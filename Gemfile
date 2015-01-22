@@ -4,6 +4,8 @@ ruby '2.0.0'
 
 gem 'neo4j', '~> 4.1.0'
 
+gem 'twitter'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use SCSS for stylesheets

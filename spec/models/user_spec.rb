@@ -5,8 +5,7 @@ RSpec.describe User, :type => :model do
 
   describe "validates presence" do
     it { expect(user).to validate_presence_of(:username) }
-    it { expect(user).to validate_presence_of(:email) }
-    # it { expect(user).to validate_presence_of(:password) }
+    it { expect(user).to validate_presence_of(:twitter) }
   end
 
   describe "validates uniqueness" do

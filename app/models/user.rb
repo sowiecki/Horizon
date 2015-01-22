@@ -16,8 +16,9 @@ class User
       length: { minimum: 3, maximum: 20 },
       format: { without: VALID_USERNAME_REGEX }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates :email, presence: true, uniqueness: true,
+  validates :email, uniqueness: true,
                   length: { maximum: 255 },
                   format: { with: VALID_EMAIL_REGEX },
                   uniqueness: { case_sensitive: false }
+  validates :twitter, presence: true, uniqueness: true
 end
