@@ -1,12 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe User, :type => :model do
-  let(:user) { User.new(username: "Jebidiah", password: "testtest", email: 'test@aol.com', twitter: 'Whee')}
+  let(:user) { User.new(username: "Jebidiah", email: 'test@aol.com', twitter: 'Whee')}
 
   describe "validates presence" do
     it { expect(user).to validate_presence_of(:username) }
     it { expect(user).to validate_presence_of(:email) }
-    it { expect(user).to validate_presence_of(:password) }
+    # it { expect(user).to validate_presence_of(:password) }
   end
 
   describe "validates uniqueness" do
