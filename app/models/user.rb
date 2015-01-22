@@ -1,75 +1,74 @@
 class User
-    include Neo4j::ActiveNode
-    #
-    # Neo4j.rb needs to have property definitions before any validations. So, the property block needs to come before
-    # loading your devise modules.
-    #
-    # If you add another devise module (such as :lockable, :confirmable, or :token_authenticatable), be sure to
-    # uncomment the property definitions for those modules. Otherwise, the unused property definitions can be deleted.
-    #
+  include Neo4j::ActiveNode
+  #
+  # Neo4j.rb needs to have property definitions before any validations. So, the property block needs to come before
+  # loading your devise modules.
+  #
+  # If you add another devise module (such as :lockable, :confirmable, or :token_authenticatable), be sure to
+  # uncomment the property definitions for those modules. Otherwise, the unused property definitions can be deleted.
+  #
 
-    ## Database authenticatable
-    property :email,type: String, null: false, default: ""
-    index :email
+  ## Database authenticatable
+  property :email,type: String, null: false, default: ""
+  index :email
 
-    property :username, type:   String
-    property :twitter, type: String
-    index :twitter
+  property :username, type:   String
+  property :twitter, type: String
+  index :twitter
 
-    property :created_at, type: DateTime
-    property :updated_at, type: DateTime
+  property :created_at, type: DateTime
+  property :updated_at, type: DateTime
 
-    before_save { self.email = email.downcase }
+  before_save { self.email = email.downcase }
 
-    VALID_USERNAME_REGEX = /\s/
-    validates :username,  presence: true,
-                                            length: { minimum: 3, maximum: 20 },
-                                            format: { without: VALID_USERNAME_REGEX }
-    VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-    validates :email, presence: true, length: { maximum: 255 },
-                    format: { with: VALID_EMAIL_REGEX },
-                    uniqueness: { case_sensitive: false }
+  VALID_USERNAME_REGEX = /\s/
+  validates :username,  presence: true, uniqueness: true,
+      length: { minimum: 3, maximum: 20 },
+      format: { without: VALID_USERNAME_REGEX }
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, presence: true, uniqueness: true,
+                  length: { maximum: 255 },
+                  format: { with: VALID_EMAIL_REGEX },
+                  uniqueness: { case_sensitive: false }
 
-    property :encrypted_password
+  property :encrypted_password
 
-    ## If you include devise modules, uncomment the properties below.
+  ## If you include devise modules, uncomment the properties below.
 
-    ## Rememberable
-    property :remember_created_at, :type => DateTime
-    index :remember_token
-
-
-    ## Recoverable
-    property :reset_password_token
-    index :reset_password_token
-    property :reset_password_sent_at, :type =>   DateTime
-
-    ## Trackable
-    property :sign_in_count, :type => Integer, :default => 0
-    property :current_sign_in_at, :type => DateTime
-    property :last_sign_in_at, :type => DateTime
-    property :current_sign_in_ip, :type =>  String
-    property :last_sign_in_ip, :type => String
-
-    ## Confirmable
-    # property :confirmation_token
-    # index :confirmation_token
-    # property :confirmed_at, :type => DateTime
-    # property :confirmation_sent_at, :type => DateTime
-
-    ## Lockable
-    #  property :failed_attempts, :type => Integer, :default => 0
-    # property :locked_at, :type => DateTime
-    #  property :unlock_token, :type => String,
-    # index :unlock_token
-
-    ## Token authenticatable
-    # property :authentication_token, :type => String, :null => true, :index => :exact
-
-    # Include default devise modules. Others available are:
-    # :confirmable, :lockable, :timeoutable and :omniauthable
-    devise :database_authenticatable, :registerable,
-     :recoverable, :rememberable, :trackable, :validatable
+  ## Rememberable
+  property :remember_created_at, :type => DateTime
+  index :remember_token
 
 
+  ## Recoverable
+  property :reset_password_token
+  index :reset_password_token
+  property :reset_password_sent_at, :type =>   DateTime
+
+  ## Trackable
+  property :sign_in_count, :type => Integer, :default => 0
+  property :current_sign_in_at, :type => DateTime
+  property :last_sign_in_at, :type => DateTime
+  property :current_sign_in_ip, :type =>  String
+  property :last_sign_in_ip, :type => String
+
+  ## Confirmable
+  # property :confirmation_token
+  # index :confirmation_token
+  # property :confirmed_at, :type => DateTime
+  # property :confirmation_sent_at, :type => DateTime
+
+  ## Lockable
+  #  property :failed_attempts, :type => Integer, :default => 0
+  # property :locked_at, :type => DateTime
+  #  property :unlock_token, :type => String,
+  # index :unlock_token
+
+  ## Token authenticatable
+  # property :authentication_token, :type => String, :null => true, :index => :exact
+
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+  :recoverable, :rememberable, :trackable, :validatable
 end

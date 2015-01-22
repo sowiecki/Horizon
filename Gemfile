@@ -43,6 +43,8 @@ gem 'spring', group: [:development, :test]
 # Test Ruby
 gem 'os', group: [:development] # for rake Neo4j Tasks
 gem 'rspec-rails', '~> 3.0.0', group: [:development]
+gem 'shoulda-matchers', group: [:test]
+gem 'simplecov'
 
 # Test JavaScript
 gem 'jasmine', group: [:test]
