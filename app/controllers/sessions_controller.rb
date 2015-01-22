@@ -1,21 +1,23 @@
 class SessionsController < ApplicationController
+  include SessionsHelper
 
   def new
+
   end
 
   def create
-    user = User.find_by(username: params[:username])
-
-    if user.authenticate(params[:password])
-      session[:user_id] = user.id
-      redirect_to admin_root_path
-    else
-      render :new
-    end
+    auth = request.env["omniauth.auth"]
+    user = User.find_by(provider: auth["provider"], uid: auth["uid"]) || User.create_with_omniauth(auth)
+    session[:user_id] = user.id
+    # if current_user
+      redirect_to root_url, :notice => "Signed in!"
+    # else
+    #   render '/login'
+    # end
   end
 
   def destroy
-    session.delete(:user_id)
-    redirect_to root_path
+    session[:user_id] = nil
+    redirect_to root_url, :notice => "Signed out!"
   end
 end
