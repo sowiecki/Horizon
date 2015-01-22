@@ -1,5 +1,5 @@
-class User 
-  include Neo4j::ActiveNode
+class User
+    include Neo4j::ActiveNode
     #
     # Neo4j.rb needs to have property definitions before any validations. So, the property block needs to come before
     # loading your devise modules.
@@ -8,57 +8,68 @@ class User
     # uncomment the property definitions for those modules. Otherwise, the unused property definitions can be deleted.
     #
 
-     property :username, :type =>   String
-     property :facebook_token, :type => String
-     index :facebook_token
+    ## Database authenticatable
+    property :email,type: String, null: false, default: ""
+    index :email
 
-     property :created_at, :type => DateTime
-     property :updated_at, :type => DateTime
+    property :username, type:   String
+    property :twitter, type: String
+    index :twitter
 
-     ## Database authenticatable
-     property :email, :type => String, :null => false, :default => ""
-     index :email
+    property :created_at, type: DateTime
+    property :updated_at, type: DateTime
 
-     property :encrypted_password
+    before_save { self.email = email.downcase }
 
-     ## If you include devise modules, uncomment the properties below.
+    VALID_USERNAME_REGEX = /\s/
+    validates :username,  presence: true,
+                                            length: { minimum: 3, maximum: 20 },
+                                            format: { without: VALID_USERNAME_REGEX }
+    VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+    validates :email, presence: true, length: { maximum: 255 },
+                    format: { with: VALID_EMAIL_REGEX },
+                    uniqueness: { case_sensitive: false }
 
-     ## Rememberable
-     property :remember_created_at, :type => DateTime
-     index :remember_token
+    property :encrypted_password
+
+    ## If you include devise modules, uncomment the properties below.
+
+    ## Rememberable
+    property :remember_created_at, :type => DateTime
+    index :remember_token
 
 
-     ## Recoverable
-     property :reset_password_token
-     index :reset_password_token
-     property :reset_password_sent_at, :type =>   DateTime
+    ## Recoverable
+    property :reset_password_token
+    index :reset_password_token
+    property :reset_password_sent_at, :type =>   DateTime
 
-     ## Trackable
-     property :sign_in_count, :type => Integer, :default => 0
-     property :current_sign_in_at, :type => DateTime
-     property :last_sign_in_at, :type => DateTime
-     property :current_sign_in_ip, :type =>  String
-     property :last_sign_in_ip, :type => String
+    ## Trackable
+    property :sign_in_count, :type => Integer, :default => 0
+    property :current_sign_in_at, :type => DateTime
+    property :last_sign_in_at, :type => DateTime
+    property :current_sign_in_ip, :type =>  String
+    property :last_sign_in_ip, :type => String
 
-     ## Confirmable
-     # property :confirmation_token
-     # index :confirmation_token
-     # property :confirmed_at, :type => DateTime
-     # property :confirmation_sent_at, :type => DateTime
+    ## Confirmable
+    # property :confirmation_token
+    # index :confirmation_token
+    # property :confirmed_at, :type => DateTime
+    # property :confirmation_sent_at, :type => DateTime
 
-     ## Lockable
-     #  property :failed_attempts, :type => Integer, :default => 0
-     # property :locked_at, :type => DateTime
-     #  property :unlock_token, :type => String,
-     # index :unlock_token
+    ## Lockable
+    #  property :failed_attempts, :type => Integer, :default => 0
+    # property :locked_at, :type => DateTime
+    #  property :unlock_token, :type => String,
+    # index :unlock_token
 
-      ## Token authenticatable
-      # property :authentication_token, :type => String, :null => true, :index => :exact
+    ## Token authenticatable
+    # property :authentication_token, :type => String, :null => true, :index => :exact
 
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+    # Include default devise modules. Others available are:
+    # :confirmable, :lockable, :timeoutable and :omniauthable
+    devise :database_authenticatable, :registerable,
+     :recoverable, :rememberable, :trackable, :validatable
 
 
 end
