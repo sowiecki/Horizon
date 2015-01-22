@@ -11,5 +11,5 @@
 /log/*
 !/log/.keep
 /tmp
-/config/omniauth.rb
+/config/initializers/omniauth.rb
 /config/secrets.yml
