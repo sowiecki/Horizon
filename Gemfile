@@ -1,10 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'neo4j', '~> 4.1.0'
+# gem 'neography'
 gem 'devise'
 gem 'devise-neo4j'
-
-# gem 'neography'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
@@ -26,7 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'unicorn'
 
 # Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
+# gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
 gem 'unicorn'
@@ -51,6 +50,6 @@ gem 'rspec-rails', '~> 3.0.0', group: [:development]
 # Test JavaScript
 gem 'jasmine', group: [:test]
 
-gem 'neo4j-community', '~> 2.0.0', platforms: [:jruby]
+# gem 'neo4j-community', '~> 2.0.0', platforms: [:jruby]
 
-gem 'string-urlize'  # for making the title the primary key and work as an URL, see Neo4j.rb id_property
+# gem 'string-urlize'  # for making the title the primary key and work as an URL, see Neo4j.rb id_property

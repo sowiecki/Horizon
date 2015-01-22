@@ -1,6 +1,9 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  config.neo4j.session_type = :server_db
+  config.neo4j.session_path = ENV["GRAPHENEDB_URL"] || 'http://localhost:7474'
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
