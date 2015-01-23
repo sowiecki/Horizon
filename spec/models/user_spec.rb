@@ -1,6 +1,10 @@
 require 'rails_helper'
 
+
+
 RSpec.describe User, :type => :model do
+
+  it { should have_many(:issues) }
   # let(:user) { User.new(username: "Jebidiah", email: 'test@aol.com', twitter: 'Whee')}
 
   # describe "validates presence" do
