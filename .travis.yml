@@ -1,8 +1,5 @@
-script: "bundle exec rake neo4j:install['community-2.2.0-M01'] neo4j:start default --trace"
-language: ruby
 rvm:
-  - 2.0.0
-services:
-  - neo4j
+  - jruby-18mode
+  - jruby-19mode
 # uncomment this line if your project needs to run something other than `rake`:
 # script: bundle exec rspec spec
