@@ -45,9 +45,6 @@ header {
   color: #35D7E0;
   background-color: transparent;
   background: #3f3f3f;
-  background-image:
-     -webkit-radial-gradient(20% top, rgb(100, 100, 100) 0%, rgb(50,50,50) 75%),
-     -webkit-radial-gradient(right top, rgb(250, 250, 250) 100%, rgba(100, 100, 100,0) 57%);
 }
 .header-content-wrapper {
   margin: 0 auto auto;
@@ -56,8 +53,13 @@ header {
 .logo {
   margin: 16px 0 16px 0;
   font-size: 60px;
-  /*color: #f2f2f2;*/
   /*text-shadow: 0 0 20px rgba(100,100,100,0.8), 0 0 0 black;*/
+}
+a.logo-text {
+  color: #EFE9F4;
+}
+a.logo-text {
+  text-decoration: none;
 }
 section.logo {
   display: inline-block;
