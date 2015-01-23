@@ -45,7 +45,8 @@ gem 'spring', group: [:development, :test]
 
 # Test Ruby
 gem 'os', group: [:development] # for rake Neo4j Tasks
-gem 'rspec-rails', '~> 3.0.0', group: [:development]
+gem 'rspec-rails', '~> 3.0.0', group: [:development, :test]
+gem 'rails_12factor', group: [:production]
 gem 'shoulda-matchers', group: [:test]
 gem 'simplecov'
 

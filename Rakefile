@@ -2,9 +2,5 @@
 # for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
 
 require File.expand_path('../config/application', __FILE__)
-# require 'neo4j/tasks/neo4j_server'
-require 'rspec/core/rake_task'
-task :default => :spec
-RSpec::Core::RakeTask.new
 
 Rails.application.load_tasks
