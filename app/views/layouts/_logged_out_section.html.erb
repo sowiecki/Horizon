@@ -1,4 +1,8 @@
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-<%= link_to "Sign in with Twitter", "/auth/twitter", class: 'twitter-auth-button' %>
-<!-- Use /auth/twitter?force_login=true to force login upon redirect -->
+<div class='nav-text-alerts'>
+  <span class="notice"><%= notice %></span>
+  <span class="alert"><%= alert %></span>
+</div>
+<div class='nav-button-twitter-login'>
+  <%= link_to "Sign in with Twitter", "/auth/twitter", class: 'twitter-auth-button' %>
+  <!-- Use /auth/twitter?force_login=true to force login upon redirect -->
+</div>

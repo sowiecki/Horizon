@@ -7,13 +7,20 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <%= render 'layouts/header' %>
-    <% if logged_in? %>
-      <%= render 'layouts/logged_in_section' %>
-    <% else %>
-      <%= render 'layouts/logged_out_section' %>
-    <% end %>
-    <%= yield %>
-
+    <header>
+      <section class='logo'>
+        <%= render 'layouts/header' %>
+      </section>
+      <nav>
+        <% if logged_in? %>
+          <%= render 'layouts/logged_in_section' %>
+        <% else %>
+          <%= render 'layouts/logged_out_section' %>
+        <% end %>
+      </nav>
+    </header>
+    <section class='page-content'>
+      <%= yield %>
+    </section>
   </body>
 </html>
