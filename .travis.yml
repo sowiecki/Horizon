@@ -3,11 +3,6 @@ rvm:
   - 2.0.0
   - jruby-18mode
   - jruby-19mode
-before_install:
-    # install Neo4j locally:
-    - wget dist.neo4j.org/neo4j-community-$NEO4J_VERSION-unix.tar.gz
-    - tar -xzf neo4j-community-$NEO4J_VERSION-unix.tar.gz
-    - neo4j-community-$NEO4J_VERSION/bin/neo4j start
 services:
   - neo4j
 # uncomment this line if your project needs to run something other than `rake`:
