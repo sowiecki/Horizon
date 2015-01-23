@@ -1,6 +1,6 @@
 <div class='nav-text'>
-  <span class='nav-text-welcome'>Welcome, <%= link_to current_user.username, current_user %></span>
-  <%= link_to "Sign Out", signout_path, class: "nav-link-logout" %>
+  <span class='nav-text-welcome'>Welcome <%= link_to current_user.username, current_user, class: 'nav-text-welcome' %></span>
+  <%= link_to "Sign Out", signout_path, class: "nav-link nav-link-logout" %>
 </div>
 <div class='nav-avatar'>
   <a href='<%= current_user.twitter %>'>

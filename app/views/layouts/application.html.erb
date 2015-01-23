@@ -8,16 +8,18 @@
   </head>
   <body>
     <header>
-      <section class='logo'>
-        <%= render 'layouts/header' %>
-      </section>
-      <nav>
-        <% if logged_in? %>
-          <%= render 'layouts/logged_in_section' %>
-        <% else %>
-          <%= render 'layouts/logged_out_section' %>
-        <% end %>
-      </nav>
+      <div class='header-content-wrapper'>
+        <section class='logo'>
+          <%= render 'layouts/header' %>
+        </section>
+        <nav>
+          <% if logged_in? %>
+            <%= render 'layouts/logged_in_section' %>
+          <% else %>
+            <%= render 'layouts/logged_out_section' %>
+          <% end %>
+        </nav>
+      </div>
     </header>
     <section class='page-content'>
       <%= yield %>
