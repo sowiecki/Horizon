@@ -22,6 +22,7 @@ module Horizon
       g.orm :neo4j
     end
 
+    config.assets.precompile = ['*.js', '*.css']
     config.neo4j.session_type = :server_db
     config.neo4j.session_path = ENV['GRAPHENEDB_URL'] || 'http://localhost:7474'
   end
