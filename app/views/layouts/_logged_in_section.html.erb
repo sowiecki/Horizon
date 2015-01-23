@@ -1,8 +1,7 @@
 <div class='nav-text'>
   <span class='nav-text-welcome'>Welcome <%= link_to current_user.username, current_user, class: 'nav-text-welcome' %></span>
-  <span class="notice"><%= notice %>Signed in now</span>
-  <span class="alert"><%= alert %></span>
-  <%= link_to "Sign Out", signout_path, class: "nav-link nav-link-logout" %>
+  <span class="nav-link-logout"><%= notice %><%= alert %>
+  <%= link_to "Sign Out", signout_path, class: "nav-link" %></span>
 </div>
 <div class='nav-avatar'>
   <a href='<%= current_user.twitter %>'>

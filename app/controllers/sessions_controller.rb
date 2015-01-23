@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     user = User.find_by(provider: auth["provider"], uid: auth["uid"]) || User.create_with_omniauth(auth)
     session[:user_id] = user.id
     # if current_user
-    redirect_to root_url, :notice => "You are now signed in."
+    redirect_to root_url, :notice => "You've been signed in. | "
     # else
     #   render '/login'
     # end

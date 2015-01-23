@@ -96,7 +96,7 @@ a.nav-link:visited, a.nav-text-welcome:visited {
 a.nav-text-welcome:hover {
   color: #7acef4;
 }
-a.nav-link-logout {
+.nav-link-logout {
   display: block;
   color: #35D7E0;
 }
