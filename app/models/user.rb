@@ -4,13 +4,11 @@ class User
   property :username, type:   String
   property :twitter, type: String
   property :email, type: String
+  property :avatar, type: String
   index :twitter
 
   property :uid, type: String
   property :provider, type: String
-
-  # property :oauth_token, type: String
-  # property :oauth_secret, type: String
 
   property :created_at, type: DateTime
   property :updated_at, type: DateTime
@@ -29,10 +27,12 @@ class User
   # validates :twitter, presence: true, uniqueness: true
 
   def self.create_with_omniauth(auth)
-    create! do |user|
+    create! do |user| # OMFG remove this bang before production
       user.provider = auth["provider"]
       user.uid = auth["uid"]
-      user.username = auth["info"]["username"]
+      user.username = auth["info"]["nickname"]
+      user.twitter = auth["info"]["urls"]["Twitter"]
+      user.avatar = auth["info"]["image"]
     end
   end
 end
