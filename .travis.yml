@@ -3,5 +3,3 @@ services:
 language: ruby
 rvm:
   - 2.0.0
-before_script:
-  - rake neo4j:start
