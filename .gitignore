@@ -13,3 +13,4 @@
 /tmp
 .env
 env.rb
+/db/neo4j/*/data/*
