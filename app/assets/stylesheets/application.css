@@ -13,3 +13,134 @@
  *= require_tree .
  *= require_self
  */
+ * {
+  /*font-family: "Comic Sans MS";*/
+ }
+html {
+  background: #3f3f3f;
+  background-image:
+     -webkit-radial-gradient(20% top, rgb(280, 280, 280) 0%, rgb(200,200,200) 75%),
+     -webkit-radial-gradient(right top, rgb(250, 250, 250) 100%, rgba(100, 100, 100,0) 57%);
+  background-repeat: no-repeat;
+  background-size: 150%;
+  overflow-y: scroll;
+  min-height: 100%;
+ }
+body {
+  margin: 0;
+  background-color: transparent;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  background-color: transparent;
+}
+
+/* Header elements */
+header {
+  padding: 2px;
+  height: 54px;
+  color: #35D7E0;
+  background-color: transparent;
+  background: #3f3f3f;
+  background-image:
+     -webkit-radial-gradient(20% top, rgb(100, 100, 100) 0%, rgb(50,50,50) 75%),
+     -webkit-radial-gradient(right top, rgb(250, 250, 250) 100%, rgba(100, 100, 100,0) 57%);
+}
+.header-content-wrapper {
+  margin: 0 auto auto;
+  max-width: 1000px;
+}
+.logo {
+  margin: 16px 0 16px 0;
+  font-size: 60px;
+  /*color: #f2f2f2;*/
+  /*text-shadow: 0 0 20px rgba(100,100,100,0.8), 0 0 0 black;*/
+}
+section.logo {
+  display: inline-block;
+}
+nav {
+  float: right;
+  text-align: right;
+}
+.nav-avatar {
+  display: inline-block;
+}
+.nav-text {
+  display: inline-block;
+  padding: 6px;
+  vertical-align: top;
+}
+a.nav-link:hover, a.nav-text-welcome:hover {
+  color: #35D7E0;
+}
+a.nav-link:visited, a.nav-text-welcome:visited {
+  color: #35D7E0;
+}
+.nav-button-twitter-login {
+  display: inline-block;
+  margin: 12px;
+}
+.nav-text-alerts {
+  display: inline-block;
+  vertical-align: top;
+  margin: 16px 0 0 0;
+}
+.nav-text-welcome {
+  font-size: 20px;
+  color: #FF784F;
+}
+a.nav-text-welcome:hover {
+  color: #7acef4;
+}
+.nav-link-logout {
+  display: block;
+  color: #35D7E0;
+}
+.notice, .alert {
+  display: inline;
+}
+
+.page-content {
+  margin: 20px auto auto;
+  padding: 0 20px 0 20px;
+  max-width: 1000px;
+}
+.current-user-avatar {
+  display: inline-block;
+  border: 3px solid #35D7E0;
+  border-radius: 6px;
+}
+
+a.twitter-auth-button {
+  display: inline-block;
+  padding: 1px 6px 0 28px;
+  border: #ccc solid 1px;
+  border-radius: 3px;
+  background: #f8f8f8 url(//platform.twitter.com/images/bird.png) 2px 3px no-repeat;
+  background: url(//platform.twitter.com/images/bird.png) 2px 3px no-repeat,
+              -webkit-linear-gradient(#fff, #dedede);
+  background: url(//platform.twitter.com/images/bird.png) 2px 3px no-repeat,
+              linear-gradient(#fff, #dedede);
+  background-size: 22px 19px, auto auto;
+
+  /* Text */
+  font: bold 18px/24px Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  color: #333;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+  white-space: nowrap;
+}
+
+a.twitter-auth-button:hover {
+  color: #4c4c4c;
+  background: #f8f8f8 url(//platform.twitter.com/images/bird.png) 2px 3px no-repeat;
+  background: url(//platform.twitter.com/images/bird.png) 2px 3px no-repeat,
+              -webkit-linear-gradient(#fff, #f2f2f2);
+  background: url(//platform.twitter.com/images/bird.png) 2px 3px no-repeat,
+              linear-gradient(#fff, #f2f2f2);
+  background-size: 22px 19px, auto auto;
+}

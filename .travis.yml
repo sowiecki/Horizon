@@ -1,7 +1,5 @@
+services:
+  - neo4j
 language: ruby
 rvm:
   - 2.0.0
-services:
-  - neo4j
-# uncomment this line if your project needs to run something other than `rake`:
-# script: bundle exec rspec spec

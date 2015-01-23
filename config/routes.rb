@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # get 'profile/show'
   # get '/login' => 'sessions#new'
   # get '/auth/twitter/callback' => 'sessions#create', as: 'twitter_callback'
-  # resources :users
+  resources :users
 
   # root :to => "welcome#index"
 
