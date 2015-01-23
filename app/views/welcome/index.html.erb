@@ -1,15 +1,9 @@
 <h1>Hello, world!</h1>
 
 <% if logged_in? %>
-  Now logged in as...<br>
-  <%= image_tag current_user.avatar %><br>
-  Username: <%= current_user.username %><br>
-  User id is: <%= current_user.id %><br>
-  Twitter is: <%= current_user.twitter %><br>
-  <%= link_to "Sign Out", signout_path %>
+  <%= render 'logged_in_index' %>
+  <!-- Renders a view for user that ARE logged in -->
 <% else %>
-  <%= link_to "Sign in with Twitter", "/auth/twitter" %>
-  <!-- Use /auth/twitter?force_login=true to force login upon redirect -->
-  <p>or</p>
-  <%= link_to "Register", "/register" %>
+  <%= render 'logged_out_index' %>
+  <!-- Renders a view for users that are NOT logged in -->
 <% end %>
