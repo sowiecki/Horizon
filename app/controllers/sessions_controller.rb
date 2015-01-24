@@ -10,11 +10,7 @@ class SessionsController < ApplicationController
     session[:user_id] = user.id
     session[:token] = auth["token"]
     session[:secret] = auth["secret"]
-    # if current_user
     redirect_to root_url, :notice => "You've been signed in. | "
-    # else
-    #   render '/login'
-    # end
   end
 
   def destroy

@@ -28,3 +28,23 @@ module Horizon
     config.neo4j.session_path = ENV['GRAPHENEDB_URL'] || 'http://localhost:7474'
   end
 end
+
+# module OmniAuth
+#   module Strategies
+#     class User < OmniAuth::Strategies::Facebook
+#       def call
+#         begin
+#           super
+#         raise OmniAuth::Unauthorized => e
+#           return "Test"
+#         end
+#       end
+#     end
+#   end
+# end
+
+# Rails.application.config.middleware.use OmniAuth::Builder do
+#   provider OmniAuth::Strategies::FacebookWithExceptionHandling,
+#     api_key, ENV["CONSUMER_KEY"]
+#     secret_key, ENV["CONSUMER_SECRET"]
+# end
