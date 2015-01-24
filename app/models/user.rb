@@ -1,6 +1,8 @@
 class User
   include Neo4j::ActiveNode
   has_many :out, :issues
+  has_many :out, :followers, type: :followers, model_class: User
+  has_many :in, :followees, type: :followees, model_class: User
 
 
   property :username, type: String

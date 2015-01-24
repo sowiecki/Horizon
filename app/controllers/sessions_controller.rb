@@ -2,13 +2,14 @@ class SessionsController < ApplicationController
   include SessionsHelper
 
   def new
-
   end
 
   def create
     auth = request.env["omniauth.auth"]
     user = User.find_by(provider: auth["provider"], uid: auth["uid"]) || User.create_with_omniauth(auth)
     session[:user_id] = user.id
+    session[:token] = auth["token"]
+    session[:secret] = auth["secret"]
     # if current_user
     redirect_to root_url, :notice => "You've been signed in. | "
     # else
