@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # get '/auth/twitter/callback' => 'sessions#create', as: 'twitter_callback'
   resources :users
 
+  get "/resources/show" => "resources#show"
   # root :to => "welcome#index"
 
   get "/auth/:provider/callback" => "sessions#create"
