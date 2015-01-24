@@ -1,4 +1,4 @@
-<h1>Logged in title</h1>
+<h1>Please choose a category</h1>
 
 <h3>Categories</h3>
 <ul>
@@ -6,7 +6,7 @@
   <li>
     <%= category.title %>
     <ul>
-      <% category.issues.each do |iss | %>
+      <% category.issues.each do |iss| %>
         <li>
           <%= link_to "#{iss.title}", iss %>
         </li>

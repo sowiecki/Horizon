@@ -57,6 +57,9 @@ header {
 }
 a.logo-text {
   color: #EFE9F4;
+  font-weight: bold;
+  font-family: 'Lato', serif;
+  /*color: #4312AE;*/
 }
 a.logo-text {
   text-decoration: none;

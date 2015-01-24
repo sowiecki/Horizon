@@ -4,12 +4,38 @@
 <p></p>
 
 <h3>Experts:</h3>
+<%= @expert_ids %>
 <ul>
 <% @issue.experts.each do |expert| %>
 <li>
- <%= expert.username %>
+ <%= expert.username %> (<%= expert.uid %>)
 <%= image_tag client.user(expert.username).profile_image_url, class: 'current-user-avatar' %>
 <%= link_to "Follow", follow_path(expert.username), class: "nav-link" %>
 </li>
 <% end %>
 </ul>
+
+<h4>Experts you follow:</h4>
+
+<%= @my_experts %>
+
+<ul>
+  <% @my_experts.each do |expert| %>
+    <li>
+    <%= expert %>
+    </li>
+  <% end %>
+</ul>
+
+<h4>Recommended Experts:</h4>
+<%= @rec_experts %>
+<ul>
+  <% @rec_experts.each do |expert| %>
+    <li>
+    <%= expert %>
+    </li>
+  <% end %>
+</ul>
+
+<%= @my_friend_ids %>
+
