@@ -5,8 +5,6 @@ Rails.application.routes.draw do
   resources :users
 
   get "/resources/show" => "resources#show"
-  # root :to => "welcome#index"
-
   get "/auth/:provider/callback" => "sessions#create"
   get "/signout" => "sessions#destroy", :as => :signout
 

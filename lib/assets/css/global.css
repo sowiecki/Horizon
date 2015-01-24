@@ -48,7 +48,7 @@ header section#title p {
 	margin-left: 10px;
 	font-family: GraublauWeb, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size:12px;
-	line-height:1.4;	
+	line-height:1.4;
 }
 
 header section#search {
@@ -65,7 +65,7 @@ html,body {
 	margin:0px;
 	padding:0px;
 	color: #555;
-	
+
 	font-family: GraublauWeb, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size-adjust:none;
 	font-stretch:normal;
@@ -91,7 +91,7 @@ header h1 {
 	width: 200px;
 	color: black;
 	font-weight: bold;
-	margin: 0px;	
+	margin: 0px;
 	font-size:30px;
 	padding: 0px;
 	margin-left: 10px;
@@ -173,8 +173,8 @@ section#infovis {
 	background-color:#F4F4F4;
 }
 
-.hidden {  
-  display:none;  
+.hidden {
+  display:none;
 }
 
 #browser_not_supported {
@@ -187,10 +187,10 @@ section#infovis {
 
 /* Clearing */
 .clearfix:after, #frame:after, .navigation:after {
-    content: "."; 
-    display: block; 
-    height: 0; 
-    clear: both; 
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
     visibility: hidden;
 }
 .clearfix, #frame, .navigation {display: inline-block;}

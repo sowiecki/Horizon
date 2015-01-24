@@ -13,5 +13,5 @@
 //= require jquery
 //= require jquery-ui
 //= require jquery_ujs
-
+//= processing.min
 //= require_tree .

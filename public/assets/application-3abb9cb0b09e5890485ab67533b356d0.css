@@ -427,6 +427,10 @@ a.nav-text-welcome:hover {
   border-radius: 6px;
 }
 
+.canvas-wrapper {
+  width: 100%;
+}
+
 a.twitter-auth-button {
   display: inline-block;
   padding: 1px 6px 0 28px;

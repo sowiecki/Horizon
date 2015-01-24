@@ -2,7 +2,7 @@ class ResourcesController < ApplicationController
   include ApplicationHelper
 
   def show
-    cypher = "START me=node(#{params[:id]})
+    cypher = "START me=node(#{current_user})
               OPTIONAL MATCH me -[r]- related
               RETURN me, r, related"
 
