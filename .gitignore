@@ -11,6 +11,7 @@
 /log/*
 !/log/.keep
 /tmp
-.env
+/config/initializers/env.rb
 env.rb
 /db/neo4j/*/data/*
+

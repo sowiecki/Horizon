@@ -1,9 +1,10 @@
 class User
   include Neo4j::ActiveNode
+  has_many :out, :issues
 
-  property :username, type:   String
+
+  property :username, type: String
   property :twitter, type: String
-  property :email, type: String
   property :avatar, type: String
   index :twitter
 
@@ -12,6 +13,11 @@ class User
 
   property :created_at, type: DateTime
   property :updated_at, type: DateTime
+
+
+
+  validates_uniqueness_of(:twitter)
+  # validates :username, :presence => true
 
   # before_save { self.email = email.downcase }
 
