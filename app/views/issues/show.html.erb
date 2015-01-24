@@ -1,0 +1,15 @@
+
+<h1><%= @issue.title %></h1>
+
+<p></p>
+
+<h3>Experts:</h3>
+<ul>
+<% @issue.experts.each do |expert| %>
+<li>
+ <%= expert.username %>
+<%= image_tag client.user(expert.username).profile_image_url, class: 'current-user-avatar' %>
+<%= link_to "Follow", follow_path(expert.username), class: "nav-link" %>
+</li>
+<% end %>
+</ul>

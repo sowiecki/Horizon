@@ -3,15 +3,18 @@
 <h3>Categories</h3>
 <ul>
 <% Category.all.each do |category| %>
-  <li><%= category.title %></li>
+  <li>
+    <%= category.title %>
+    <ul>
+      <% category.issues.each do |iss | %>
+        <li>
+          <%= link_to "#{iss.title}", iss %>
+        </li>
+      <% end %>
+    </ul>
+  </li>
 <% end %>
 </ul>
 
-<% User.all.each do |user| %>
-  <p><%= user.username %></p>
-  <% user.issues.each do |issue| %>
-    <p><%= issue.title %></p>
-  <% end %>
-<% end %>
 
-<h1>Test: <%= client if client %></h1>
+<%= link_to "Sign Out", signout_path, class: "nav-link" %>

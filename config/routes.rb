@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
+  resources :issues
+  post "/issues" => "issues#follow", :as => :follow
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
