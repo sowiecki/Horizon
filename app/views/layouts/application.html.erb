@@ -2,6 +2,10 @@
 <html>
   <head>
     <title>Horizon</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+    <script src="/js/ui.js"></script>
+    <script src="/js/processing.min.js"></script>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
@@ -23,7 +27,7 @@
       </div>
     </header>
     <section class='page-content'>
+      </section>
       <%= yield %>
-    </section>
   </body>
 </html>

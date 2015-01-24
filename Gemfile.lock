@@ -266,6 +266,7 @@ DEPENDENCIES
   jasmine
   jbuilder (~> 2.0)
   jquery-rails
+  json
   neo4j (~> 4.1.0)
   neography
   oauth
