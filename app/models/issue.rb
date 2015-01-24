@@ -7,7 +7,4 @@ class Issue
 
 
   property  :title, type: String
-
-
-
 end

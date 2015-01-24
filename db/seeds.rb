@@ -2,8 +2,8 @@ user = User.create({username:"Luke", twitter:"L_zdanowicz"})
 category = Category.create({title:"Technology"})
 issue = Issue.create({title: "Net Nuetrality"})
 category.issues << issue
-expert_1 = User.create({uid: "", username: "ggreenwald", twitter: "ggreenwald"})
-expert_2 = User.create({uid: "", username: "neiltyson", twitter: "neiltyson"})
+expert_1 = User.create({uid: "16076032", username: "ggreenwald", twitter: "ggreenwald"})
+expert_2 = User.create({uid: "19725644", username: "neiltyson", twitter: "neiltyson"})
 issue.experts << expert_1
 issue.experts << expert_2
 

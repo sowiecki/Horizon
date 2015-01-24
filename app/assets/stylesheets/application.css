@@ -40,8 +40,8 @@ a:hover {
 
 /* Header elements */
 header {
-  padding: 2px;
-  height: 54px;
+  padding: 12px;
+  height: 56px;
   color: #35D7E0;
   background-color: transparent;
   background: #171D1C;
@@ -51,8 +51,7 @@ header {
   max-width: 1000px;
 }
 .logo {
-  margin: 16px 0 16px 0;
-  font-size: 60px;
+  /*margin: 16px 0 16px 0;*/
   /*text-shadow: 0 0 20px rgba(100,100,100,0.8), 0 0 0 black;*/
 }
 a.logo-text {
