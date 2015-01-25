@@ -3,12 +3,12 @@ import( '/js/pjs/util.lib' );
 
 color[] colors = new color[12];
 
-colors[0] = #24CFD5;
+colors[0] = #7D8CA3;
 colors[1] = #FF784F;
-colors[2] = #24CFD5;
-colors[3] = #24CFD5;
-colors[4] = #24CFD5;
-colors[5] = #24CFD5;
+colors[2] = #4c9699;
+colors[3] = #e5b572;
+colors[4] = #9771e2;
+colors[5] = #f25b29;
 colors[6] = #24CFD5;
 colors[7] = #24CFD5;
 colors[8] = #24CFD5;
@@ -17,7 +17,7 @@ colors[10] = #24CFD5;
 colors[11] = #24CFD5;
 
 color LABEL_COLOR = #171D1C;
-color HIGHLIGHTED_LABEL_COLOR = #5e23d3;
+color HIGHLIGHTED_LABEL_COLOR = #5070a0;
 color DONUT_BACKGROUND = #e1dce5;
 color BACKGROUND = #EFE9F4;
 

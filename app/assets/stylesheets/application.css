@@ -134,21 +134,26 @@ aside {
   position: absolute;
   float: right;
   margin: 0 auto auto;
-  padding: 10px;
   top: 100px;
   right: 100px;
-  width: 400px;
+  /*width: 400px;*/
   color: #7c7c7c;
+  max-height: 30px;
+}
+.aside-box {
+  padding: 6px;
   background-color: #e1dce5;
-  border: 3px solid #3A3042;
-  max-height: 180px;
-  border-radius: 10px;
+  border: 6px solid #3A3042;
+  border-radius: 6px;
+}
+a.aside-text {
+  color: #5f7e7f;
 }
 h2 {
   margin: 2px;
 }
-ul {
-  list-style-type: none;
+p {
+  margin: 2px;
 }
 input {
   padding: 4px;
@@ -199,4 +204,18 @@ a.twitter-auth-button:hover {
   background: url(//platform.twitter.com/images/bird.png) 2px 3px no-repeat,
               linear-gradient(#fff, #f2f2f2);
   background-size: 22px 19px, auto auto;
+}
+
+footer {
+  position: absolute;
+  padding: 4px;
+  height: 18px;
+  width: 100%;
+  text-align: center;
+  color: #35D7E0;
+  background: #171D1C;
+  bottom: 10px;
+}
+footer > a {
+  color: #35D7E0;
 }

@@ -1,9 +1,5 @@
 <section id="search">
-    <form action="/" method="get">
-      <label>Node ID:</label>
-      <input id="neoid" name="neoid" type="text" value="<%= @neoid %>"></input>
-      <input class="button" id="loadnode" type="submit" value="Load"></input>
-    </form>
+    <%= render 'layouts/search' %>
 </section>
 <div class='aside-wrapper'>
     <aside>
@@ -32,7 +28,6 @@ $(function() {
     p.setup();
 
     $("#path li").remove();
-
   };
 
   $(function() {
@@ -47,9 +42,7 @@ $(function() {
     }
 
     if (canvasSupported()) {
-
       var initialized = false;
-
       // init
       var vizid =  window.location.search.substring(1).split("=")[1];
       if (vizid) {
@@ -66,8 +59,8 @@ $(function() {
         Attributes.adjustHeight();
       });
     } else {
-      $('#browser_not_supported').show();
-      $('#explanation').hide();
+      // $('#browser_not_supported').show();
+      // $('#explanation').hide();
     }
   });
 });

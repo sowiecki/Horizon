@@ -23,14 +23,19 @@ module ApplicationHelper
   end
 
   def get_properties(node)
-    properties = "<ul>"
+    properties = "<div class='aside-box'>"
     node.each_pair do |key, value|
-      if key == "avatar_url"
-        properties << "<li><img src='#{value}'></li>"
+      case key
+      when 'title'
+        properties << "<h3><b>#{key}:</b> #{value}</h3>"
+      when 'avatar_url'
+        properties << "<p><img src='#{value}'></p>"
+      when 'username'
+        properties << "<p><b>#{key}:</b> <a class='aside-text' href='https://twitter.com/#{value}' target='_blank'>#{value}</a></p>"
       else
-        properties << "<li><b>#{key}:</b> #{value}</li>"
+        properties << "<p><b>#{key}:</b> #{value}</p>"
       end
     end
-    properties + "</ul>"
+    properties + "</div>"
   end
 end
