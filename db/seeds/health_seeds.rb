@@ -1,8 +1,8 @@
 # CREATE THIS CATEGORY ('Health')
-category = Category.create({title:"Health", description: "Major issues concerning public health and wellness."})
+category = Category.create({name:"Health", description: "Major issues concerning public health and wellness."})
 
 # CREATE THE ISSUE 'Healthcare' AND PUT IT UNDER THIS CATEGORY
-issue = Issue.create({title: "Healthcare", description: ""})
+issue = Issue.create({name: "Healthcare", description: ""})
 category.issues << issue
 
 # CREATE THE EXPERTS THAT BELONG UNDER THIS ISSUE
@@ -36,7 +36,7 @@ issue.experts << expert
 expert = User.create({provider: 'twitter', uid: '11274452', username: 'kevinmd', twitter: 'https://twitter.com/kevinmd', avatar: 'http://pbs.twimg.com/profile_images/1182717255/Kevin2_WEB_normal.jpg', name: 'Kevin Pho, M.D.', bio: 'Physician, author, keynote speaker, USA TODAY\'s Board of Contributors. Social media\'s leading physician voice. http://t.co/MlC37Wze and http://t.co/hThNxwTt'})
 
 # CREATE THIS ISSUE AND PUT IT UNDER THIS CATEGORY
-tissue = Issue.create({title: "Vaccinations", description: ""})
+tissue = Issue.create({name: "Vaccinations", description: ""})
 category.issues << tissue
 
 # CREATE THE EXPERTS THAT BELONG UNDER THIS ISSUE
@@ -72,7 +72,7 @@ expert = User.find_or_create_by({provider: 'twitter', uid: '27013292', username:
 issue.experts << expert
 
 # CREATE THIS ISSUE AND PUT IT UNDER THIS CATEGORY
-issue = Issue.create({title: "Obesity", description: ""})
+issue = Issue.create({name: "Obesity", description: ""})
 category.issues << issue
 
 # CREATE THE EXPERTS THAT BELONG UNDER THIS ISSUE

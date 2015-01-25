@@ -6,6 +6,6 @@ class Issue
   has_many :in, :experts, model_class: User
 
 
-  property :title, type: String
+  property :name, type: String
   property :description, type: String
 end

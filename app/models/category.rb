@@ -4,7 +4,7 @@ class Category
   has_many :out, :issues
   has_many :in, :users
 
-  property  :title, type: String
+  propery  :name, type: String
   property :description, type: String
 
 
