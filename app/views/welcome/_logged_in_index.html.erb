@@ -10,7 +10,9 @@
         <%= current_user.neo_id %>
     </aside>
 </div>
-<canvas id="neoviz"></canvas>
+<div class='canvas-wrapper'>
+    <canvas id="neoviz"></canvas>
+</div>
 <script>
 $(function() {
   var canvas = document.getElementById("neoviz");

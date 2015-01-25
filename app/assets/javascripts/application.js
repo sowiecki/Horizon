@@ -15,3 +15,7 @@
 //= require jquery_ujs
 //= processing.min
 //= require_tree .
+
+$(function() {
+  $('aside').draggable();
+});
