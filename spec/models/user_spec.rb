@@ -3,31 +3,31 @@ require 'rails_helper'
 
 
 RSpec.describe User, :type => :model do
-<<<<<<< HEAD
 
-  it { should have_many(:issues) }
-  # let(:user) { User.new(username: "Jebidiah", email: 'test@aol.com', twitter: 'Whee')}
-=======
-  let(:user) { User.new(username: "Jebidiah", email: 'test@aol.com', twitter: 'Whee')}
->>>>>>> f91ed6ca5f51271b11b7314bcb104672ac18c78f
+  let(:user) { User.create(username: "Jebidiah", twitter: 'Whee')}
+  let(:issue) {issue = Issue.create(title: "Big Issue")}
 
-  describe "validates presence" do
+
+  describe "issues have an array of experts" do
+    it { expect(issue.experts).to eq([])}
+  end
+
+  describe "validates presence of username" do
     it { expect(user).to validate_presence_of(:username) }
+  end
+
+  describe "validates presence of twitter" do
     it { expect(user).to validate_presence_of(:twitter) }
   end
 
-  describe "validates uniqueness" do
-    it { expect(user).to validate_uniqueness_of(:email) }
+  describe "validates uniqueness of twitter handle" do
+    it {expect(user).to validate_uniqueness_of(:twitter)}
   end
 
-  # describe "excepts associations" do
-  #   it { expect(user).to have_many() }
-  # end
-
-  describe "restricts email format" do
-    it { expect(user).to allow_value('text@email.com').for(:email) }
-    it { expect(user).to_not allow_value('textemail.com').for(:email) }
+  describe "twitter format should not be case sensitive" do
+    it {expect(user.twitter).to eq('whee')}
   end
+
 
   describe "restricts username format" do
     it { expect(user).to allow_value('username').for(:username) }
