@@ -36,16 +36,16 @@ issue.experts << expert
 expert = User.create({provider: 'twitter', uid: '11274452', username: 'kevinmd', twitter: 'https://twitter.com/kevinmd', avatar: 'http://pbs.twimg.com/profile_images/1182717255/Kevin2_WEB_normal.jpg', name: 'Kevin Pho, M.D.', bio: 'Physician, author, keynote speaker, USA TODAY\'s Board of Contributors. Social media\'s leading physician voice. http://t.co/MlC37Wze and http://t.co/hThNxwTt'})
 
 # CREATE THIS ISSUE AND PUT IT UNDER THIS CATEGORY
-tissue = Issue.create({name: "Vaccinations", description: ""})
-category.issues << tissue
+issue = Issue.create({name: "Vaccinations", description: ""})
+category.issues << issue
 
 # CREATE THE EXPERTS THAT BELONG UNDER THIS ISSUE
 
-expert1 = User.find_or_create_by({provider: 'twitter', uid: '233364902', username: 'atul_gawande', twitter: 'https://twitter.com/atul_gawande', avatar: 'http://pbs.twimg.com/profile_images/526917220241137664/8KF6mJxn_normal.jpeg', name: 'Atul Gawande', bio: 'Surgeon, Writer, Researcher, Dilettante.'})
-tissue.experts << expert1
+expert = User.find_or_create_by({provider: 'twitter', uid: '233364902', username: 'atul_gawande', twitter: 'https://twitter.com/atul_gawande', avatar: 'http://pbs.twimg.com/profile_images/526917220241137664/8KF6mJxn_normal.jpeg', name: 'Atul Gawande', bio: 'Surgeon, Writer, Researcher, Dilettante.'})
+issue.experts << expert
 
 expert = User.find_or_create_by({provider: 'twitter', uid: '11274452', username: 'kevinmd', twitter: 'https://twitter.com/kevinmd', avatar: 'http://pbs.twimg.com/profile_images/1182717255/Kevin2_WEB_normal.jpg', name: 'Kevin Pho, M.D.', bio: 'Physician, author, keynote speaker, USA TODAY\'s Board of Contributors. Social media\'s leading physician voice. http://t.co/MlC37Wze and http://t.co/hThNxwTt'})
-tissue.experts << expert
+issue.experts << expert
 
 expert = User.create({provider: 'twitter', uid: '27013292', username: 'thelancet', twitter: 'https://twitter.com/thelancet', avatar: 'http://pbs.twimg.com/profile_images/378800000725668351/16bf102fc319d621a456d9f821071253_normal.jpeg', name: 'The Lancet', bio: 'Welcome to The Lancet on Twitter. Keep in touch with The Lancet, one of the world\'s leading general medical journals, published weekly since 1823.'})
 issue.experts << expert
