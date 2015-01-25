@@ -5,7 +5,7 @@ color[] colors = new color[12];
 
 colors[0] = #20CCD5;
 colors[1] = #FF784F;
-colors[2] = #4c9699;
+colors[2] = #ff9400;
 colors[3] = #e5b572;
 colors[4] = #9771e2;
 colors[5] = #f25b29;
@@ -16,7 +16,7 @@ colors[9] = #ff4cc3;
 colors[10] = #ed9e00;
 colors[11] = #24CFD5;
 
-color LABEL_COLOR = #171D1C;
+color LABEL_COLOR = #4c9699;
 color HIGHLIGHTED_LABEL_COLOR = #5070a0;
 color DONUT_BACKGROUND = #DDEAE9;
 color BACKGROUND = #EFEFEF;
