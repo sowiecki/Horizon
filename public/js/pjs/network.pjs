@@ -19,7 +19,7 @@ colors[11] = #24CFD5;
 color LABEL_COLOR = #171D1C;
 color HIGHLIGHTED_LABEL_COLOR = #5070a0;
 color DONUT_BACKGROUND = #DDEAE9;
-color BACKGROUND = #EFE9F4;
+color BACKGROUND = #EFEFEF;
 
 // global constants
 float STROKE_WEIGHT_COLLAPSED = 50;

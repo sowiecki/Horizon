@@ -1,13 +1,13 @@
-<section id="search">
-    <%= render 'layouts/search' %>
-</section>
 <div class='aside-wrapper'>
     <aside>
         <%= current_user.neo_id %>
     </aside>
 </div>
 <div class='canvas-wrapper'>
-    <canvas id="neoviz"></canvas>
+  <section id="search">
+      <%= render 'layouts/search' %>
+  </section>
+  <canvas id="neoviz"></canvas>
 </div>
 <script>
 $(function() {

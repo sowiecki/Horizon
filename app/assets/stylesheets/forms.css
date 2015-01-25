@@ -7,6 +7,16 @@ input.button {
   text-transform: uppercase;
   background-color: #FF784F
 }
+/*#search {
+  position: absolute;
+  margin: 10px;
+  top: 76px;
+}*/
+section#search {
+  float: left;
+  margin: 10px;
+  top: 76px;
+}
 section#search-buttons {
   display: none;
 }

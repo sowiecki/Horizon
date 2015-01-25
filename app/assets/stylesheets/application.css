@@ -166,12 +166,16 @@ canvas {
   clear: none;
   height: 100%;
   width: 100%;
-
+}
+#search-wrapper {
+  position: relative;
+  margin: 0 auto auto;
+  max-width: 900px;
 }
 #search {
   position: absolute;
-  margin: 10px;
-  top: 76px;
+  left: 10px;
+  right: 10px;
 }
 
 a.twitter-auth-button {
