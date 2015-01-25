@@ -136,8 +136,8 @@ aside {
   position: absolute;
   float: right;
   margin: 0 auto auto;
-  top: 100px;
-  right: 100px;
+  top: 85px;
+  right: 2px;
   color: #20CCD5;
   max-height: 30px;
 }
@@ -146,12 +146,13 @@ aside {
   background-color:rgba(239, 233, 244, 0.75);
   border: 6px solid rgba(32, 204, 213, 0.75);
   border-radius: 4px;
+  box-shadow: 1px 1px 2px #bfbfbf;
 }
 a.aside-text {
   color: #00f6ff;
 }
 a.aside-text:after {
-  content: ' ←';
+  content: ' (external link)';
 }
 h2 {
   margin: 2px;

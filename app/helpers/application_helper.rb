@@ -3,6 +3,10 @@ module ApplicationHelper
     @neo = Neography::Rest.new(ENV["GRAPHENEDB_URL"] || "http://localhost:7474")
   end
 
+  def neo_id_for(string)
+    Category.find_by(title: string).neo_id
+  end
+
   def hashify(results)
     results["data"].map {|row| Hash[*results["columns"].zip(row).flatten] }
   end
