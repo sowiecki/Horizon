@@ -14,4 +14,5 @@
 /config/initializers/env.rb
 env.rb
 /db/neo4j/*
+/coverage/
 
