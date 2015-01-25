@@ -5,6 +5,7 @@ class Category
   has_many :in, :users
 
   property  :title, type: String
+  property :description, type: String
 
 
 

@@ -5,10 +5,14 @@ class User
   has_many :in, :followees, type: :followees, model_class: User
 
 
+  property :name, type: String
   property :username, type: String
   property :twitter, type: String
+  property :bio, type: String
   property :avatar, type: String
   index :twitter
+
+  # property :friend_ids, type: Array
 
   property :uid, type: String
   property :provider, type: String
@@ -41,6 +45,8 @@ class User
       user.username = auth["info"]["nickname"]
       user.twitter = auth["info"]["urls"]["Twitter"]
       user.avatar = auth["info"]["image"]
+      user.name = auth["info"]["name"]
+      user.bio = auth["info"]["description"]
     end
   end
 end
