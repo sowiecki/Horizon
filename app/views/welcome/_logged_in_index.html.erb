@@ -1,28 +1,14 @@
-<h1>Please choose a category</h1>
-
-<h3>Categories</h3>
-<ul>
-<% Category.all.each do |category| %>
-  <li>
-    <%= category.title %>
-    <ul>
-      <% category.issues.each do |iss| %>
-        <li>
-          <%= link_to "#{iss.title}", iss %>
-        </li>
-      <% end %>
-    </ul>
-  </li>
-<% end %>
-</ul>
-<section id="search">
-<form action="/" method="get">
-  <label>Node ID:</label>
-  <input id="neoid" name="neoid" type="text" value="<%= @neoid %>"></input>
-  <input class="button" id="loadnode" type="submit" value="Load"></input>
-</form>
-</section>
-<div class='canvas-wrapper'><canvas id="neoviz"></canvas></div>
+<div class='aside-wrapper'>
+    <aside>
+        <%= current_user.neo_id %>
+    </aside>
+</div>
+<div class='canvas-wrapper'>
+  <section id="search">
+      <%= render 'layouts/search' %>
+  </section>
+  <canvas id="neoviz"></canvas>
+</div>
 <script>
 $(function() {
   var canvas = document.getElementById("neoviz");
@@ -42,7 +28,6 @@ $(function() {
     p.setup();
 
     $("#path li").remove();
-
   };
 
   $(function() {
@@ -57,9 +42,7 @@ $(function() {
     }
 
     if (canvasSupported()) {
-
       var initialized = false;
-
       // init
       var vizid =  window.location.search.substring(1).split("=")[1];
       if (vizid) {
@@ -76,8 +59,8 @@ $(function() {
         Attributes.adjustHeight();
       });
     } else {
-      $('#browser_not_supported').show();
-      $('#explanation').hide();
+      // $('#browser_not_supported').show();
+      // $('#explanation').hide();
     }
   });
 });

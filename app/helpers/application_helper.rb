@@ -7,61 +7,30 @@ module ApplicationHelper
     results["data"].map {|row| Hash[*results["columns"].zip(row).flatten] }
   end
 
-  def create_graph
+  def node
+    cypher = "START me=node(#{params[:id]})
+              OPTIONAL MATCH me -[r]- related
+              RETURN me, r, related"
 
-    # return if neo.execute_query("MATCH (n:Person) RETURN COUNT(n)")["data"].first.first > 1
+    connections = neo.execute_query(cypher)["data"]
 
-    # guys = %w[Sean]
-    # girls = %w[Alesha Bethany Carrie Darcey Emely Frida Gabrielle Helene Isabelle Jacqualine Katheryn Lora Megan Nathalie Olivia Patricia Rachael Shanon Tiffany Vannessa Wendie Xuan Yolonda Zofia]
-    # cities = %w[Chicago]
-    # attributes = %w[Social Test Liberal Conservative]
+    me = connections[0][0]["data"]
 
-    # cypher = "CREATE (n:Person {nodes}) RETURN  ID(n) AS id, n.name AS name"
+    relationships = []
+    if connections[0][1]
+      connections.group_by{|group| group[1]["type"]}.each do |key,values|
+        relationships <<  { id: key, name: key, values: values.collect{|n| n[2]["data"].merge({id: node_id(n[2]) }) } }
+      end
+    end
 
-    # nodes = []
-    # guys.each { |n| nodes <<  {"name" => n, "gender" => "male"} }
-    # girls.each { |n| nodes << {"name" => n, "gender" => "female"} }
-    # users = hashify(neo.execute_query(cypher, {:nodes => nodes}))
+    relationships = [{"name" => "No Relationships","values" => [{"id" => "#{params[:id]}","name" => "No Relationships "}]}] if relationships.empty?
 
-    # nodes = []
-    # cities.each { |n| nodes << {"name" => n} }
-    # cities = hashify(neo.execute_query(cypher, {:nodes => nodes}))
-
-    # nodes = []
-    # attributes.each { |n| nodes << {"name" => n} }
-    # attributes = hashify(neo.execute_query(cypher, {:nodes => nodes}))
-
-    # neo.execute_query("CREATE INDEX ON :Person(name)")
-
-    # commands = []
-    # users.each do |user|
-    #   commands << [:create_relationship, "lives_in", user["id"], cities.sample["id"], nil]
-    # end
-    # neo.batch *commands
-
-    # users.each do |user|
-    #   commands = []
-    #   users.sample(3 + rand(10)).each do |att|
-    #     commands << [:create_relationship, "friends", user["id"], att["id"], nil] unless (att["id"] == user["id"])
-    #   end
-    #   neo.batch *commands
-    # end
-
-    # users.each do |user|
-    #   commands = []
-    #   attributes.sample(10 + rand(10)).each do |att|
-    #     commands << [:create_relationship, "has", user["id"], att["id"], nil]
-    #   end
-    #   neo.batch *commands
-    # end
-
-    # users.each do |user|
-    #   commands = []
-    #   attributes.sample(10 + rand(10)).each do |att|
-    #     commands << [:create_relationship, "wants", user["id"], att["id"], nil]
-    #   end
-    #   neo.batch *commands
-    # end
+    {
+      details_html: "<h2>#{me["username"]}</h2>\n<p class='summary'>\n#{get_properties(me)}</p>\n",
+      data: {
+        attributes: relationships, name: me["username"], id: params[:id]
+      }
+    }
   end
 
   def node_id(node)
@@ -76,14 +45,19 @@ module ApplicationHelper
   end
 
   def get_properties(node)
-    properties = "<ul>"
+    properties = "<div class='aside-box'>"
     node.each_pair do |key, value|
-      if key == "avatar_url"
-        properties << "<li><img src='#{value}'></li>"
+      case key
+      when 'title'
+        properties << "<h3><b>#{key}:</b> #{value}</h3>"
+      when 'avatar_url'
+        properties << "<p><img src='#{value}'></p>"
+      when 'username'
+        properties << "<p><b>#{key}:</b> <a class='aside-text' href='https://twitter.com/#{value}' target='_blank'>#{value}</a></p>"
       else
-        properties << "<li><b>#{key}:</b> #{value}</li>"
+        properties << "<p><b>#{key}:</b> #{value}</p>"
       end
     end
-    properties + "</ul>"
+    properties + "</div>"
   end
 end

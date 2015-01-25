@@ -1,0 +1,240 @@
+@font-face {
+    font-family: "GraublauWeb";
+    src: url(/fonts/GraublauWeb.otf) format("truetype");
+}
+@font-face {
+    font-family: "GraublauWeb";
+    font-weight: bold;
+    src: url(/fonts/GraublauWebBold.otf) format("truetype");
+}
+
+.neo-reset a {
+	text-decoration: none;
+	border: 0;
+}
+
+.neo-reset a:hover {
+	text-decoration: none;
+	border: 0;
+}
+
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
+ * {
+  font-family: "Helvetica";
+ }
+html {
+  background: #EFE9F4;
+  background-image:
+     -webkit-radial-gradient(20% top, rgb(280, 280, 280) 0%, rgb(200,200,200) 75%),
+     -webkit-radial-gradient(right top, rgb(250, 250, 250) 100%, rgba(100, 100, 100,0) 57%);
+  background-repeat: no-repeat;
+  background-size: 150%;
+  overflow-y: scroll;
+  min-height: 100%;
+ }
+body {
+  margin: 0;
+  background-color: transparent;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  background-color: transparent;
+}
+
+/* Header elements */
+header {
+  position: absolute;
+  padding: 10px;
+  top: 0;
+  height: 56px;
+  width: 100%;
+  color: #35D7E0;
+  background-color: transparent;
+  background: #171D1C;
+}
+.header-content-wrapper {
+  margin: 0 auto auto;
+  max-width: 900px;
+}
+.logo {
+  /*margin: 16px 0 16px 0;*/
+  /*text-shadow: 0 0 20px rgba(100,100,100,0.8), 0 0 0 black;*/
+}
+a.logo-text {
+  color: #EFE9F4;
+  font-weight: bold;
+  font-family: 'Lato', serif;
+  /*color: #4312AE;*/
+}
+a.logo-text {
+  text-decoration: none;
+}
+section.logo {
+  display: inline-block;
+}
+nav {
+  float: right;
+  text-align: right;
+}
+.nav-avatar {
+  display: inline-block;
+}
+.nav-text {
+  display: inline-block;
+  padding: 6px;
+  vertical-align: top;
+}
+.nav-link, a.nav-link:hover, a.nav-text-welcome:hover {
+  color: #35D7E0;
+}
+a.nav-link:visited, a.nav-text-welcome:visited {
+  color: #35D7E0;
+}
+.nav-button-twitter-login {
+  display: inline-block;
+  margin: 12px;
+}
+.nav-text-alerts {
+  display: inline-block;
+  vertical-align: top;
+  margin: 16px 0 0 0;
+}
+.nav-text-welcome {
+  font-size: 20px;
+  color: #FF784F;
+}
+a.nav-text-welcome:hover {
+  color: #7acef4;
+}
+.nav-link-logout {
+  display: block;
+  color: #35D7E0;
+}
+.notice, .alert {
+  display: inline;
+}
+
+.current-user-avatar {
+  display: inline-block;
+  border: 3px solid #35D7E0;
+  border-radius: 6px;
+}
+
+.welcome-wrapper {
+  /*position: absolute;*/
+  margin: 100px auto auto;
+  padding: 0 20px 0 20px;
+  max-width: 600px;
+  color: #7c7c7c;
+}
+
+.aside_wrapper {
+  float: right;
+  clear: none;
+  margin: 0 auto auto;
+  max-width: 900px;
+  height: 100px;
+}
+aside {
+  position: absolute;
+  float: right;
+  margin: 0 auto auto;
+  top: 100px;
+  right: 100px;
+  color: #20CCD5;
+  max-height: 30px;
+}
+.aside-box {
+  padding: 6px;
+  background-color:rgba(239, 233, 244, 0.75);
+  border: 6px solid rgba(32, 204, 213, 0.75);
+  border-radius: 4px;
+}
+a.aside-text {
+  color: #00f6ff;
+}
+a.aside-text:after {
+  content: ' ←';
+}
+h2 {
+  margin: 2px;
+  text-transform: uppercase;
+  color: #3A3042;
+}
+p {
+  margin: 2px;
+}
+
+canvas {
+  clear: none;
+  height: 100%;
+  width: 100%;
+}
+#search {
+  position: absolute;
+  margin: 10px;
+  top: 76px;
+}
+
+a.twitter-auth-button {
+  display: inline-block;
+  padding: 1px 6px 0 28px;
+  border: #ccc solid 1px;
+  border-radius: 3px;
+  background: #f8f8f8 url(//platform.twitter.com/images/bird.png) 2px 3px no-repeat;
+  background: url(//platform.twitter.com/images/bird.png) 2px 3px no-repeat,
+              -webkit-linear-gradient(#fff, #dedede);
+  background: url(//platform.twitter.com/images/bird.png) 2px 3px no-repeat,
+              linear-gradient(#fff, #dedede);
+  background-size: 22px 19px, auto auto;
+
+  /* Text */
+  font: bold 18px/24px Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  color: #333;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+  white-space: nowrap;
+}
+
+a.twitter-auth-button:hover {
+  color: #4c4c4c;
+  background: #f8f8f8 url(//platform.twitter.com/images/bird.png) 2px 3px no-repeat;
+  background: url(//platform.twitter.com/images/bird.png) 2px 3px no-repeat,
+              -webkit-linear-gradient(#fff, #f2f2f2);
+  background: url(//platform.twitter.com/images/bird.png) 2px 3px no-repeat,
+              linear-gradient(#fff, #f2f2f2);
+  background-size: 22px 19px, auto auto;
+}
+
+footer {
+  position: absolute;
+  padding: 4px;
+  height: 18px;
+  width: 100%;
+  text-align: center;
+  color: #35D7E0;
+  background: #171D1C;
+  bottom: 10px;
+}
+footer > a {
+  color: #35D7E0;
+}

@@ -121,23 +121,6 @@ section#content {
 	width: 400px;
 }
 
-aside {
-  font-size: 12px;
-  position: absolute;
-  right: 17px;
-  top: 80px;
-  bottom: 50px;
-  width: 290px;
-  padding: 10px;
-  border-radius: 5px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border: 1px solid #c1c1c1;
-  line-height: 1.5em;
-  background: #fff;
-	opacity: 0.9;
-	overflow: auto;
-}
 
 p.summary img {
   float: left;

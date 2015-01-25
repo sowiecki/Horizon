@@ -4,6 +4,9 @@ class User
   has_many :out, :followers, type: :followers, model_class: User
   has_many :in, :followees, type: :followees, model_class: User
 
+  before_create do
+    self.twitter = self.twitter.downcase
+  end
 
   property :name, type: String
   property :username, type: String
@@ -21,22 +24,14 @@ class User
   property :updated_at, type: DateTime
 
 
+  validates :twitter, presence: true, uniqueness: true
 
-  validates_uniqueness_of(:twitter)
-  # validates :username, :presence => true
 
-  # before_save { self.email = email.downcase }
+  VALID_USERNAME_REGEX = /\s/
+  validates :username,  presence: true, uniqueness: true,
+      length: { minimum: 3, maximum: 20 },
+      format: { without: VALID_USERNAME_REGEX }
 
-  # VALID_USERNAME_REGEX = /\s/
-  # validates :username,  presence: true, uniqueness: true,
-  #     length: { minimum: 3, maximum: 20 },
-  #     format: { without: VALID_USERNAME_REGEX }
-  # VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  # validates :email, uniqueness: true,
-  #                 length: { maximum: 255 },
-  #                 format: { with: VALID_EMAIL_REGEX },
-  #                 uniqueness: { case_sensitive: false }
-  # validates :twitter, presence: true, uniqueness: true
 
   def self.create_with_omniauth(auth)
     create! do |user| # OMFG remove this bang before production
@@ -48,5 +43,7 @@ class User
       user.name = auth["info"]["name"]
       user.bio = auth["info"]["description"]
     end
+
+
   end
 end
