@@ -1,11 +1,11 @@
 @font-face {
-    font-family: "Helvetica";
-    src: url(/fonts/Helvetica.svg) format("truetype");
+    font-family: "GraublauWeb";
+    src: url(/fonts/GraublauWeb.otf) format("truetype");
 }
 @font-face {
-    font-family: "Helvetica";
+    font-family: "GraublauWeb";
     font-weight: bold;
-    src: url(/fonts/Helvetica.svg) format("truetype");
+    src: url(/fonts/GraublauWebBold.otf) format("truetype");
 }
 
 .neo-reset a {
@@ -160,33 +160,28 @@ aside {
   margin: 0 auto auto;
   top: 100px;
   right: 100px;
-  color: #FF784F;
+  color: #20CCD5;
   max-height: 30px;
 }
 .aside-box {
   padding: 6px;
-  background-color: #3A3042;
-  border: 6px solid #FF784F;
+  background-color:rgba(239, 233, 244, 0.75);
+  border: 6px solid rgba(32, 204, 213, 0.75);
   border-radius: 4px;
 }
 a.aside-text {
-  color: #efdabf;
+  color: #00f6ff;
+}
+a.aside-text:after {
+  content: ' ←';
 }
 h2 {
   margin: 2px;
+  text-transform: uppercase;
   color: #3A3042;
 }
 p {
   margin: 2px;
-}
-input {
-  padding: 4px;
-  border-radius: 4px;
-  border: none;
-}
-input.button {
-  text-transform: uppercase;
-  background-color: #FF784F
 }
 
 canvas {

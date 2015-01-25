@@ -1,0 +1,21 @@
+@font-face {
+    font-family: "GraublauWeb";
+    src: url(/fonts/GraublauWeb.otf) format("truetype");
+}
+@font-face {
+    font-family: "GraublauWeb";
+    font-weight: bold;
+    src: url(/fonts/GraublauWebBold.otf) format("truetype");
+}
+
+.neo-reset a {
+	text-decoration: none;
+	border: 0;
+}
+
+.neo-reset a:hover {
+	text-decoration: none;
+	border: 0;
+}
+
+

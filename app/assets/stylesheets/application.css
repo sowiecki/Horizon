@@ -14,7 +14,7 @@
  *= require_self
  */
  * {
-  font-family: "Helvetica";
+  font-family: Tahoma, Geneva, sans-serif;
  }
 html {
   background: #EFE9F4;
@@ -24,10 +24,10 @@ html {
   background-repeat: no-repeat;
   background-size: 150%;
   overflow-y: scroll;
-  min-height: 100%;
  }
 body {
   margin: 0;
+  min-height: 100%;
   background-color: transparent;
 }
 a {
@@ -161,20 +161,12 @@ h2 {
 p {
   margin: 2px;
 }
-input {
-  padding: 4px;
-  border-radius: 4px;
-  border: none;
-}
-input.button {
-  text-transform: uppercase;
-  background-color: #FF784F
-}
 
 canvas {
   clear: none;
   height: 100%;
   width: 100%;
+
 }
 #search {
   position: absolute;
@@ -215,12 +207,12 @@ a.twitter-auth-button:hover {
 footer {
   position: absolute;
   padding: 4px;
-  height: 18px;
+  height: 20px;
   width: 100%;
   text-align: center;
   color: #35D7E0;
   background: #171D1C;
-  bottom: 10px;
+  bottom: 0px;
 }
 footer > a {
   color: #35D7E0;

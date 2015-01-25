@@ -18,4 +18,15 @@
 
 $(function() {
   $('aside').draggable();
+
+  $('#toggle-category-list').on('click', function (e) {
+    e.preventDefault();
+    var opened = $(this).data('opened');
+    if (opened) {
+      $('#search-buttons').slideUp();
+    } else {
+      $('#search-buttons').slideDown();
+    }
+    $(this).data('opened', !opened);
+  })
 });
