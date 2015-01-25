@@ -2,7 +2,7 @@ class ResourcesController < ApplicationController
   include ApplicationHelper
 
   def show
-    cypher = "START me=node(157)
+    cypher = "START me=node(#{params[:id]})
               OPTIONAL MATCH me -[r]- related
               RETURN me, r, related"
 
@@ -21,7 +21,7 @@ class ResourcesController < ApplicationController
 
     relationships = [{"name" => "No Relationships","values" => [{"id" => "#{params[:id]}","name" => "No Relationships "}]}] if relationships.empty?
 
-    @node = {details_html: "<h2>#{me["name"]}</h2>\n<p class='summary'>\n#{get_properties(me)}</p>\n",
+    @node = {details_html: "<h2>#{me["username"]}</h2>\n<p class='summary'>\n#{get_properties(me)}</p>\n",
               data: {
                 attributes: relationships, name: me["username"], id: params[:id]
               }

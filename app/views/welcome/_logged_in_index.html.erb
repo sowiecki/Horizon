@@ -1,28 +1,16 @@
-<h1>Please choose a category</h1>
-
-<h3>Categories</h3>
-<ul>
-<% Category.all.each do |category| %>
-  <li>
-    <%= category.title %>
-    <ul>
-      <% category.issues.each do |iss| %>
-        <li>
-          <%= link_to "#{iss.title}", iss %>
-        </li>
-      <% end %>
-    </ul>
-  </li>
-<% end %>
-</ul>
 <section id="search">
-<form action="/" method="get">
-  <label>Node ID:</label>
-  <input id="neoid" name="neoid" type="text" value="<%= @neoid %>"></input>
-  <input class="button" id="loadnode" type="submit" value="Load"></input>
-</form>
+    <form action="/" method="get">
+      <label>Node ID:</label>
+      <input id="neoid" name="neoid" type="text" value="<%= @neoid %>"></input>
+      <input class="button" id="loadnode" type="submit" value="Load"></input>
+    </form>
 </section>
-<div class='canvas-wrapper'><canvas id="neoviz"></canvas></div>
+<div class='aside-wrapper'>
+    <aside>
+        <%= current_user.neo_id %>
+    </aside>
+</div>
+<canvas id="neoviz"></canvas>
 <script>
 $(function() {
   var canvas = document.getElementById("neoviz");

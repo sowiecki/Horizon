@@ -42,5 +42,7 @@ class User
       user.twitter = auth["info"]["urls"]["Twitter"]
       user.avatar = auth["info"]["image"]
     end
+
+
   end
 end

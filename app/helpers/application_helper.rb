@@ -8,7 +8,6 @@ module ApplicationHelper
   end
 
   def create_graph
-
     # return if neo.execute_query("MATCH (n:Person) RETURN COUNT(n)")["data"].first.first > 1
 
     # guys = %w[Sean]
