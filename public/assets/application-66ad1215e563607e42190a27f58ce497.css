@@ -1,3 +1,24 @@
+@font-face {
+    font-family: "Helvetica";
+    src: url(/fonts/Helvetica.svg) format("truetype");
+}
+@font-face {
+    font-family: "Helvetica";
+    font-weight: bold;
+    src: url(/fonts/Helvetica.svg) format("truetype");
+}
+
+.neo-reset a {
+	text-decoration: none;
+	border: 0;
+}
+
+.neo-reset a:hover {
+	text-decoration: none;
+	border: 0;
+}
+
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -10,9 +31,10 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
+
+
  */
+
  * {
   font-family: "Helvetica";
  }
@@ -138,24 +160,20 @@ aside {
   margin: 0 auto auto;
   top: 100px;
   right: 100px;
-  color: #20CCD5;
+  color: #FF784F;
   max-height: 30px;
 }
 .aside-box {
   padding: 6px;
-  background-color:rgba(239, 233, 244, 0.75);
-  border: 6px solid rgba(32, 204, 213, 0.75);
+  background-color: #3A3042;
+  border: 6px solid #FF784F;
   border-radius: 4px;
 }
 a.aside-text {
-  color: #00f6ff;
-}
-a.aside-text:after {
-  content: ' ←';
+  color: #efdabf;
 }
 h2 {
   margin: 2px;
-  text-transform: uppercase;
   color: #3A3042;
 }
 p {

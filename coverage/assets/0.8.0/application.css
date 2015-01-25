@@ -593,7 +593,7 @@ a {
     text-decoration: underline; }
 
 body {
-  font-family: "Lucida Grande", Helvetica, "Helvetica Neue", Arial, sans-serif;
+  /*font-family: "Lucida Grande", Helvetica, "Helvetica Neue", Arial, sans-serif;*/
   padding: 12px;
   background-color: #333333; }
 

@@ -3,7 +3,7 @@ import( '/js/pjs/util.lib' );
 
 color[] colors = new color[12];
 
-colors[0] = #7D8CA3;
+colors[0] = #20CCD5;
 colors[1] = #FF784F;
 colors[2] = #4c9699;
 colors[3] = #e5b572;
@@ -18,7 +18,7 @@ colors[11] = #24CFD5;
 
 color LABEL_COLOR = #171D1C;
 color HIGHLIGHTED_LABEL_COLOR = #5070a0;
-color DONUT_BACKGROUND = #e1dce5;
+color DONUT_BACKGROUND = #DDEAE9;
 color BACKGROUND = #EFE9F4;
 
 // global constants
@@ -29,8 +29,7 @@ float OUTER_BORDER = 5;
 float RADIUS_OPENED = 110;
 float RADIUS_CLOSED = 50;
 
-
-PFont defaultFont = loadFont("/fonts/GraublauWeb-Regular.svg");
+PFont defaultFont = loadFont("/fonts/Helvetica.svg");
 
 int fontSize = 11.3;
 int fontSizeCaption = 16;
