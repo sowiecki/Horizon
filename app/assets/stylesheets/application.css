@@ -13,9 +13,9 @@
  *= require_tree .
  *= require_self
  */
- * {
+* {
   font-family: Tahoma, Geneva, sans-serif;
- }
+}
 html {
   background: #EFE9F4;
   background-image:

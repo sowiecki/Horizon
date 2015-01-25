@@ -1,3 +1,6 @@
+form {
+  max-width: 250px;
+}
 input {
   padding: 4px;
   /*border-radius: 4px;*/
@@ -13,12 +16,15 @@ input.button {
   top: 76px;
 }*/
 section#search {
-  float: left;
+  /*float: left;*/
   margin: 10px;
   top: 76px;
+  max-width: 250px;
 }
 section#search-buttons {
   display: none;
+  margin: 0;
+  max-width: 250px;
 }
 .category-button, .toggle-button {
   margin: 2px;
