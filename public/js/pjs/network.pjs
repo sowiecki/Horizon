@@ -9,11 +9,11 @@ colors[2] = #4c9699;
 colors[3] = #e5b572;
 colors[4] = #9771e2;
 colors[5] = #f25b29;
-colors[6] = #24CFD5;
-colors[7] = #24CFD5;
-colors[8] = #24CFD5;
-colors[9] = #24CFD5;
-colors[10] = #24CFD5;
+colors[6] = #ff4c4c;
+colors[7] = #23d399;
+colors[8] = #ff884c;
+colors[9] = #ff4cc3;
+colors[10] = #ed9e00;
 colors[11] = #24CFD5;
 
 color LABEL_COLOR = #171D1C;
