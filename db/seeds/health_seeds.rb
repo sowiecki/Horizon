@@ -33,19 +33,19 @@ issue.experts << expert
 expert = User.create({provider: 'twitter', uid: '18170896', username: 'drsanjaygupta', twitter: 'https://twitter.com/drsanjaygupta', avatar: 'http://pbs.twimg.com/profile_images/512747456442818560/nQc8NBRD_normal.jpeg', name: 'Dr. Sanjay Gupta', bio: 'Staff Neurosurgeon, Emory Clinic; CNN Chief Medical Correspondent'})
 issue.experts << expert
 
-expert = User.create({provider: 'twitter', uid: '11274452', username: 'kevinmd', twitter: 'https://twitter.com/kevinmd', avatar: 'http://pbs.twimg.com/profile_images/1182717255/Kevin2_WEB_normal.jpg', name: 'Kevin Pho, M.D.', bio: 'Physician, author, keynote speaker, USA TODAY's Board of Contributors. Social media's leading physician voice. http://t.co/MlC37Wze and http://t.co/hThNxwTt'})
+expert = User.create({provider: 'twitter', uid: '11274452', username: 'kevinmd', twitter: 'https://twitter.com/kevinmd', avatar: 'http://pbs.twimg.com/profile_images/1182717255/Kevin2_WEB_normal.jpg', name: 'Kevin Pho, M.D.', bio: 'Physician, author, keynote speaker, USA TODAY\'s Board of Contributors. Social media\'s leading physician voice. http://t.co/MlC37Wze and http://t.co/hThNxwTt'})
 
 # CREATE THIS ISSUE AND PUT IT UNDER THIS CATEGORY
-issue = Issue.create({title: "Vaccinations", description: ""})
-category.issues << issue
+tissue = Issue.create({title: "Vaccinations", description: ""})
+category.issues << tissue
 
 # CREATE THE EXPERTS THAT BELONG UNDER THIS ISSUE
 
-expert = User.create({provider: 'twitter', uid: '233364902', username: 'atul_gawande', twitter: 'https://twitter.com/atul_gawande', avatar: 'http://pbs.twimg.com/profile_images/526917220241137664/8KF6mJxn_normal.jpeg', name: 'Atul Gawande', bio: 'Surgeon, Writer, Researcher, Dilettante.'})
-issue.experts << expert
+expert1 = User.find_or_create_by({provider: 'twitter', uid: '233364902', username: 'atul_gawande', twitter: 'https://twitter.com/atul_gawande', avatar: 'http://pbs.twimg.com/profile_images/526917220241137664/8KF6mJxn_normal.jpeg', name: 'Atul Gawande', bio: 'Surgeon, Writer, Researcher, Dilettante.'})
+tissue.experts << expert1
 
-expert = User.create({provider: 'twitter', uid: '11274452', username: 'kevinmd', twitter: 'https://twitter.com/kevinmd', avatar: 'http://pbs.twimg.com/profile_images/1182717255/Kevin2_WEB_normal.jpg', name: 'Kevin Pho, M.D.', bio: 'Physician, author, keynote speaker, USA TODAY's Board of Contributors. Social media's leading physician voice. http://t.co/MlC37Wze and http://t.co/hThNxwTt'})
-issue.experts << expert
+expert = User.find_or_create_by({provider: 'twitter', uid: '11274452', username: 'kevinmd', twitter: 'https://twitter.com/kevinmd', avatar: 'http://pbs.twimg.com/profile_images/1182717255/Kevin2_WEB_normal.jpg', name: 'Kevin Pho, M.D.', bio: 'Physician, author, keynote speaker, USA TODAY\'s Board of Contributors. Social media\'s leading physician voice. http://t.co/MlC37Wze and http://t.co/hThNxwTt'})
+tissue.experts << expert
 
 expert = User.create({provider: 'twitter', uid: '27013292', username: 'thelancet', twitter: 'https://twitter.com/thelancet', avatar: 'http://pbs.twimg.com/profile_images/378800000725668351/16bf102fc319d621a456d9f821071253_normal.jpeg', name: 'The Lancet', bio: 'Welcome to The Lancet on Twitter. Keep in touch with The Lancet, one of the world\'s leading general medical journals, published weekly since 1823.'})
 issue.experts << expert
@@ -59,16 +59,16 @@ issue.experts << expert
 expert = User.create({provider: 'twitter', uid: '39130793', username: 'anniedotson', twitter: 'https://twitter.com/anniedotson', avatar: 'http://pbs.twimg.com/profile_images/2428910966/dqikekhx5l5cr1gsz882_normal.jpeg', name: 'Annie Dotson', bio: 'family med | public health epidemiologist |  teacher | social justice enthusiast | avid traveler | Carolinian'})
 issue.experts << expert
 
-expert = User.create({provider: 'twitter', uid: '18170896', username: 'drsanjaygupta', twitter: 'https://twitter.com/drsanjaygupta', avatar: 'http://pbs.twimg.com/profile_images/512747456442818560/nQc8NBRD_normal.jpeg', name: 'Dr. Sanjay Gupta', bio: 'Staff Neurosurgeon, Emory Clinic; CNN Chief Medical Correspondent'})
+expert = User.find_or_create_by({provider: 'twitter', uid: '18170896', username: 'drsanjaygupta', twitter: 'https://twitter.com/drsanjaygupta', avatar: 'http://pbs.twimg.com/profile_images/512747456442818560/nQc8NBRD_normal.jpeg', name: 'Dr. Sanjay Gupta', bio: 'Staff Neurosurgeon, Emory Clinic; CNN Chief Medical Correspondent'})
 issue.experts << expert
 
-expert = User.create({provider: 'twitter', uid: '1180070852', username: 'hc_thejournal', twitter: 'https://twitter.com/hc_thejournal', avatar: 'http://pbs.twimg.com/profile_images/3346598018/dd2212dae71b4c6f3fae3e8f443ac155_normal.jpeg', name: 'Healthcare', bio: 'Healthcare: The Journal of Delivery Science and Innovation\r\nRT≠endorsement'})
+expert = User.find_or_create_by({provider: 'twitter', uid: '1180070852', username: 'hc_thejournal', twitter: 'https://twitter.com/hc_thejournal', avatar: 'http://pbs.twimg.com/profile_images/3346598018/dd2212dae71b4c6f3fae3e8f443ac155_normal.jpeg', name: 'Healthcare', bio: 'Healthcare: The Journal of Delivery Science and Innovation\r\nRT≠endorsement'})
 issue.experts << expert
 
 expert = User.create({provider: 'twitter', uid: '16348549', username: 'onecampaign', twitter: 'https://twitter.com/onecampaign', avatar: 'http://pbs.twimg.com/profile_images/553288704454701057/WPpw-ZK1_normal.jpeg', name: 'ONE', bio: 'ONE is a campaigning and advocacy organization of more than 6 million people taking action to end extreme poverty & preventable disease, particularly in Africa.'})
 issue.experts << expert
 
-expert = User.create({provider: 'twitter', uid: '27013292', username: 'thelancet', twitter: 'https://twitter.com/thelancet', avatar: 'http://pbs.twimg.com/profile_images/378800000725668351/16bf102fc319d621a456d9f821071253_normal.jpeg', name: 'The Lancet', bio: 'Welcome to The Lancet on Twitter. Keep in touch with The Lancet, one of the world\'s leading general medical journals, published weekly since 1823.'})
+expert = User.find_or_create_by({provider: 'twitter', uid: '27013292', username: 'thelancet', twitter: 'https://twitter.com/thelancet', avatar: 'http://pbs.twimg.com/profile_images/378800000725668351/16bf102fc319d621a456d9f821071253_normal.jpeg', name: 'The Lancet', bio: 'Welcome to The Lancet on Twitter. Keep in touch with The Lancet, one of the world\'s leading general medical journals, published weekly since 1823.'})
 issue.experts << expert
 
 # CREATE THIS ISSUE AND PUT IT UNDER THIS CATEGORY
@@ -89,7 +89,7 @@ issue.experts << expert
 expert = User.create({provider: 'twitter', uid: '96786749', username: 'ywmoac', twitter: 'https://twitter.com/ywmoac', avatar: 'http://pbs.twimg.com/profile_images/469200000145031169/RapWOdly_normal.png', name: 'Your Weight Matters', bio: 'The Your Weight Matters Campaign is a national health and weight awareness initiative launched by the Obesity Action Coalition (OAC).'})
 issue.experts << expert
 
-expert = User.create({provider: 'twitter', uid: '27013292', username: 'thelancet', twitter: 'https://twitter.com/thelancet', avatar: 'http://pbs.twimg.com/profile_images/378800000725668351/16bf102fc319d621a456d9f821071253_normal.jpeg', name: 'The Lancet', bio: 'Welcome to The Lancet on Twitter. Keep in touch with The Lancet, one of the world\'s leading general medical journals, published weekly since 1823.'})
+expert = User.find_or_create_by({provider: 'twitter', uid: '27013292', username: 'thelancet', twitter: 'https://twitter.com/thelancet', avatar: 'http://pbs.twimg.com/profile_images/378800000725668351/16bf102fc319d621a456d9f821071253_normal.jpeg', name: 'The Lancet', bio: 'Welcome to The Lancet on Twitter. Keep in touch with The Lancet, one of the world\'s leading general medical journals, published weekly since 1823.'})
 issue.experts << expert
 
 expert = User.create({provider: 'twitter', uid: '16833168', username: 'drsharma', twitter: 'https://twitter.com/drsharma', avatar: 'http://pbs.twimg.com/profile_images/2546123642/hpgy7tlfs0vaprtqkxlz_normal.jpeg', name: 'Dr Arya M. Sharma', bio: 'Chair of Obesity Research and Mangement, University of Alberta'})
