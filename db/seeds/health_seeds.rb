@@ -69,8 +69,6 @@ vax_issue.experts << expert
 expert = User.find_or_create_by({provider: 'twitter', uid: '16348549', username: 'onecampaign', twitter: 'https://twitter.com/onecampaign', avatar: 'http://pbs.twimg.com/profile_images/553288704454701057/WPpw-ZK1_normal.jpeg', name: 'ONE', bio: 'ONE is a campaigning and advocacy organization of more than 6 million people taking action to end extreme poverty & preventable disease, particularly in Africa.'})
 vax_issue.experts << expert
 
-expert = User.find_or_create_by({provider: 'twitter', uid: '27013292', username: 'thelancet', twitter: 'https://twitter.com/thelancet', avatar: 'http://pbs.twimg.com/profile_images/378800000725668351/16bf102fc319d621a456d9f821071253_normal.jpeg', name: 'The Lancet', bio: 'Welcome to The Lancet on Twitter. Keep in touch with The Lancet, one of the world\'s leading general medical journals, published weekly since 1823.'})
-vax_issue.experts << expert
 
 # find_or_CREATE_by THIS ISSUE AND PUT IT UNDER THIS health_category
 obesity_issue = Issue.find_or_create_by({name: "Obesity", description: ""})
