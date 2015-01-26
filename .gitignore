@@ -16,3 +16,4 @@ env.rb
 /db/neo4j/*
 # Ignore test-related files
 coverage/
+public/assets
