@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.describe User, :type => :model do
 
   let(:user) { User.create(username: "Jebidiah", twitter: 'Whee')}
-  let(:issue) {issue = Issue.create(title: "Big Issue")}
+  let(:issue) {issue = Issue.create(name: "Big Issue")}
 
 
   describe "issues have an array of experts" do
@@ -22,10 +22,6 @@ RSpec.describe User, :type => :model do
 
   describe "validates uniqueness of twitter handle" do
     it {expect(user).to validate_uniqueness_of(:twitter)}
-  end
-
-  describe "twitter format should not be case sensitive" do
-    it {expect(user.twitter).to eq('whee')}
   end
 
 

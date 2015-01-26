@@ -43,7 +43,7 @@ health_category.issues << issue
 # CREATE THE EXPERTS THAT BELONG UNDER THIS ISSUE
 
 expert = User.find_or_create_by({provider: 'twitter', uid: '233364902', username: 'atul_gawande', twitter: 'https://twitter.com/atul_gawande', avatar: 'http://pbs.twimg.com/profile_images/526917220241137664/8KF6mJxn_normal.jpeg', name: 'Atul Gawande', bio: 'Surgeon, Writer, Researcher, Dilettante.'})
-category.issue.experts << expert
+issue.experts << expert
 
 expert = User.find_or_create_by({provider: 'twitter', uid: '11274452', username: 'kevinmd', twitter: 'https://twitter.com/kevinmd', avatar: 'http://pbs.twimg.com/profile_images/1182717255/Kevin2_WEB_normal.jpg', name: 'Kevin Pho, M.D.', bio: 'Physician, author, keynote speaker, USA TODAY\'s Board of Contributors. Social media\'s leading physician voice. http://t.co/MlC37Wze and http://t.co/hThNxwTt'})
 issue.experts << expert

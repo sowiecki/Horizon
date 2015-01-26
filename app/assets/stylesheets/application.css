@@ -147,7 +147,7 @@ aside {
   max-width: 300px;
   max-height: 30px;
 }
-#explanation {
+#aside-filler {
   padding: 6px;
   max-width: 900px;
   background-color:rgba(239, 233, 244, 0.75);
