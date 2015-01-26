@@ -349,6 +349,8 @@ public class Donut {
     } else if (counter==3) {
      s.col = colors[3];
      counter += 1;
+    } else {
+      s.col = colors[3];
     }
     if (colorCount==0)
       setSelectedSlice(s.slices[0]);
