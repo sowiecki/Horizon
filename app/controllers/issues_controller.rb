@@ -2,6 +2,11 @@ class IssuesController < ApplicationController
 
   def index
 
+
+
+
+
+    p extract_relevant_tweets('djdewitt',["tech","podcast","belieber", "salute"])
   end
 
   def show
@@ -49,7 +54,7 @@ class IssuesController < ApplicationController
     #  @rec_experts = @expert_ids - @my_friend_ids
     #  #@my_experts = []
     #  @my_experts = @my_friend_ids & @expert_ids
->>>>>>> fe4d2c99dbb169593fcc2bee6ec1e6376dc53aa1
+
   end
 
   def follow
