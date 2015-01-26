@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery-ui
 //= require jquery_ujs
-//= processing.min
+//= require processing.min
 //= require_tree .
 
 $(function() {
