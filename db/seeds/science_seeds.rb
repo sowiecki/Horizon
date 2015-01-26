@@ -17,8 +17,8 @@ category.issues << issue
 expert = User.find_or_create_by({provider: 'twitter', uid: '1344789349', username: 'oneclimate', twitter: 'https://twitter.com/oneclimate', avatar: 'http://abs.twimg.com/sticky/default_profile_images/default_profile_1_normal.png', name: 'OneClimate', bio: 'OneClimate is now tweeting at @OneWorld_News'})
 issue.experts << expert
 
-expert = User.find_or_create_by({provider: 'twitter', uid: '1117341', username: 'globalwarming', twitter: 'https://twitter.com/globalwarming', avatar: 'http://pbs.twimg.com/profile_images/1162061553/global_warming_100x100_normal.jpg', name: 'Global Warming', bio: 'Global warming, climate change and environment news from Outdoors Blog.'})
-issue.experts << expert
+# expert = User.find_or_create_by({provider: 'twitter', uid: '1117341', username: 'globalwarming', twitter: 'https://twitter.com/globalwarming', avatar: 'http://pbs.twimg.com/profile_images/1162061553/global_warming_100x100_normal.jpg', name: 'Global Warming', bio: 'Global warming, climate change and environment news from Outdoors Blog.'})
+# issue.experts << expert
 
 expert = User.find_or_create_by({provider: 'twitter', uid: '18929090', username: 'adamwerbach', twitter: 'https://twitter.com/adamwerbach', avatar: 'http://pbs.twimg.com/profile_images/2681533693/bee04ba0f5dc3882ebb8fb721bc231ca_normal.png', name: 'adamwerbach', bio: 'co-founder, yerdle'})
 issue.experts << expert

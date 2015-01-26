@@ -130,7 +130,14 @@ a.nav-text-welcome:hover {
   max-width: 600px;
   color: #7c7c7c;
 }
-
+h1 {
+  margin: 1px;
+  font-size: 40px;
+  color: #4c4c4c;
+}
+h1.issue {
+  font-size: 30px;
+}
 h2 {
   margin: 2px;
   text-transform: uppercase;

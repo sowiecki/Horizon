@@ -91,9 +91,9 @@ module ApplicationHelper
 
   def aside_content(node)
     if Category.find_by(name: node['name'])
-      string = "<h3>#{node['name']}</h3><p>#{node['description']}</p>"
+      string = "<h1>#{node['name']}</h1><p>#{node['description']}</p>"
     elsif Issue.find_by(name: node['name'])
-      string = "<h3>#{node['name']}</h3><p>#{node['description']}</p>"
+      string = "<h1 class='issue'>#{node['name']}</h1><p>#{node['description']}</p>"
     elsif user = User.find_by(name: node['name'])
       # user_tweets = extract_user_tweets(User.find_by(name: node['name'])).uid
       # p extract_relevant_tweets('nasezero', ['space', 'the', 'a'])
@@ -102,9 +102,9 @@ module ApplicationHelper
       string = [
                 "<a target='_blank' class='aside-text' href='#{node['twitter']}'>",
                 "<img class='aside-user-avatar' src='#{node['avatar']}' />",
-                "<h3><img src='http://platform.twitter.com/images/bird.png' />",
+                "<h3><img src='http://platform.twitter.com/images/bird.png' /> ",
                 "#{node['name']}</h3></a>",
-                "<p><b>Description:</b> #{node['bio']}</p>",
+                "<p>#{node['bio']}</p>",
                 "<h4>Recently tweeted:</h4>",
                 "#{tweets.join}"
       ].join
