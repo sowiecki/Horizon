@@ -5,9 +5,9 @@ sports_category = Category.find_or_create_by({name:"Sports", description: "Major
 amat_issue = Issue.find_or_create_by({name: "Amateurism", description: ""})
 sports_category.issues << amat_issue
 
-# find_or_CREATE_by THE EXPERTS THAT BELONG UNDER THIS ISSUE
+# find_or_CREATE_by THE perspectives THAT BELONG UNDER THIS ISSUE
 
-amat_experts = [User.find_or_create_by({provider: 'twitter', uid: '55253484', username: 'sportsbizmiss', twitter: 'https://twitter.com/sportsbizmiss', avatar: 'http://pbs.twimg.com/profile_images/528525572142428160/pS6dyS-o_normal.jpeg', name: 'Kristi Dosh', bio: 'Cover sports biz for @CampusInsiders and @theoktc (ESPN & Forbes alum), VP at @Rep_Ink & attorney. Author of biz of college fball book: Saturday Millionaires.'}),
+amat_perspectives = [User.find_or_create_by({provider: 'twitter', uid: '55253484', username: 'sportsbizmiss', twitter: 'https://twitter.com/sportsbizmiss', avatar: 'http://pbs.twimg.com/profile_images/528525572142428160/pS6dyS-o_normal.jpeg', name: 'Kristi Dosh', bio: 'Cover sports biz for @CampusInsiders and @theoktc (ESPN & Forbes alum), VP at @Rep_Ink & attorney. Author of biz of college fball book: Saturday Millionaires.'}),
 User.find_or_create_by({provider: 'twitter', uid: '279270074', username: 'patrick_hruby', twitter: 'https://twitter.com/patrick_hruby', avatar: 'http://pbs.twimg.com/profile_images/483614193786966017/sU8APc3N_normal.jpeg', name: 'Patrick Hruby', bio: 'Contributing Editor, Vice Sports; contributor to Washingtonian magazine, elsewhere; former Georgetown professor; ambulatory.'}),
 User.find_or_create_by({provider: 'twitter', uid: '32765534', username: 'billsimmons', twitter: 'https://twitter.com/billsimmons', avatar: 'http://pbs.twimg.com/profile_images/2416051975/a8riusej2c5rcf8rrfj9_normal.jpeg', name: 'Bill Simmons', bio: 'Grantland boss + columnist, @30for30 co-creator, Grantland Basketball Hour host, BS Report host, author of http://t.co/MGP3udcK. Facebook: http://t.co/PEczRi3i'}),
 User.find_or_create_by({provider: 'twitter', uid: '24580952', username: 'jeremyschaap', twitter: 'https://twitter.com/jeremyschaap', avatar: 'http://pbs.twimg.com/profile_images/489874980151119874/VG18v_cq_normal.jpeg', name: 'Jeremy Schaap', bio: 'We have met the enemy and he is us.'}),
@@ -16,17 +16,17 @@ User.find_or_create_by({provider: 'twitter', uid: '25019638', username: 'richard
 User.find_or_create_by({provider: 'twitter', uid: '50772918', username: 'claytravisbgid', twitter: 'https://twitter.com/claytravisbgid', avatar: 'http://pbs.twimg.com/profile_images/479824106460676097/1DSgBg5__normal.jpeg', name: 'Clay Travis', bio: 'Author of Dixieland Delight & On Rocky Top, writer at http://t.co/tXwbcy57r3, TV with @foxsports1, dad of three boys, lawyer'}),
 User.find_or_create_by({provider: 'twitter', uid: '47848627', username: 'danwetzel', twitter: 'https://twitter.com/danwetzel', avatar: 'http://pbs.twimg.com/profile_images/533451813560008705/murqqkJf_normal.jpeg', name: 'Dan Wetzel', bio: 'Yahoo Sports columnist. NYT best selling author. Husband. Father. Fan of the South Oakland Storm.'})]
 
-amat_experts.each do |expert|
-  amat_issue.experts << expert
+amat_perspectives.each do |expert|
+  amat_issue.perspectives << expert
 end
 
 # find_or_CREATE_by THE ISSUE AND PUT IT UNDER THIS CATEGORY
 ped_issue = Issue.find_or_create_by({name: "Performance-Enhancing Drugs", description: ""})
 sports_category.issues << ped_issue
 
-# find_or_CREATE_by THE EXPERTS THAT BELONG UNDER THIS ISSUE
+# find_or_CREATE_by THE perspectives THAT BELONG UNDER THIS ISSUE
 
-ped_experts = [User.find_or_create_by({provider: 'twitter', uid: '279270074', username: 'patrick_hruby', twitter: 'https://twitter.com/patrick_hruby', avatar: 'http://pbs.twimg.com/profile_images/483614193786966017/sU8APc3N_normal.jpeg', name: 'Patrick Hruby', bio: 'Contributing Editor, Vice Sports; contributor to Washingtonian magazine, elsewhere; former Georgetown professor; ambulatory.'}),
+ped_perspectives = [User.find_or_create_by({provider: 'twitter', uid: '279270074', username: 'patrick_hruby', twitter: 'https://twitter.com/patrick_hruby', avatar: 'http://pbs.twimg.com/profile_images/483614193786966017/sU8APc3N_normal.jpeg', name: 'Patrick Hruby', bio: 'Contributing Editor, Vice Sports; contributor to Washingtonian magazine, elsewhere; former Georgetown professor; ambulatory.'}),
 User.find_or_create_by({provider: 'twitter', uid: '2290582400', username: 'sportsethics', twitter: 'https://twitter.com/sportsethics', avatar: 'http://pbs.twimg.com/profile_images/423260147788423168/SYflu4cw_normal.jpeg', name: 'SportsEthics', bio: 'Ethics in Sports is a Serious Matter, but Talking about it doesn\'t have to be Business As Usual!  Follow Chuck Gallagher\'s tweets on http://t.co/r4KiG6Zkfy.'}),
 User.find_or_create_by({provider: 'twitter', uid: '41646662', username: 'bnightengale', twitter: 'https://twitter.com/bnightengale', avatar: 'http://pbs.twimg.com/profile_images/318621659/bobs_twittericon_normal.jpg', name: 'Bob Nightengale', bio: 'USA TODAY Sports Major League Baseball columnist'}),
 User.find_or_create_by({provider: 'twitter', uid: '24580952', username: 'jeremyschaap', twitter: 'https://twitter.com/jeremyschaap', avatar: 'http://pbs.twimg.com/profile_images/489874980151119874/VG18v_cq_normal.jpeg', name: 'Jeremy Schaap', bio: 'We have met the enemy and he is us.'}),
@@ -35,8 +35,8 @@ User.find_or_create_by({provider: 'twitter', uid: '25019638', username: 'richard
 User.find_or_create_by({provider: 'twitter', uid: '88763317', username: 'buster_espn', twitter: 'https://twitter.com/buster_espn', avatar: 'http://pbs.twimg.com/profile_images/2620118839/5tcmrdbaddfsxq7pt6uq_normal.png', name: 'Buster Olney', bio: 'Senior baseball writer for ESPN The Magazine'}),
 User.find_or_create_by({provider: 'twitter', uid: '37669435', username: 'andrewmarchand', twitter: 'https://twitter.com/andrewmarchand', avatar: 'http://pbs.twimg.com/profile_images/378800000740208855/f717c76237f80d188a1876a2028c73f5_normal.jpeg', name: 'Andrew Marchand', bio: 'ESPN New York, Sr. Writer'})]
 
-ped_experts.each do |expert|
-  ped_issue.experts << expert
+ped_perspectives.each do |expert|
+  ped_issue.perspectives << expert
 end
 
 
@@ -44,9 +44,9 @@ end
 injury_issue = Issue.find_or_create_by({name: "Concussions and Injuries", description: ""})
 sports_category.issues << injury_issue
 
-# find_or_CREATE_by THE EXPERTS THAT BELONG UNDER THIS ISSUE
+# find_or_CREATE_by THE perspectives THAT BELONG UNDER THIS ISSUE
 
-injury_experts = [User.find_or_create_by({provider: 'twitter', uid: '279270074', username: 'patrick_hruby', twitter: 'https://twitter.com/patrick_hruby', avatar: 'http://pbs.twimg.com/profile_images/483614193786966017/sU8APc3N_normal.jpeg', name: 'Patrick Hruby', bio: 'Contributing Editor, Vice Sports; contributor to Washingtonian magazine, elsewhere; former Georgetown professor; ambulatory.'}),
+injury_perspectives = [User.find_or_create_by({provider: 'twitter', uid: '279270074', username: 'patrick_hruby', twitter: 'https://twitter.com/patrick_hruby', avatar: 'http://pbs.twimg.com/profile_images/483614193786966017/sU8APc3N_normal.jpeg', name: 'Patrick Hruby', bio: 'Contributing Editor, Vice Sports; contributor to Washingtonian magazine, elsewhere; former Georgetown professor; ambulatory.'}),
 User.find_or_create_by({provider: 'twitter', uid: '18170896', username: 'drsanjaygupta', twitter: 'https://twitter.com/drsanjaygupta', avatar: 'http://pbs.twimg.com/profile_images/512747456442818560/nQc8NBRD_normal.jpeg', name: 'Dr. Sanjay Gupta', bio: 'Staff Neurosurgeon, Emory Clinic; CNN Chief Medical Correspondent'}),
 User.find_or_create_by({provider: 'twitter', uid: '21423021', username: 'noahwg', twitter: 'https://twitter.com/noahwg', avatar: 'http://pbs.twimg.com/profile_images/551873462198079489/hcSb4xB2_normal.jpeg', name: 'Noah Gray', bio: 'Senior Editor @nature | Huge fan of @FrontYoungMinds. These thoughts are mine alone since nobody else will take responsibility.'}),
 User.find_or_create_by({provider: 'twitter', uid: '273766668', username: 'drrobertklapper', twitter: 'https://twitter.com/drrobertklapper', avatar: 'http://pbs.twimg.com/profile_images/1291015615/Screen_shot_2011-03-28_at_8.43.16_PM_normal.png', name: 'Dr. Robert Klapper', bio: 'Orthopedic Surgeon,ESPN Radio Host,FOX Sports 1 TV Analyst,Marble Sculptor,Surfer,Author,Patented Inventor'}),
@@ -57,6 +57,6 @@ User.find_or_create_by({provider: 'twitter', uid: '25019638', username: 'richard
 User.find_or_create_by({provider: 'twitter', uid: '365506316', username: 'nflconcussions', twitter: 'https://twitter.com/nflconcussions', avatar: 'http://pbs.twimg.com/profile_images/2146808139/tecmo_normal.png', name: 'NFL Concussions', bio: 'Chronicling every publicly-disclosed concussion in the NFL. (Not affiliated with the NFL.)'}),
 User.find_or_create_by({provider: 'twitter', uid: '61520340', username: 'eric_edholm', twitter: 'https://twitter.com/eric_edholm', avatar: 'http://pbs.twimg.com/profile_images/339747935/radio_pic_normal.jpg', name: 'Eric Edholm', bio: 'NFL writer, Yahoo Sports, Shutdown Corner. Football analyst (NFL, college, fantasy), 120 Sports.'})]
 
-injury_experts.each do |expert|
-  injury_issue.experts << expert
+injury_perspectives.each do |expert|
+  injury_issue.perspectives << expert
 end

@@ -38,7 +38,7 @@ class IssuesController < ApplicationController
 
     # # # Gather the Expert IDs for this issue
     # @expert_ids = []
-    # @issue.experts.each do |expert|
+    # @issue.perspectives.each do |expert|
     #    @expert_ids << expert.uid
     #  end
 
@@ -50,10 +50,10 @@ class IssuesController < ApplicationController
     # # # @my_friend_ids = current_user.friend_ids
 
     # # # TEMP SOLUTION: We should be comparing arrays of objects, not IDs
-    # #@rec_experts = []
-    #  @rec_experts = @expert_ids - @my_friend_ids
-    #  #@my_experts = []
-    #  @my_experts = @my_friend_ids & @expert_ids
+    # #@rec_perspectives = []
+    #  @rec_perspectives = @expert_ids - @my_friend_ids
+    #  #@my_perspectives = []
+    #  @my_perspectives = @my_friend_ids & @expert_ids
 
   end
 

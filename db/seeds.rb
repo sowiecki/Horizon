@@ -6,8 +6,8 @@
 # category.issues << issue
 # expert_1 = User.create({uid: "16076032", username: "ggreenwald", twitter: "https://twitter.com/ggreenwald"})
 # expert_2 = User.create({uid: "19725644", username: "neiltyson", twitter: "https://twitter.com/neiltyson"})
-# issue.experts << expert_1
-# issue.experts << expert_2
+# issue.perspectives << expert_1
+# issue.perspectives << expert_2
 
 
 # ed_category = Category.create({title:"Education"})
@@ -25,22 +25,22 @@
 
 # administrators.each do |administrator|
 # 	user = User.create(username: administrator, twitter: administrator)
-# 	administrator_perspective.experts << user
+# 	administrator_perspective.perspectives << user
 # end
 
 # edtech.each do |educator|
 # 	user = User.create(username: educator, twitter: educator)
-# 	edtech_perspective.experts << user
+# 	edtech_perspective.perspectives << user
 # end
 
 # higher_ed.each do |educator|
 # 	user = User.create(username: educator, twitter: educator)
-# 	highered_perspective.experts << user
+# 	highered_perspective.perspectives << user
 # end
 
 # policy_makers.each do |bureaucrat|
 # 	user = User.create(username: bureaucrat, twitter: bureaucrat)
-# 	policymaker_perspective.experts << user
+# 	policymaker_perspective.perspectives << user
 # end
 
 

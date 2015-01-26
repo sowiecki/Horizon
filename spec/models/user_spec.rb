@@ -8,8 +8,8 @@ RSpec.describe User, :type => :model do
   let(:issue) {issue = Issue.create(name: "Big Issue")}
 
 
-  describe "issues have an array of experts" do
-    it { expect(issue.experts).to eq([])}
+  describe "issues have an array of perspectives" do
+    it { expect(issue.perspectives).to eq([])}
   end
 
   describe "validates presence of username" do

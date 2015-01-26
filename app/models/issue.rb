@@ -3,7 +3,7 @@ class Issue
 
   has_many :in, :categories
   has_many :out, :users, model_class: User
-  has_many :in, :experts, model_class: User
+  has_many :in, :perspectives, model_class: User
 
 
   property :name, type: String

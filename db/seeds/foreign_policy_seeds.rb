@@ -5,9 +5,9 @@ fp_category = Category.find_or_create_by({name:"Foreign Policy", description: "M
 me_issue = Issue.find_or_create_by({name: "Middle East", description: "News and analysis focusing on the Middle East."})
 fp_category.issues << me_issue
 
-# find_or_CREATE_by THE EXPERTS THAT BELONG UNDER THIS ISSUE
+# find_or_CREATE_by THE perspectives THAT BELONG UNDER THIS ISSUE
 
-me_experts = [User.find_or_create_by({provider: 'twitter', uid: '17060020', username: 'Max_Fisher', twitter: 'https://twitter.com/Max_Fisher', avatar: 'http://pbs.twimg.com/profile_images/537046985770270720/7LWx0KQj_normal.jpeg', name: 'Max Fisher', bio: 'Content Director at @VoxDotCom. I love your real smart idea.'}),
+me_perspectives = [User.find_or_create_by({provider: 'twitter', uid: '17060020', username: 'Max_Fisher', twitter: 'https://twitter.com/Max_Fisher', avatar: 'http://pbs.twimg.com/profile_images/537046985770270720/7LWx0KQj_normal.jpeg', name: 'Max Fisher', bio: 'Content Director at @VoxDotCom. I love your real smart idea.'}),
 User.find_or_create_by({provider: 'twitter', uid: '108441652', username: 'pushinghoops', twitter: 'https://twitter.com/pushinghoops', avatar: 'http://pbs.twimg.com/profile_images/428193413465665536/UWlRZ7iL_normal.jpeg', name: 'Ayesha A. Siddiqi', bio: 'writer, editor in chief of @NewInquiry thank you based goth'}),
 User.find_or_create_by({provider: 'twitter', uid: '2373735295', username: 'MiddleEastEye', twitter: 'https://twitter.com/MiddleEastEye', avatar: 'http://pbs.twimg.com/profile_images/451691911783264256/WfXRGh-B_normal.png', name: 'Middle East Eye', bio: 'Your eye on the ground. Independent Middle East and North Africa news'}),
 User.find_or_create_by({provider: 'twitter', uid: '130238301', username: 'WSJMidEast', twitter: 'https://twitter.com/WSJMidEast', avatar: 'http://pbs.twimg.com/profile_images/420902998349316096/a0CMsPXb_normal.png', name: 'WSJ Middle East', bio: 'The Wall Street Journal\'s Middle East Real Time blog gives an inside look at the intersection of business, economics and politics in the Middle East'}),
@@ -16,17 +16,17 @@ User.find_or_create_by({provider: 'twitter', uid: '47814419', username: 'MiddleE
 User.find_or_create_by({provider: 'twitter', uid: '24506246', username: 'haaretzcom', twitter: 'https://twitter.com/haaretzcom', avatar: 'http://pbs.twimg.com/profile_images/447748380958011392/B-3cSD0r_normal.png', name: 'Haaretz.com', bio: 'All the news, opinion and analysis from Israel, the Middle East and the Jewish World.'}),
 User.find_or_create_by({provider: 'twitter', uid: '216004978', username: 'MideastVoice', twitter: 'https://twitter.com/MideastVoice', avatar: 'http://pbs.twimg.com/profile_images/2084485158/logo-mev_copy_normal.jpg', name: 'Middle East Voices ', bio: 'News, Views and Conversation brought to you by VOA Middle East Voices. Come join us. http://t.co/FnqYaX1ErB'})]
 
-me_experts.each do |expert|
-  me_issue.experts << expert
+me_perspectives.each do |expert|
+  me_issue.perspectives << expert
 end
 
 # find_or_CREATE_by THE ISSUE AND PUT IT UNDER THIS CATEGORY
 china_issue = Issue.find_or_create_by({name: "China", description: ""})
 fp_category.issues << china_issue
 
-# find_or_CREATE_by THE EXPERTS THAT BELONG UNDER THIS ISSUE
+# find_or_CREATE_by THE perspectives THAT BELONG UNDER THIS ISSUE
 
-china_experts = [User.find_or_create_by({provider: 'twitter', uid: '16994529', username: 'ChinaRealTime', twitter: 'https://twitter.com/ChinaRealTime', avatar: 'http://pbs.twimg.com/profile_images/460715609026617344/zVQRPPed_normal.png', name: 'WSJ China Real Time', bio: 'Insight and analysis on a changing China, from WSJ and Dow Jones'}),
+china_perspectives = [User.find_or_create_by({provider: 'twitter', uid: '16994529', username: 'ChinaRealTime', twitter: 'https://twitter.com/ChinaRealTime', avatar: 'http://pbs.twimg.com/profile_images/460715609026617344/zVQRPPed_normal.png', name: 'WSJ China Real Time', bio: 'Insight and analysis on a changing China, from WSJ and Dow Jones'}),
 User.find_or_create_by({provider: 'twitter', uid: '509191768', username: 'byAlanWong', twitter: 'https://twitter.com/byAlanWong', avatar: 'http://pbs.twimg.com/profile_images/558845870771163136/JUfA1H1X_normal.jpeg', name: 'Alan Wong', bio: 'I report for @nytimes from Hong Kong, dutifully following 689 comrades.'}),
 User.find_or_create_by({provider: 'twitter', uid: '599065130', username: 'ReutersChina', twitter: 'https://twitter.com/ReutersChina', avatar: 'http://pbs.twimg.com/profile_images/2844994980/2dea48bba599feeca4af10ab93d42de8_normal.png', name: 'Reuters China ', bio: 'China news, insight, pictures and videos from Reuters.'}),
 User.find_or_create_by({provider: 'twitter', uid: '3512101', username: 'niubi', twitter: 'https://twitter.com/niubi', avatar: 'http://pbs.twimg.com/profile_images/533210955703128064/k8vny29r_normal.jpeg', name: 'Bill Bishop', bio: 'Sinocism China Newsletter http://t.co/aPaWh4ew1h email bill @ sinocism. com sign up for the newsletter via Twitter here: https://t.co/wtE4HgCcna'}),
@@ -37,6 +37,6 @@ User.find_or_create_by({provider: 'twitter', uid: '14926475', username: 'raykwon
 User.find_or_create_by({provider: 'twitter', uid: '56967720', username: 'taniabranigan', twitter: 'https://twitter.com/taniabranigan', avatar: 'http://pbs.twimg.com/profile_images/337692612/profile_normal.jpg', name: 'tania branigan', bio: 'Tania Branigan is China Correspondent for The Guardian'}),
 User.find_or_create_by({provider: 'twitter', uid: '14745264', username: 'malcolmmoore', twitter: 'https://twitter.com/malcolmmoore', avatar: 'http://pbs.twimg.com/profile_images/1187682145/malcolm_at_xian_2_normal.jpg', name: 'malcolmmoore', bio: 'Deputy Foreign Editor of the Daily Telegraph. Was in Beijing.'})]
 
-china_experts.each do |expert|
-  china_issue.experts << expert
+china_perspectives.each do |expert|
+  china_issue.perspectives << expert
 end
