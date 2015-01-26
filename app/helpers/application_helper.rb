@@ -16,7 +16,8 @@ module ApplicationHelper
   end
 
   def node
-    cypher = "START me=node(#{params[:id]})
+    id = params[:id] || current_user.neo_id
+    cypher = "START me=node(#{id})
               OPTIONAL MATCH me -[r]- related
               RETURN me, r, related"
 
@@ -35,7 +36,7 @@ module ApplicationHelper
 
     {
       # details_html: "<h2>#{me["username"]}</h2>\n<p class='summary'>\n#{get_properties(me)}</p>\n",
-      details_html: "<img class='aside-user-avatar' src='#{me['avatar']}' /><h3>#{me['name']}</h3><p>#{me['bio']}#{me['description']}</p>",
+      details_html: "#{aside_content(me)}",
       data: {
         attributes: relationships, name: me["name"], id: params[:id]
       }
@@ -50,6 +51,17 @@ module ApplicationHelper
         node.split('/').last
       else
         node
+    end
+  end
+
+  def aside_content(node)
+    case node['_classname']
+    when 'Category'
+      "<h3>#{node['name']}</h3><p>#{node['description']}</p>"
+    when 'Issue'
+      "<h3>#{node['name']}</h3><p>#{node['description']}</p>"
+    when 'User'
+      "<img class='aside-user-avatar' src='#{node['avatar']}' /><a target='_blank' class='aside-text' href='#{node['twitter']}'><h3>#{node['name']}</h3></a><p><b>Description:</b> #{node['bio']}#{node['description']}</p>"
     end
   end
 
@@ -70,7 +82,7 @@ module ApplicationHelper
     #   when 'name'
     #     properties << "<h3>#{value}</h3>"
     #   when 'username'
-    #     properties << "<p><b>Twitter:</b> <a class='aside-text' href='https://twitter.com/#{value}' target='_blank'>#{value}</a></p>"
+    #     properties << "<p><b>Twitter:</b> <a href='https://twitter.com/#{value}' target='_blank' class='aside-text'>#{value}</a></p>"
     #   when 'description'
     #     properties << "<p><b>Description:</b> #{value}"
     #   else
