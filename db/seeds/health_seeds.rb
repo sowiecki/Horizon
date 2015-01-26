@@ -1,5 +1,5 @@
 # CREATE THIS health_category ('Health')
-health_category = health_category.create({name:"Health", description: "Major issues concerning public health and wellness."})
+health_category = Category.create({name:"Health", description: "Major issues concerning public health and wellness."})
 
 # CREATE THE ISSUE 'Healthcare' AND PUT IT UNDER THIS health_category
 care_issue = Issue.create({name: "Healthcare", description: ""})
@@ -35,9 +35,10 @@ care_issue.experts << expert
 
 expert = User.create({provider: 'twitter', uid: '11274452', username: 'kevinmd', twitter: 'https://twitter.com/kevinmd', avatar: 'http://pbs.twimg.com/profile_images/1182717255/Kevin2_WEB_normal.jpg', name: 'Kevin Pho, M.D.', bio: 'Physician, author, keynote speaker, USA TODAY\'s Board of Contributors. Social media\'s leading physician voice. http://t.co/MlC37Wze and http://t.co/hThNxwTt'})
 
-# CREATE THIS ISSUE AND PUT IT UNDER THIS health_category
-tissue = Issue.create({name: "Vaccinations", description: ""})
-health_category.issues << tissue
+# CREATE THIS ISSUE AND PUT IT UNDER THIS CATEGORY
+issue = Issue.create({name: "Vaccinations", description: ""})
+health_category.issues << issue
+
 
 # CREATE THE EXPERTS THAT BELONG UNDER THIS ISSUE
 

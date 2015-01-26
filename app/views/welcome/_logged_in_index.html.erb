@@ -1,9 +1,5 @@
-<!-- <div class='aside-wrapper'>
-    <aside><%= current_user.neo_id %></aside>
-</div> -->
 <div class='canvas-wrapper'>
   <div id='search-wrapper'>
-    <aside><%= current_user.neo_id %></aside>
     <%= render 'layouts/search' %>
   </div>
   <canvas id="neoviz"></canvas>
@@ -64,3 +60,10 @@ $(function() {
   });
 });
 </script>
+<div class="aside-wrapper">
+  <aside>
+    <div id="explanation">
+
+    </div>
+  </aside>
+</div>

@@ -7,6 +7,10 @@ module ApplicationHelper
     Category.find_by(name: string).neo_id
   end
 
+  def neo_id_for(model, string)
+    model.find_by(name: string).neo_id
+  end
+
   def hashify(results)
     results["data"].map {|row| Hash[*results["columns"].zip(row).flatten] }
   end
@@ -30,9 +34,10 @@ module ApplicationHelper
     relationships = [{"name" => "No Relationships","values" => [{"id" => "#{params[:id]}","name" => "No Relationships "}]}] if relationships.empty?
 
     {
-      details_html: "<h2>#{me["username"]}</h2>\n<p class='summary'>\n#{get_properties(me)}</p>\n",
+      # details_html: "<h2>#{me["username"]}</h2>\n<p class='summary'>\n#{get_properties(me)}</p>\n",
+      details_html: "<img class='aside-user-avatar' src='#{me['avatar']}' /><h3>#{me['name']}</h3><p>#{me['bio']}#{me['description']}</p>",
       data: {
-        attributes: relationships, name: me["username"], id: params[:id]
+        attributes: relationships, name: me["name"], id: params[:id]
       }
     }
   end
@@ -49,19 +54,30 @@ module ApplicationHelper
   end
 
   def get_properties(node)
-    properties = "<div class='aside-box'>"
-    node.each_pair do |key, value|
-      case key
-      when 'title'
-        properties << "<h3><b>#{key}:</b> #{value}</h3>"
-      when 'avatar_url'
-        properties << "<p><img src='#{value}'></p>"
-      when 'username'
-        properties << "<p><b>#{key}:</b> <a class='aside-text' href='https://twitter.com/#{value}' target='_blank'>#{value}</a></p>"
-      else
-        properties << "<p><b>#{key}:</b> #{value}</p>"
-      end
-    end
-    properties + "</div>"
+    # ["<div class='aside-box'>",
+    # "<img class='aside-user-avatar' src='#{node['avatar']}' />",
+    # "",
+    # "<p>#{node['bio']}</p>",
+    # "</div>"].join
+    # properties = "<div class='aside-box'>"
+    # node.each_pair do |key, value|
+    #   case key
+    #   # when 'title'
+    #   #   properties << "<h3><b>#{key}:</b> #{value}</h3>"
+    #   when 'avatar'
+    #     hash[:avatar] = value
+    #     properties << "<p><img class='current-user-avatar' src='#{value}'></p>"
+    #   when 'name'
+    #     properties << "<h3>#{value}</h3>"
+    #   when 'username'
+    #     properties << "<p><b>Twitter:</b> <a class='aside-text' href='https://twitter.com/#{value}' target='_blank'>#{value}</a></p>"
+    #   when 'description'
+    #     properties << "<p><b>Description:</b> #{value}"
+    #   else
+    #     properties << "<p><b>#{key}:</b> #{value}</p>"
+    #   end
+    # end
+    # properties + "</div>"
+    "<img class='aside-user-avatar' src='#{me['avatar']}' /><h3>#{me['name']}</h3><p>#{me['bio']}"
   end
 end
