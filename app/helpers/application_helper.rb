@@ -10,6 +10,10 @@ module ApplicationHelper
       client.user_timeline(uid).take(500)
   end
 
+  # def extract_user_tweets(uid)
+  #     client.user_timeline(uid).take(5)
+  # end
+
   # Scan through the array of tweet objects
   def get_text_from_tweets(uid)
       tweet_timeline = extract_user_timeline(uid)
@@ -90,9 +94,21 @@ module ApplicationHelper
       string = "<h3>#{node['name']}</h3><p>#{node['description']}</p>"
     elsif Issue.find_by(name: node['name'])
       string = "<h3>#{node['name']}</h3><p>#{node['description']}</p>"
-    elsif User.find_by(name: node['name'])
-      string = "<a target='_blank' class='aside-text' href='#{node['twitter']}'><img class='aside-user-avatar' src='#{node['avatar']}' /><h3><img src='http://platform.twitter.com/images/bird.png' /> #{node['name']}</h3></a><p><b>Description:</b> #{node['bio']}#{node['description']}</p>"
+    elsif user = User.find_by(name: node['name'])
+      # user_tweets = extract_user_tweets(User.find_by(name: node['name'])).uid
+      # p extract_relevant_tweets('nasezero', ['space', 'the', 'a'])
+      tweets = get_text_from_tweets(user.username).take(3)
+      tweets.map! { |tweet| tweet + "<br><br>" }
+      string = [
+                "<a target='_blank' class='aside-text' href='#{node['twitter']}'>",
+                "<img class='aside-user-avatar' src='#{node['avatar']}' />",
+                "<h3><img src='http://platform.twitter.com/images/bird.png' />",
+                "#{node['name']}</h3></a>",
+                "<p><b>Description:</b> #{node['bio']}</p>",
+                "<h4>Recently tweeted:</h4>",
+                "#{tweets.join}"
+      ].join
     end
-    "<div id='aside-filler'>#{string}<span class='instruct'>(Drag me)</span></div>"
+    "<div id='aside-filler'>#{string}<span class='instruct'>(Draggable)</span></div>"
   end
 end
