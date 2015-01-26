@@ -5,9 +5,9 @@ education_category = Category.find_or_create_by({name:"Education", description: 
 testing_issue = Issue.find_or_create_by({name: "Standardized Testing", description: "The latest news and analysis on standardized testing and the Common Core."})
 education_category.issues << testing_issue
 
-# find_or_CREATE_by THE EXPERTS THAT BELONG UNDER THIS ISSUE
+# find_or_CREATE_by THE perspectives THAT BELONG UNDER THIS ISSUE
 
-testing_experts = [User.find_or_create_by({provider: 'twitter', uid: '14147479', username: '21stprincipal', twitter: 'https://twitter.com/21stprincipal', avatar: 'http://pbs.twimg.com/profile_images/530792816746586113/sSyx97fh_normal.jpeg', name: 'John Robinson', bio: 'High School Principal, Long-Time HS English Teacher, Avid Reader, Public School Advocate, Blogger. Views expressed here are my own.'}),
+testing_perspectives = [User.find_or_create_by({provider: 'twitter', uid: '14147479', username: '21stprincipal', twitter: 'https://twitter.com/21stprincipal', avatar: 'http://pbs.twimg.com/profile_images/530792816746586113/sSyx97fh_normal.jpeg', name: 'John Robinson', bio: 'High School Principal, Long-Time HS English Teacher, Avid Reader, Public School Advocate, Blogger. Views expressed here are my own.'}),
 User.find_or_create_by({provider: 'twitter', uid: '2788894550', username: 'nmhs_principal', twitter: 'https://twitter.com/nmhs_principal', avatar: 'http://pbs.twimg.com/profile_images/507336891788558336/leliKGot_normal.jpeg', name: 'Eric Sheninger', bio: 'Former award winning principal of New Milford High School (NJ). Connect with Eric on Twitter at @E_Sheninger'}),
 User.find_or_create_by({provider: 'twitter', uid: '56461930', username: 'robertjmarzano', twitter: 'https://twitter.com/robertjmarzano', avatar: 'http://pbs.twimg.com/profile_images/1541424128/bobmarzano_profile_normal.PNG', name: 'Robert J. Marzano', bio: 'Co-founder & CEO of @MarzanoResearch Laboratory. I translate research and theory into educational practice.'}),
 User.find_or_create_by({provider: 'twitter', uid: '23326769', username: 'tdottawa', twitter: 'https://twitter.com/tdottawa', avatar: 'http://pbs.twimg.com/profile_images/460757163518865409/TW2NxK-D_normal.jpeg', name: 'Tom D\'Amico', bio: 'Teacher, Administrator - focus on Learning / Teaching in the 21C with a focus on EDtech, web 2.0, innovation, technology and creativity. Superintendent - OCSB'}),
@@ -17,17 +17,17 @@ User.find_or_create_by({provider: 'twitter', uid: '18332376', username: 'mikeher
 User.find_or_create_by({provider: 'twitter', uid: '21786831', username: 'hgse', twitter: 'https://twitter.com/hgse', avatar: 'http://pbs.twimg.com/profile_images/3222291276/7e5b2cc0751e99c15ff5d364140bdd8e_normal.png', name: 'Harvard Education', bio: 'The official Twitter feed of the Harvard Graduate School of Education'}),
 User.find_or_create_by({provider: 'twitter', uid: '26546403', username: 'naesp', twitter: 'https://twitter.com/naesp', avatar: 'http://pbs.twimg.com/profile_images/537702834322427904/R8LdP5MQ_normal.png', name: 'NAESP', bio: 'National Association of Elementary School Principals: Serving all elementary and middle-level principals'})]
 
-testing_experts.each do |expert|
-  testing_issue.experts << expert
+testing_perspectives.each do |expert|
+  testing_issue.perspectives << expert
 end
 
 # find_or_CREATE_by THE ISSUE AND PUT IT UNDER THIS CATEGORY
 loans_issue = Issue.find_or_create_by({name: "Student Loans", description: "Major developments on the growing concern of student loans."})
 education_category.issues << loans_issue
 
-# find_or_CREATE_by THE EXPERTS THAT BELONG UNDER THIS ISSUE
+# find_or_CREATE_by THE perspectives THAT BELONG UNDER THIS ISSUE
 
-loans_experts = [User.find_or_create_by({provider: 'twitter', uid: '15460202', username: 'kevin_corbett', twitter: 'https://twitter.com/kevin_corbett', avatar: 'http://pbs.twimg.com/profile_images/1417594286/kevin_twitter2_normal.jpg', name: 'Kevin Corbett', bio: '#elearning program developer, Kevin Corbett is interested in #mlearning, game-based design & #socialmedia in education. http://t.co/yMGLqa5dpl'}),
+loans_perspectives = [User.find_or_create_by({provider: 'twitter', uid: '15460202', username: 'kevin_corbett', twitter: 'https://twitter.com/kevin_corbett', avatar: 'http://pbs.twimg.com/profile_images/1417594286/kevin_twitter2_normal.jpg', name: 'Kevin Corbett', bio: '#elearning program developer, Kevin Corbett is interested in #mlearning, game-based design & #socialmedia in education. http://t.co/yMGLqa5dpl'}),
 User.find_or_create_by({provider: 'twitter', uid: '21827584', username: 'web20classroom', twitter: 'https://twitter.com/web20classroom', avatar: 'http://pbs.twimg.com/profile_images/378800000182949199/b9ff259706f0924924150fc351bf97b4_normal.jpeg', name: 'Steven W. Anderson', bio: 'Educator, Speaker, Blogger, #Edchat Co-Creator, Author, Learning Evangelist, Dad, Edublogs Twitterer Of The Year, ASCD Emerging Leader, Top 50 Innovators in Edu'}),
 User.find_or_create_by({provider: 'twitter', uid: '29655018', username: 'shellterrell', twitter: 'https://twitter.com/shellterrell', avatar: 'http://pbs.twimg.com/profile_images/551979532991741952/izW3TP2P_normal.jpeg', name: 'Shelly Sanchez ', bio: 'The 30 Goals Challenge author #30goalsEDU, NAPW Woman of the Year, teacher trainer, #Edchat founder, International speaker, #RoscothePug\'s mama'}),
 User.find_or_create_by({provider: 'twitter', uid: '2902901', username: 'coolcatteacher', twitter: 'https://twitter.com/coolcatteacher', avatar: 'http://pbs.twimg.com/profile_images/2181575085/vick-change-size-white-background_normal.jpg', name: 'Vicki Davis', bio: 'I love students! Best teacher blog winner * Mom * Speaker * AUTHOR Reinventing Writing * HOST Every Classroom Matters * a @Mashable Top Teacher on Twitter'}),
@@ -38,17 +38,17 @@ User.find_or_create_by({provider: 'twitter', uid: '25388528', username: 'audreyw
 User.find_or_create_by({provider: 'twitter', uid: '45955381', username: 'betamiller', twitter: 'https://twitter.com/betamiller', avatar: 'http://pbs.twimg.com/profile_images/460179395563356160/LafHW7_B_normal.jpeg', name: 'Andrew Miller', bio: 'BIE and ASCD Faculty and Educational Consultant. PBL, Blended Learning, Assessment, Student Engagement, Ed Tech, 21st Century Skills. Edutopia Blogger'}),
 User.find_or_create_by({provider: 'twitter', uid: '17087753', username: 'dianadell', twitter: 'https://twitter.com/dianadell', avatar: 'http://pbs.twimg.com/profile_images/1853950207/dianacrop_normal.jpg', name: 'Diana Dell, Ph.D', bio: 'Educational technology consultant, learning games and activities @ http://t.co/icx8iXtvWY, Moodle, iPads, GCT, eMINTS'})]
 
-loans_experts.each do |expert|
-  loans_issue.experts << expert
+loans_perspectives.each do |expert|
+  loans_issue.perspectives << expert
 end
 
 # find_or_CREATE_by THE ISSUE AND PUT IT UNDER THIS CATEGORY
 privatization_issue = Issue.find_or_create_by({name: "Privatization", description: "The current state and impact of privatized education."})
 education_category.issues << privatization_issue
 
-# find_or_CREATE_by THE EXPERTS THAT BELONG UNDER THIS ISSUE
+# find_or_CREATE_by THE perspectives THAT BELONG UNDER THIS ISSUE
 
-privatization_experts = [User.find_or_create_by({provider: 'twitter', uid: '12413032', username: 'chronicle', twitter: 'https://twitter.com/chronicle', avatar: 'http://pbs.twimg.com/profile_images/2263651251/che_twitter_053012_normal.png', name: 'Chronicle', bio: 'The Chronicle of Higher Education—The leading news source for higher education.'}),
+privatization_perspectives = [User.find_or_create_by({provider: 'twitter', uid: '12413032', username: 'chronicle', twitter: 'https://twitter.com/chronicle', avatar: 'http://pbs.twimg.com/profile_images/2263651251/che_twitter_053012_normal.png', name: 'Chronicle', bio: 'The Chronicle of Higher Education—The leading news source for higher education.'}),
 User.find_or_create_by({provider: 'twitter', uid: '43107557', username: 'nsriazat', twitter: 'https://twitter.com/nsriazat', avatar: 'http://pbs.twimg.com/profile_images/1175594368/large_nasima_riazat_normal.jpg', name: 'Nasima Riazat', bio: '#PhDchat moderator. PhD research themes: capacity building, distributed leadership, leadership sciences, developing middle leaders - Open University UK'}),
 User.find_or_create_by({provider: 'twitter', uid: '41595481', username: 'biddy_martin', twitter: 'https://twitter.com/biddy_martin', avatar: 'http://pbs.twimg.com/profile_images/1448480356/Biddy_portrait128x128_normal.jpg', name: 'Biddy Martin', bio: 'The official account of Amherst College President Biddy Martin'}),
 User.find_or_create_by({provider: 'twitter', uid: '17762060', username: 'tomwhitby', twitter: 'https://twitter.com/tomwhitby', avatar: 'http://pbs.twimg.com/profile_images/601591035/twitter_pic_1__normal.jpg', name: 'Tom Whitby', bio: 'Author,Blogger, HS/MS Tchr 34 yrs, HigherEd 6 yrs.Founder #Edchat, EDU PLN,Edchat Radio, 6 Linkedin Edu Grps. BLOG My Island View http://t.co/ZKlpqrApae'}),
@@ -60,6 +60,6 @@ User.find_or_create_by({provider: 'twitter', uid: '23602600', username: 'timeshi
 User.find_or_create_by({provider: 'twitter', uid: '15051291', username: 'thejlv', twitter: 'https://twitter.com/thejlv', avatar: 'http://pbs.twimg.com/profile_images/510812318041526272/mgqqiLjY_normal.png', name: 'Jose Vilson', bio: 'The teacher Gotham deserves. Author of This Is Not A Test. No longer invisible. #notatest #EduColor'}),
 User.find_or_create_by({provider: 'twitter', uid: '157273341', username: 'equal_education', twitter: 'https://twitter.com/equal_education', avatar: 'http://pbs.twimg.com/profile_images/378800000085752460/72f7d3217758f9c0ae9378cc703a801f_normal.jpeg', name: 'Equal Education', bio: 'A movement striving for quality and equality in South Africa\'s education system through analysis and activism. Every generation has its struggle #fixourschools'})]
 
-privatization_experts.each do |expert|
-  privatization_issue.experts << expert
+privatization_perspectives.each do |expert|
+  privatization_issue.perspectives << expert
 end

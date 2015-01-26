@@ -5,9 +5,9 @@ business_category = Category.find_or_create_by({name:"Business", description: "M
 regulation_issue = Issue.find_or_create_by({name: "Regulation", description: "The politics and consequences of economic regulation."})
 business_category.issues << regulation_issue
 
-# find_or_CREATE_by THE EXPERTS THAT BELONG UNDER THIS ISSUE
+# find_or_CREATE_by THE perspectives THAT BELONG UNDER THIS ISSUE
 
-regulation_experts = [User.create({provider: 'twitter', uid: '17997789', username: 'danariely', twitter: 'https://twitter.com/danariely', avatar: 'http://pbs.twimg.com/profile_images/3079991122/885ba5efe97fcfd916001b8374d0d75c_normal.jpeg', name: 'Dan Ariely', bio: 'Professor of Psychology and Behavioral Economics'}),
+regulation_perspectives = [User.create({provider: 'twitter', uid: '17997789', username: 'danariely', twitter: 'https://twitter.com/danariely', avatar: 'http://pbs.twimg.com/profile_images/3079991122/885ba5efe97fcfd916001b8374d0d75c_normal.jpeg', name: 'Dan Ariely', bio: 'Professor of Psychology and Behavioral Economics'}),
 User.find_or_create_by({provider: 'twitter', uid: '345504143', username: 'PankajGhemawat', twitter: 'https://twitter.com/PankajGhemawat', avatar: 'http://pbs.twimg.com/profile_images/469884794088599554/mMr2MLGv_normal.jpeg', name: 'Pankaj Ghemawat', bio: 'Professor at NYU Stern & IESE Business School, author of World 3.0 and Redefining Global Strategy, youngest “guru” on The Economist top management thinkers list'}),
 User.find_or_create_by({provider: 'twitter', uid: '17006157', username: 'NYTimeskrugman', twitter: 'https://twitter.com/NYTimeskrugman', avatar: 'http://pbs.twimg.com/profile_images/2044852218/NYT_Twitter_Krugman_normal.png', name: 'Paul Krugman', bio: 'Nobel laureate. Op-Ed columnist, @nytopinion. Author, “The Return of Depression Economics,” “The Great Unraveling,” “The Age of Diminished Expectations” + more.'}),
 User.find_or_create_by({provider: 'twitter', uid: '21660877', username: 'StephanieDhue', twitter: 'https://twitter.com/StephanieDhue', avatar: 'http://pbs.twimg.com/profile_images/378800000372316644/23c31a4aaf3e375ad2c20480a600a3e8_normal.jpeg', name: 'Stephanie Dhue', bio: 'Producer at CNBC.  I follow real estate, regulatory & fed policy, politics.  My tweets, links & retweets  reflect my opinion & not those of my employer.'}),
@@ -21,17 +21,17 @@ User.find_or_create_by({provider: 'twitter', uid: '583938358', username: 'Robert
 User.find_or_create_by({provider: 'twitter', uid: '286654612', username: 'mark_dow', twitter: 'https://twitter.com/mark_dow', avatar: 'http://pbs.twimg.com/profile_images/418323553147035648/X4EtQTNo_normal.jpeg', name: 'Mark Dow', bio: 'hedge fund manager, economist, Washington refugee, political junkie, anti-partisan, amateur linguist, tourist TA, bonobo wannabe'}),
 User.find_or_create_by({provider: 'twitter', uid: '17078632', username: 'BobbyJindal', twitter: 'https://twitter.com/BobbyJindal', avatar: 'http://pbs.twimg.com/profile_images/87988618/jindalprofile_normal.jpg', name: 'Gov. Bobby Jindal', bio: 'The Official Bobby Jindal Twitter Page'})]
 
-regulation_experts.each do |expert|
-  regulation_issue.experts << expert
+regulation_perspectives.each do |expert|
+  regulation_issue.perspectives << expert
 end
 
 # find_or_CREATE_by THE ISSUE AND PUT IT UNDER THIS CATEGORY
 globalization_issue = Issue.create({name: "Globalization", description: "Insight and analysis concerning our increasingly globalized economy."})
 business_category.issues << globalization_issue
 
-# find_or_CREATE_by THE EXPERTS THAT BELONG UNDER THIS ISSUE
+# find_or_CREATE_by THE perspectives THAT BELONG UNDER THIS ISSUE
 
-globalization_experts = [
+globalization_perspectives = [
   User.find_or_create_by({provider: 'twitter', uid: '50393960', username: 'billgates', twitter: 'https://twitter.com/billgates', avatar: 'http://pbs.twimg.com/profile_images/558109954561679360/j1f9DiJi_normal.jpeg', name: 'Bill Gates', bio: 'Sharing things I\'m learning through my foundation work and other interests...'}),
 User.find_or_create_by({provider: 'twitter', uid: '15308469', username: 'McKQuarterly', twitter: 'https://twitter.com/McKQuarterly', avatar: 'http://pbs.twimg.com/profile_images/436604894573641728/quqvcjFy_normal.png', name: 'McKinsey Quarterly', bio: 'The business publication of @McKinsey & Company. In our 50th year, McKinsey Quarterly continues to shape the top-management agenda.'}),
 
@@ -45,29 +45,29 @@ User.find_or_create_by({provider: 'twitter', uid: '970207298', username: 'SenWar
 
 
 
-globalization_experts.each do |expert|
-  globalization_issue.experts << expert
+globalization_perspectives.each do |expert|
+  globalization_issue.perspectives << expert
 end
 paul = User.find_by({provider: 'twitter', uid: '17006157', username: 'NYTimeskrugman', twitter: 'https://twitter.com/NYTimeskrugman', avatar: 'http://pbs.twimg.com/profile_images/2044852218/NYT_Twitter_Krugman_normal.png', name: 'Paul Krugman', bio: 'Nobel laureate. Op-Ed columnist, @nytopinion. Author, “The Return of Depression Economics,” “The Great Unraveling,” “The Age of Diminished Expectations” + more.'})
 
-globalization_issue.experts << paul
+globalization_issue.perspectives << paul
 
 carl = User.find_or_create_by({provider: 'twitter', uid: '1534167900', username: 'Carl_C_Icahn', twitter: 'https://twitter.com/Carl_C_Icahn', avatar: 'http://pbs.twimg.com/profile_images/378800000021016777/1d530fa4b92b883270c5bdd7583ed073_normal.jpeg', name: 'Carl Icahn', bio: 'Chairman of Icahn Enterprises L.P.; Some people get rich studying artificial intelligence.  Me, I make money studying natural stupidity.'}),
 
-globalization_issue.experts << carl
+globalization_issue.perspectives << carl
 
 maria = User.find_or_create_by({provider: 'twitter', uid: '208155240', username: 'MariaBartiromo', twitter: 'https://twitter.com/MariaBartiromo', avatar: 'http://pbs.twimg.com/profile_images/378800000813078329/c685d4f8043b2ac4ca43b4f4224b6403_normal.jpeg', name: 'Maria Bartiromo ', bio: 'Anchor, Global Markets Editor - @OpeningBellFBN w/ Maria Bartiromo 9-11am ET M-F on @FoxBusiness Network  & @SundayFutures 10:00am ET Sundays  on @FoxNews.'}),
 
-globalization_issue.experts << maria
+globalization_issue.perspectives << maria
 
 # find_or_CREATE_by THE ISSUE AND PUT IT UNDER THIS CATEGORY
 trading_issue = Issue.find_or_create_by({name: "High-Frequency Trading", description: "The latest on high-speed, high-frequency trading."})
 
 business_category.issues << trading_issue
 
-# find_or_CREATE_by THE EXPERTS THAT BELONG UNDER THIS ISSUE
+# find_or_CREATE_by THE perspectives THAT BELONG UNDER THIS ISSUE
 
-trading_experts = [User.find_or_create_by({provider: 'twitter', uid: '15281391', username: 'thestreet', twitter: 'https://twitter.com/thestreet', avatar: 'http://pbs.twimg.com/profile_images/528585288902533120/BO5x5qE9_normal.jpeg', name: 'TheStreet', bio: 'An independent digital financial media company. We provide business and financial news, investing ideas and analysis to investors worldwide.'}),
+trading_perspectives = [User.find_or_create_by({provider: 'twitter', uid: '15281391', username: 'thestreet', twitter: 'https://twitter.com/thestreet', avatar: 'http://pbs.twimg.com/profile_images/528585288902533120/BO5x5qE9_normal.jpeg', name: 'TheStreet', bio: 'An independent digital financial media company. We provide business and financial news, investing ideas and analysis to investors worldwide.'}),
 User.find_or_create_by({provider: 'twitter', uid: '14216123', username: 'jimcramer', twitter: 'https://twitter.com/jimcramer', avatar: 'http://pbs.twimg.com/profile_images/451344676914593792/8lV96m2l_normal.jpeg', name: 'Jim Cramer', bio: 'I am founder of @TheStreet & I run charitable trust portfolio Action Alerts PLUS. I also host @MadMoneyOnCNBC & blog daily on http://t.co/sGTJX6HuDA. Booyah!'}),
 User.find_or_create_by({provider: 'twitter', uid: '39264827', username: 'GuyAdami', twitter: 'https://twitter.com/GuyAdami', avatar: 'http://pbs.twimg.com/profile_images/2941554076/2b0270a02dbca561605b6c88ae1f1d0b_normal.jpeg', name: 'Guy Adami', bio: 'Champion for independent financial advice Director Advisor Advocacy @privateADVgroup Original @cnbcfastmoney member. NYC 2012 @IronmanTri Proud @georgetown alum'}),
 
@@ -76,8 +76,8 @@ User.find_or_create_by({provider: 'twitter', uid: '60473581', username: 'HedgeFu
 User.find_or_create_by({provider: 'twitter', uid: '2829684101', username: 'Mikhail_Econ', twitter: 'https://twitter.com/Mikhail_Econ', avatar: 'http://pbs.twimg.com/profile_images/538263284147691520/jvzo3_Mv_normal.jpeg', name: 'Mikhail Liluashvili', bio: 'Central and Eastern European Economist at Oxford Economics. All views expressed here are my own.'}),
 User.find_or_create_by({provider: 'twitter', uid: '14115408', username: 'optionmonster', twitter: 'https://twitter.com/optionmonster', avatar: 'http://pbs.twimg.com/profile_images/977412025/Screen_shot_2010-06-10_at_11.49.42_AM_normal.png', name: 'Jon Najarian', bio: 'Talent hits a target no one else can hit; Genius hits a target no one else can see. I am the Co-founder of optionMONSTER & http://t.co/qmWQVy310M'})]
 
-trading_experts.each do |expert|
-  trading_issue.experts << expert
+trading_perspectives.each do |expert|
+  trading_issue.perspectives << expert
 end
 
 
