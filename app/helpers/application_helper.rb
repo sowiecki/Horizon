@@ -35,7 +35,6 @@ module ApplicationHelper
     relationships = [{"name" => "No Relationships","values" => [{"id" => "#{params[:id]}","name" => "No Relationships "}]}] if relationships.empty?
 
     {
-      # details_html: "<h2>#{me["username"]}</h2>\n<p class='summary'>\n#{get_properties(me)}</p>\n",
       details_html: "#{aside_content(me)}",
       data: {
         attributes: relationships, name: me["name"], id: params[:id]
@@ -63,41 +62,5 @@ module ApplicationHelper
       string = "<img class='aside-user-avatar' src='#{node['avatar']}' /><a target='_blank' class='aside-text' href='#{node['twitter']}'><h3>#{node['name']}</h3></a><p><b>Description:</b> #{node['bio']}#{node['description']}</p>"
     end
     "<div id='aside-filler'>#{string}</div>"
-    # case node['_classname']
-    # when 'Category'
-    #   "<h3>#{node['name']}</h3><p>#{node['description']}</p>"
-    # when 'Issue'
-    #   "<h3>#{node['name']}</h3><p>#{node['description']}</p>"
-    # when 'User'
-    #   "<img class='aside-user-avatar' src='#{node['avatar']}' /><a target='_blank' class='aside-text' href='#{node['twitter']}'><h3>#{node['name']}</h3></a><p><b>Description:</b> #{node['bio']}#{node['description']}</p>"
-    # end
-  end
-
-  def get_properties(node)
-    # ["<div class='aside-box'>",
-    # "<img class='aside-user-avatar' src='#{node['avatar']}' />",
-    # "",
-    # "<p>#{node['bio']}</p>",
-    # "</div>"].join
-    # properties = "<div class='aside-box'>"
-    # node.each_pair do |key, value|
-    #   case key
-    #   # when 'title'
-    #   #   properties << "<h3><b>#{key}:</b> #{value}</h3>"
-    #   when 'avatar'
-    #     hash[:avatar] = value
-    #     properties << "<p><img class='current-user-avatar' src='#{value}'></p>"
-    #   when 'name'
-    #     properties << "<h3>#{value}</h3>"
-    #   when 'username'
-    #     properties << "<p><b>Twitter:</b> <a href='https://twitter.com/#{value}' target='_blank' class='aside-text'>#{value}</a></p>"
-    #   when 'description'
-    #     properties << "<p><b>Description:</b> #{value}"
-    #   else
-    #     properties << "<p><b>#{key}:</b> #{value}</p>"
-    #   end
-    # end
-    # properties + "</div>"
-    "<img class='aside-user-avatar' src='#{me['avatar']}' /><h3>#{me['name']}</h3><p>#{me['bio']}"
   end
 end
