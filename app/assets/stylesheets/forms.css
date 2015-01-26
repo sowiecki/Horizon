@@ -17,7 +17,7 @@ div#search {
   top: 80px;
   /*max-width: 230px;*/
 }
-div#search-buttons {
+#search-buttons {
   display: inline;
   padding: 0 0 0 50px;
   height: 100px;

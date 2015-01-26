@@ -125,41 +125,12 @@ a.nav-text-welcome:hover {
 }
 
 .welcome-wrapper {
-  /*position: absolute;*/
   margin: 100px auto auto;
   padding: 0 20px 0 20px;
   max-width: 600px;
   color: #7c7c7c;
 }
 
-.aside-wrapper {
-  margin: 0 auto auto;
-  right: 100px;
-  left: 0;
-  max-width: 10px;
-  height: 100px;
-}
-aside {
-  position: absolute;
-  margin: 0 auto auto;
-  top: 85px;
-  color: #20CCD5;
-  max-width: 300px;
-  max-height: 30px;
-}
-#aside-filler {
-  padding: 6px;
-  max-width: 900px;
-  background-color:rgba(239, 233, 244, 0.75);
-  border: 2px solid rgba(32, 204, 213, 0.75);
-  box-shadow: 1px 1px 2px #bfbfbf;
-}
-a.aside-text {
-  color: #00f6ff;
-}
-a.aside-text:after {
-  content: ' (external link)';
-}
 h2 {
   margin: 2px;
   text-transform: uppercase;

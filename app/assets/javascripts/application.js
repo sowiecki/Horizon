@@ -15,8 +15,11 @@
 //= require jquery_ujs
 //= require processing.min
 //= require_tree .
-
 $(function() {
+  $('html').on('click', function() {
+    $('#info').fadeOut(500)
+  })
+  $('#search-buttons').hide();
   $('aside').draggable();
 
   $('#toggle-category-list').on('click', function (e) {
