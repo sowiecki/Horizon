@@ -368,9 +368,9 @@ public class Resource {
       roundedRect(this.x-fWidth/2, this.y+yOffset, fWidth, 22, 10);
 
       if (state=="open")
-        fill(73, 71, 59);
+        fill(38, 38, 38);
       else
-        fill(182,187,171);
+        fill(200, 200, 200);
 
       ellipse(this.x-fWidth/2-5, this.y+yOffset+11, 30, 30);
 
@@ -380,7 +380,7 @@ public class Resource {
 
       fill(255);
       // draw resource index
-      curContext.font = "bold 18px Century Gothic";
+      curContext.font = "bold 18px Helvetica";
       curContext.textBaseline = "middle";
       String idxstr = (this.idx<10) ? "0"+this.idx : this.idx;
       curContext.fillText(idxstr, this.x-fWidth/2-5, this.y+yOffset+11);

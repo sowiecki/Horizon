@@ -1,10 +1,9 @@
 .aside-wrapper {
-  margin: 100px 0 0 500px;
-  max-width: 100px;
-  min-height: 100px;
+  margin: 0 0 0 300px;
+/*  max-width: 100px;
+  min-height: 100px;*/
 }
 aside {
-  margin: 100px 0 0 0;
   position: absolute;
   top: 125px;
   color: #20CCD5;
@@ -12,6 +11,7 @@ aside {
   max-height: 30px;
 }
 #aside-filler {
+  margin: 10px;
   padding: 6px;
   max-width: 900px;
   background-color:rgba(239, 233, 244, 0.75);
