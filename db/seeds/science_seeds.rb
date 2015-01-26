@@ -7,10 +7,10 @@
 # user.bio = auth["info"]["description"]
 
 # CREATE THIS CATEGORY ('Science')
-category = Category.create({title:"Science", description: "Major issues concerning science, the environment, and space."})
+category = Category.create({name:"Science", description: "Major issues concerning science, the environment, and space."})
 
 # CREATE THE ISSUE 'Global Warming' AND PUT IT UNDER THIS CATEGORY
-issue = Issue.create({title: "Global Warming", description: ""})
+issue = Issue.create({name: "Global Warming", description: ""})
 category.issues << issue
 
 # CREATE THE EXPERTS THAT BELONG UNDER THE 'Global Warming' ISSUE

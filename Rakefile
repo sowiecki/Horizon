@@ -8,8 +8,11 @@ Rails.application.load_tasks
 namespace :db do
   desc 'Load seed data from db/seeds.rb'
   task :seed => :environment do
-    seed_file = File.join(Rails.root,'db/seeds', 'politics_seeds.rb')
-    load(seed_file) if File.exist?(seed_file)
+    seed_files = ['social_justice_seeds.rb', 'health_seeds.rb', 'education_seeds.rb', 'business_seeds.rb', 'foreign_policy_seeds.rb', 'politics_seeds.rb', 'science_seeds.rb', 'sports_seeds.rb', 'technology_seeds.rb']
+    seed_files.each do |file|
+      seed_file = File.join(Rails.root,'db/seeds', file)
+      load(seed_file) if File.exist?(seed_file)
+    end
   end
 end
 
