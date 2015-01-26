@@ -4,7 +4,7 @@ module ApplicationHelper
   end
 
   def neo_id_for(string)
-    Category.find_by(title: string).neo_id
+    Category.find_by(name: string).neo_id
   end
 
   def hashify(results)

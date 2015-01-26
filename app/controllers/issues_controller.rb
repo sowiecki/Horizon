@@ -10,26 +10,12 @@ class IssuesController < ApplicationController
     p ""
     p ""
 
-    p "HEALTHCARE"
+    p "LGBT Rights"
 
-    temp_usernames = ["atriushealth","andrewspong","PublicHealth","atul_gawande","hc_thejournal","sacjai","cmichaelgibson","healthblawg","drsanjaygupta","kevinmd"]
+    temp_usernames = ["TheAdvocateMag", "gaycivilrights", 'LGBT','glaad','TPEquality','ACLULGBT','NOH8Campaign','PhilaGayNews', 'Queerty', 'nlgja']
 
-    temp_usernames.each do |temp_username|
 
-       twitter_object = client.user(temp_username)
 
-    @user_create_string = "User.create({provider: 'twitter', uid: '" + twitter_object.id.to_s + "', username: '" + temp_username + "', twitter: 'https://twitter.com/" + temp_username + "', avatar: '" + twitter_object.profile_image_url + "', name: '" + twitter_object.name + "', bio: '" + twitter_object.description + "'})"
-
-    p @user_create_string
-  end
-
-    p ""
-    p ""
-    p ""
-
-    p "VACCINATIONS"
-
-    temp_usernames = ["atul_gawande","kevinmd","thelancet","orinlevine","vaccinestoday","anniedotson","drsanjaygupta","hc_thejournal","onecampaign","thelancet"]
 
     temp_usernames.each do |temp_username|
 
@@ -44,9 +30,39 @@ class IssuesController < ApplicationController
     p ""
     p ""
 
-    p "OBESITY"
+    p "Police Militarization"
 
-    temp_usernames = ["bigzigfitness","obesitysociety","kidseatright","ywmoac","thelancet","drsharma","fatboythinman","momamiatx","fat_rejection","obesityblog"]
+    temp_usernames = ["CopWatch",'thisstopstoday','privacysos','IPS_DC','MikeRiggs', '
+michael_urbina', 'lesleybikes' ]
+
+
+
+    temp_usernames.each do |temp_username|
+
+       twitter_object = client.user(temp_username)
+
+    @user_create_string = "User.create({provider: 'twitter', uid: '" + twitter_object.id.to_s + "', username: '" + temp_username + "', twitter: 'https://twitter.com/" + temp_username + "', avatar: '" + twitter_object.profile_image_url + "', name: '" + twitter_object.name + "', bio: '" + twitter_object.description + "'})"
+
+    p @user_create_string
+  end
+
+    p ""
+    p ""
+    p ""
+
+    p "Civil Rights"
+
+
+    temp_usernames = %w(deray
+tanehisicoates
+ShaunKing
+LatoyaPeterson
+MikeRugnetta
+civilrightsorg
+hrw
+HRC
+amnesty
+Blklivesmatter)
 
     temp_usernames.each do |temp_username|
 
