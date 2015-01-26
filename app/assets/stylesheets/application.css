@@ -83,10 +83,10 @@ nav {
   vertical-align: top;
 }
 .nav-link, a.nav-link:hover, a.nav-text-welcome:hover {
-  color: #35D7E0;
+  color: #ff784f;
 }
 a.nav-link:visited, a.nav-text-welcome:visited {
-  color: #35D7E0;
+  color: #ff784f;
 }
 .nav-button-twitter-login {
   display: inline-block;
@@ -99,10 +99,10 @@ a.nav-link:visited, a.nav-text-welcome:visited {
 }
 .nav-text-welcome {
   font-size: 20px;
-  color: #FF784F;
+  color: #35D7E0;
 }
 a.nav-text-welcome:hover {
-  color: #7acef4;
+  color: #ff784f;
 }
 .nav-link-logout {
   display: block;
@@ -110,6 +110,12 @@ a.nav-text-welcome:hover {
 }
 .notice, .alert {
   display: inline;
+}
+h3.twitter-link {
+  text-decoration: underline;
+}
+h3.twitter-link:hover {
+  color: #ff9b7f;
 }
 
 .current-user-avatar {
@@ -219,5 +225,6 @@ footer {
   bottom: 0px;
 }
 footer > a {
+  margin: 0 auto auto;
   color: #35D7E0;
 }
