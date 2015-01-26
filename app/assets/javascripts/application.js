@@ -15,11 +15,17 @@
 //= require jquery_ujs
 //= require processing.min
 //= require_tree .
+function hideHelp() {
+  $('#nav-info').fadeOut(500)
+  $('#aside-info').fadeOut(500)
+}
 $(function() {
+  var keyword = window.location.hash.replace("#","")
+  if (keyword=='nohelp') { hideHelp() }
   $('html').on('click', function() {
-    $('#info').fadeOut(500)
+    hideHelp()
   })
-  $('#search-buttons').hide();
+  // $('#search-buttons').hide();
   $('aside').draggable();
 
   $('#toggle-category-list').on('click', function (e) {

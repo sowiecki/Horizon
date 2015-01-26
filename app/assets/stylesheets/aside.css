@@ -1,9 +1,10 @@
 .aside-wrapper {
-  margin: 10px;
-  max-width: 10px;
+  margin: 100px 0 0 500px;
+  max-width: 100px;
   min-height: 100px;
 }
 aside {
+  margin: 100px 0 0 0;
   position: absolute;
   top: 125px;
   color: #20CCD5;
@@ -18,11 +19,20 @@ aside {
   /*border-radius: 2px;*/
   box-shadow: 1px 1px 2px #bfbfbf;
 }
-#info {
+#nav-info {
   pointer-events: none;
   z-index: 100;
   position: absolute;
-  padding: 4px 0 0 50px;
+  padding: 28px 0 0 40px;
+  color: #333333;
+  font-size: 18px;
+  font-weight: bolder;
+}
+#aside-info {
+  pointer-events: none;
+  z-index: 100;
+  position: absolute;
+  padding: 88px 0 0 40px;
   color: #333333;
   font-size: 18px;
   font-weight: bolder;

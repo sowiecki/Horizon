@@ -19,7 +19,6 @@ div#search {
 }
 #search-buttons {
   display: inline;
-  padding: 0 0 0 50px;
   height: 100px;
   width: 0;
 }
