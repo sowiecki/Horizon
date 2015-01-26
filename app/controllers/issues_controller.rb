@@ -1,68 +1,21 @@
 class IssuesController < ApplicationController
 
+
   def index
 
-  end
-
-  def show
-
-    p ""
-    p ""
-    p ""
-
-    p "LGBT Rights"
-
-    temp_usernames = ["TheAdvocateMag", "gaycivilrights", 'LGBT','glaad','TPEquality','ACLULGBT','NOH8Campaign','PhilaGayNews', 'Queerty', 'nlgja']
+# Politics
 
 
+temp_usernames =
+%w(lessig
+markknoller
+nhrebellion
+WolfPAChq
+tnr
+unPAC
+KarlRove)
 
 
-    temp_usernames.each do |temp_username|
-
-       twitter_object = client.user(temp_username)
-
-    @user_create_string = "User.create({provider: 'twitter', uid: '" + twitter_object.id.to_s + "', username: '" + temp_username + "', twitter: 'https://twitter.com/" + temp_username + "', avatar: '" + twitter_object.profile_image_url + "', name: '" + twitter_object.name + "', bio: '" + twitter_object.description + "'})"
-
-    p @user_create_string
-  end
-
-    p ""
-    p ""
-    p ""
-
-    p "Police Militarization"
-
-    temp_usernames = ["CopWatch",'thisstopstoday','privacysos','IPS_DC','MikeRiggs', '
-michael_urbina', 'lesleybikes' ]
-
-
-
-    temp_usernames.each do |temp_username|
-
-       twitter_object = client.user(temp_username)
-
-    @user_create_string = "User.create({provider: 'twitter', uid: '" + twitter_object.id.to_s + "', username: '" + temp_username + "', twitter: 'https://twitter.com/" + temp_username + "', avatar: '" + twitter_object.profile_image_url + "', name: '" + twitter_object.name + "', bio: '" + twitter_object.description + "'})"
-
-    p @user_create_string
-  end
-
-    p ""
-    p ""
-    p ""
-
-    p "Civil Rights"
-
-
-    temp_usernames = %w(deray
-tanehisicoates
-ShaunKing
-LatoyaPeterson
-MikeRugnetta
-civilrightsorg
-hrw
-HRC
-amnesty
-Blklivesmatter)
 
     temp_usernames.each do |temp_username|
 
