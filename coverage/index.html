@@ -14,27 +14,27 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-01-25T20:04:51-06:00">2015-01-25T20:04:51-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-01-26T08:04:21-06:00">2015-01-26T08:04:21-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">73.4%</span></span>
+    (<span class="covered_percent"><span class="red">73.02%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.85
+         0.84
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>27</b> files in total.
-    <b>188</b> relevant lines. 
+    <b>189</b> relevant lines. 
     <span class="green"><b>138</b> lines covered</span> and
-    <span class="red"><b>50</b> lines missed </span>
+    <span class="red"><b>51</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -92,11 +92,11 @@
       
       <tr>
         <td class="strong"><a href="#fead5daba63b3aaf4873a5d713c00ecf2fa50fab" class="src_link" title="app/helpers/application_helper.rb">app/helpers/application_helper.rb</a></td>
-        <td class="red strong">28.13 %</td>
-        <td>95</td>
-        <td>32</td>
+        <td class="red strong">27.27 %</td>
+        <td>103</td>
+        <td>33</td>
         <td>9</td>
-        <td>23</td>
+        <td>24</td>
         <td>0.3</td>
       </tr>
       
@@ -819,11 +819,11 @@
         <div class="source_table" id="fead5daba63b3aaf4873a5d713c00ecf2fa50fab">
   <div class="header">
     <h3>app/helpers/application_helper.rb</h3>
-    <h4><span class="red">28.13 %</span> covered</h4>
+    <h4><span class="red">27.27 %</span> covered</h4>
     <div>
-      <b>32</b> relevant lines. 
+      <b>33</b> relevant lines. 
       <span class="green"><b>9</b> lines covered</span> and
-      <span class="red"><b>23</b> lines missed.</span>
+      <span class="red"><b>24</b> lines missed.</span>
     </div>
   </div>
   
@@ -1175,226 +1175,274 @@
         <li class="missed" data-hits="0" data-linenumber="58">
           
           
-          <code class="ruby">    case node[&#39;_classname&#39;]</code>
+          <code class="ruby">    if Category.find_by(name: node[&#39;name&#39;])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="59">
+        <li class="missed" data-hits="0" data-linenumber="59">
           
           
-          <code class="ruby">    when &#39;Category&#39;</code>
+          <code class="ruby">      string = &quot;&lt;h3&gt;#{node[&#39;name&#39;]}&lt;/h3&gt;&lt;p&gt;#{node[&#39;description&#39;]}&lt;/p&gt;&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="60">
+        <li class="never" data-hits="" data-linenumber="60">
           
           
-          <code class="ruby">      &quot;&lt;h3&gt;#{node[&#39;name&#39;]}&lt;/h3&gt;&lt;p&gt;#{node[&#39;description&#39;]}&lt;/p&gt;&quot;</code>
+          <code class="ruby">    elsif Issue.find_by(name: node[&#39;name&#39;])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="61">
+        <li class="missed" data-hits="0" data-linenumber="61">
           
           
-          <code class="ruby">    when &#39;Issue&#39;</code>
+          <code class="ruby">      string = &quot;&lt;h3&gt;#{node[&#39;name&#39;]}&lt;/h3&gt;&lt;p&gt;#{node[&#39;description&#39;]}&lt;/p&gt;&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="62">
+        <li class="never" data-hits="" data-linenumber="62">
           
           
-          <code class="ruby">      &quot;&lt;h3&gt;#{node[&#39;name&#39;]}&lt;/h3&gt;&lt;p&gt;#{node[&#39;description&#39;]}&lt;/p&gt;&quot;</code>
+          <code class="ruby">    elsif User.find_by(name: node[&#39;name&#39;])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="63">
+        <li class="missed" data-hits="0" data-linenumber="63">
           
           
-          <code class="ruby">    when &#39;User&#39;</code>
+          <code class="ruby">      string = &quot;&lt;img class=&#39;aside-user-avatar&#39; src=&#39;#{node[&#39;avatar&#39;]}&#39; /&gt;&lt;a target=&#39;_blank&#39; class=&#39;aside-text&#39; href=&#39;#{node[&#39;twitter&#39;]}&#39;&gt;&lt;h3&gt;#{node[&#39;name&#39;]}&lt;/h3&gt;&lt;/a&gt;&lt;p&gt;&lt;b&gt;Description:&lt;/b&gt; #{node[&#39;bio&#39;]}#{node[&#39;description&#39;]}&lt;/p&gt;&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="64">
-          
-          
-          <code class="ruby">      &quot;&lt;img class=&#39;aside-user-avatar&#39; src=&#39;#{node[&#39;avatar&#39;]}&#39; /&gt;&lt;a target=&#39;_blank&#39; class=&#39;aside-text&#39; href=&#39;#{node[&#39;twitter&#39;]}&#39;&gt;&lt;h3&gt;#{node[&#39;name&#39;]}&lt;/h3&gt;&lt;/a&gt;&lt;p&gt;&lt;b&gt;Description:&lt;/b&gt; #{node[&#39;bio&#39;]}#{node[&#39;description&#39;]}&lt;/p&gt;&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="65">
+        <li class="never" data-hits="" data-linenumber="64">
           
           
           <code class="ruby">    end</code>
         </li>
       
+        <li class="missed" data-hits="0" data-linenumber="65">
+          
+          
+          <code class="ruby">    &quot;&lt;div id=&#39;aside-filler&#39;&gt;#{string}&lt;/div&gt;&quot;</code>
+        </li>
+      
         <li class="never" data-hits="" data-linenumber="66">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    # case node[&#39;_classname&#39;]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="67">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    # when &#39;Category&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="68">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="68">
           
-          <code class="ruby">  def get_properties(node)</code>
+          
+          <code class="ruby">    #   &quot;&lt;h3&gt;#{node[&#39;name&#39;]}&lt;/h3&gt;&lt;p&gt;#{node[&#39;description&#39;]}&lt;/p&gt;&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="69">
           
           
-          <code class="ruby">    # [&quot;&lt;div class=&#39;aside-box&#39;&gt;&quot;,</code>
+          <code class="ruby">    # when &#39;Issue&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="70">
           
           
-          <code class="ruby">    # &quot;&lt;img class=&#39;aside-user-avatar&#39; src=&#39;#{node[&#39;avatar&#39;]}&#39; /&gt;&quot;,</code>
+          <code class="ruby">    #   &quot;&lt;h3&gt;#{node[&#39;name&#39;]}&lt;/h3&gt;&lt;p&gt;#{node[&#39;description&#39;]}&lt;/p&gt;&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="71">
           
           
-          <code class="ruby">    # &quot;&quot;,</code>
+          <code class="ruby">    # when &#39;User&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="72">
           
           
-          <code class="ruby">    # &quot;&lt;p&gt;#{node[&#39;bio&#39;]}&lt;/p&gt;&quot;,</code>
+          <code class="ruby">    #   &quot;&lt;img class=&#39;aside-user-avatar&#39; src=&#39;#{node[&#39;avatar&#39;]}&#39; /&gt;&lt;a target=&#39;_blank&#39; class=&#39;aside-text&#39; href=&#39;#{node[&#39;twitter&#39;]}&#39;&gt;&lt;h3&gt;#{node[&#39;name&#39;]}&lt;/h3&gt;&lt;/a&gt;&lt;p&gt;&lt;b&gt;Description:&lt;/b&gt; #{node[&#39;bio&#39;]}#{node[&#39;description&#39;]}&lt;/p&gt;&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="73">
           
           
-          <code class="ruby">    # &quot;&lt;/div&gt;&quot;].join</code>
+          <code class="ruby">    # end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="74">
           
           
-          <code class="ruby">    # properties = &quot;&lt;div class=&#39;aside-box&#39;&gt;&quot;</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="75">
           
           
-          <code class="ruby">    # node.each_pair do |key, value|</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="76">
+        <li class="covered" data-hits="1" data-linenumber="76">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    #   case key</code>
+          <code class="ruby">  def get_properties(node)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="77">
           
           
-          <code class="ruby">    #   # when &#39;title&#39;</code>
+          <code class="ruby">    # [&quot;&lt;div class=&#39;aside-box&#39;&gt;&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="78">
           
           
-          <code class="ruby">    #   #   properties &lt;&lt; &quot;&lt;h3&gt;&lt;b&gt;#{key}:&lt;/b&gt; #{value}&lt;/h3&gt;&quot;</code>
+          <code class="ruby">    # &quot;&lt;img class=&#39;aside-user-avatar&#39; src=&#39;#{node[&#39;avatar&#39;]}&#39; /&gt;&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="79">
           
           
-          <code class="ruby">    #   when &#39;avatar&#39;</code>
+          <code class="ruby">    # &quot;&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="80">
           
           
-          <code class="ruby">    #     hash[:avatar] = value</code>
+          <code class="ruby">    # &quot;&lt;p&gt;#{node[&#39;bio&#39;]}&lt;/p&gt;&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="81">
           
           
-          <code class="ruby">    #     properties &lt;&lt; &quot;&lt;p&gt;&lt;img class=&#39;current-user-avatar&#39; src=&#39;#{value}&#39;&gt;&lt;/p&gt;&quot;</code>
+          <code class="ruby">    # &quot;&lt;/div&gt;&quot;].join</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="82">
           
           
-          <code class="ruby">    #   when &#39;name&#39;</code>
+          <code class="ruby">    # properties = &quot;&lt;div class=&#39;aside-box&#39;&gt;&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="83">
           
           
-          <code class="ruby">    #     properties &lt;&lt; &quot;&lt;h3&gt;#{value}&lt;/h3&gt;&quot;</code>
+          <code class="ruby">    # node.each_pair do |key, value|</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="84">
           
           
-          <code class="ruby">    #   when &#39;username&#39;</code>
+          <code class="ruby">    #   case key</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="85">
           
           
-          <code class="ruby">    #     properties &lt;&lt; &quot;&lt;p&gt;&lt;b&gt;Twitter:&lt;/b&gt; &lt;a href=&#39;https://twitter.com/#{value}&#39; target=&#39;_blank&#39; class=&#39;aside-text&#39;&gt;#{value}&lt;/a&gt;&lt;/p&gt;&quot;</code>
+          <code class="ruby">    #   # when &#39;title&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="86">
           
           
-          <code class="ruby">    #   when &#39;description&#39;</code>
+          <code class="ruby">    #   #   properties &lt;&lt; &quot;&lt;h3&gt;&lt;b&gt;#{key}:&lt;/b&gt; #{value}&lt;/h3&gt;&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="87">
           
           
-          <code class="ruby">    #     properties &lt;&lt; &quot;&lt;p&gt;&lt;b&gt;Description:&lt;/b&gt; #{value}&quot;</code>
+          <code class="ruby">    #   when &#39;avatar&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="88">
           
           
-          <code class="ruby">    #   else</code>
+          <code class="ruby">    #     hash[:avatar] = value</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="89">
           
           
-          <code class="ruby">    #     properties &lt;&lt; &quot;&lt;p&gt;&lt;b&gt;#{key}:&lt;/b&gt; #{value}&lt;/p&gt;&quot;</code>
+          <code class="ruby">    #     properties &lt;&lt; &quot;&lt;p&gt;&lt;img class=&#39;current-user-avatar&#39; src=&#39;#{value}&#39;&gt;&lt;/p&gt;&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="90">
           
           
-          <code class="ruby">    #   end</code>
+          <code class="ruby">    #   when &#39;name&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="91">
           
           
-          <code class="ruby">    # end</code>
+          <code class="ruby">    #     properties &lt;&lt; &quot;&lt;h3&gt;#{value}&lt;/h3&gt;&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="92">
           
           
-          <code class="ruby">    # properties + &quot;&lt;/div&gt;&quot;</code>
+          <code class="ruby">    #   when &#39;username&#39;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="93">
+        <li class="never" data-hits="" data-linenumber="93">
           
           
-          <code class="ruby">    &quot;&lt;img class=&#39;aside-user-avatar&#39; src=&#39;#{me[&#39;avatar&#39;]}&#39; /&gt;&lt;h3&gt;#{me[&#39;name&#39;]}&lt;/h3&gt;&lt;p&gt;#{me[&#39;bio&#39;]}&quot;</code>
+          <code class="ruby">    #     properties &lt;&lt; &quot;&lt;p&gt;&lt;b&gt;Twitter:&lt;/b&gt; &lt;a href=&#39;https://twitter.com/#{value}&#39; target=&#39;_blank&#39; class=&#39;aside-text&#39;&gt;#{value}&lt;/a&gt;&lt;/p&gt;&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="94">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    #   when &#39;description&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="95">
+          
+          
+          <code class="ruby">    #     properties &lt;&lt; &quot;&lt;p&gt;&lt;b&gt;Description:&lt;/b&gt; #{value}&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="96">
+          
+          
+          <code class="ruby">    #   else</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="97">
+          
+          
+          <code class="ruby">    #     properties &lt;&lt; &quot;&lt;p&gt;&lt;b&gt;#{key}:&lt;/b&gt; #{value}&lt;/p&gt;&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="98">
+          
+          
+          <code class="ruby">    #   end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="99">
+          
+          
+          <code class="ruby">    # end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="100">
+          
+          
+          <code class="ruby">    # properties + &quot;&lt;/div&gt;&quot;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="101">
+          
+          
+          <code class="ruby">    &quot;&lt;img class=&#39;aside-user-avatar&#39; src=&#39;#{me[&#39;avatar&#39;]}&#39; /&gt;&lt;h3&gt;#{me[&#39;name&#39;]}&lt;/h3&gt;&lt;p&gt;#{me[&#39;bio&#39;]}&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="102">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="103">
           
           
           <code class="ruby">end</code>
