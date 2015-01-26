@@ -1,52 +1,21 @@
 class IssuesController < ApplicationController
 
+
   def index
 
-  end
+# Politics
 
-  def show
 
-    p ""
-    p ""
-    p ""
+temp_usernames =
+%w(lessig
+markknoller
+nhrebellion
+WolfPAChq
+tnr
+unPAC
+KarlRove)
 
-    p "HEALTHCARE"
 
-    temp_usernames = ["atriushealth","andrewspong","PublicHealth","atul_gawande","hc_thejournal","sacjai","cmichaelgibson","healthblawg","drsanjaygupta","kevinmd"]
-
-    temp_usernames.each do |temp_username|
-
-       twitter_object = client.user(temp_username)
-
-    @user_create_string = "User.create({provider: 'twitter', uid: '" + twitter_object.id.to_s + "', username: '" + temp_username + "', twitter: 'https://twitter.com/" + temp_username + "', avatar: '" + twitter_object.profile_image_url + "', name: '" + twitter_object.name + "', bio: '" + twitter_object.description + "'})"
-
-    p @user_create_string
-  end
-
-    p ""
-    p ""
-    p ""
-
-    p "VACCINATIONS"
-
-    temp_usernames = ["atul_gawande","kevinmd","thelancet","orinlevine","vaccinestoday","anniedotson","drsanjaygupta","hc_thejournal","onecampaign","thelancet"]
-
-    temp_usernames.each do |temp_username|
-
-       twitter_object = client.user(temp_username)
-
-    @user_create_string = "User.create({provider: 'twitter', uid: '" + twitter_object.id.to_s + "', username: '" + temp_username + "', twitter: 'https://twitter.com/" + temp_username + "', avatar: '" + twitter_object.profile_image_url + "', name: '" + twitter_object.name + "', bio: '" + twitter_object.description + "'})"
-
-    p @user_create_string
-  end
-
-    p ""
-    p ""
-    p ""
-
-    p "OBESITY"
-
-    temp_usernames = ["bigzigfitness","obesitysociety","kidseatright","ywmoac","thelancet","drsharma","fatboythinman","momamiatx","fat_rejection","obesityblog"]
 
     temp_usernames.each do |temp_username|
 

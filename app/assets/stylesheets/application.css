@@ -24,6 +24,7 @@ html {
   background-repeat: no-repeat;
   background-size: 150%;
   overflow-y: scroll;
+  min-height: 100%;
  }
 body {
   margin: 0;
@@ -116,6 +117,12 @@ a.nav-text-welcome:hover {
   border: 3px solid #35D7E0;
   border-radius: 6px;
 }
+.aside-user-avatar {
+  float: right;
+  display: block;
+  border: 3px solid #FF8351;
+  border-radius: 6px;
+}
 
 .welcome-wrapper {
   /*position: absolute;*/
@@ -125,27 +132,26 @@ a.nav-text-welcome:hover {
   color: #7c7c7c;
 }
 
-.aside_wrapper {
-  float: right;
-  clear: none;
+.aside-wrapper {
   margin: 0 auto auto;
-  max-width: 900px;
+  right: 100px;
+  left: 0;
+  max-width: 10px;
   height: 100px;
 }
 aside {
   position: absolute;
-  float: right;
   margin: 0 auto auto;
   top: 85px;
-  right: 2px;
   color: #20CCD5;
+  max-width: 300px;
   max-height: 30px;
 }
-.aside-box {
+#explanation {
   padding: 6px;
+  max-width: 900px;
   background-color:rgba(239, 233, 244, 0.75);
-  border: 6px solid rgba(32, 204, 213, 0.75);
-  border-radius: 4px;
+  border: 2px solid rgba(32, 204, 213, 0.75);
   box-shadow: 1px 1px 2px #bfbfbf;
 }
 a.aside-text {
@@ -158,6 +164,10 @@ h2 {
   margin: 2px;
   text-transform: uppercase;
   color: #3A3042;
+}
+h3 {
+  margin: 2px;
+  padding: 2px;
 }
 p {
   margin: 2px;

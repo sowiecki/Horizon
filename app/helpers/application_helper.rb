@@ -4,7 +4,11 @@ module ApplicationHelper
   end
 
   def neo_id_for(string)
-    Category.find_by(title: string).neo_id
+    Category.find_by(name: string).neo_id
+  end
+
+  def neo_id_for(model, string)
+    model.find_by(name: string).neo_id
   end
 
   def hashify(results)
@@ -12,7 +16,8 @@ module ApplicationHelper
   end
 
   def node
-    cypher = "START me=node(#{params[:id]})
+    id = params[:id] || current_user.neo_id
+    cypher = "START me=node(#{id})
               OPTIONAL MATCH me -[r]- related
               RETURN me, r, related"
 
@@ -30,9 +35,10 @@ module ApplicationHelper
     relationships = [{"name" => "No Relationships","values" => [{"id" => "#{params[:id]}","name" => "No Relationships "}]}] if relationships.empty?
 
     {
-      details_html: "<h2>#{me["username"]}</h2>\n<p class='summary'>\n#{get_properties(me)}</p>\n",
+      # details_html: "<h2>#{me["username"]}</h2>\n<p class='summary'>\n#{get_properties(me)}</p>\n",
+      details_html: "#{aside_content(me)}",
       data: {
-        attributes: relationships, name: me["username"], id: params[:id]
+        attributes: relationships, name: me["name"], id: params[:id]
       }
     }
   end
@@ -48,20 +54,42 @@ module ApplicationHelper
     end
   end
 
-  def get_properties(node)
-    properties = "<div class='aside-box'>"
-    node.each_pair do |key, value|
-      case key
-      when 'title'
-        properties << "<h3><b>#{key}:</b> #{value}</h3>"
-      when 'avatar_url'
-        properties << "<p><img src='#{value}'></p>"
-      when 'username'
-        properties << "<p><b>#{key}:</b> <a class='aside-text' href='https://twitter.com/#{value}' target='_blank'>#{value}</a></p>"
-      else
-        properties << "<p><b>#{key}:</b> #{value}</p>"
-      end
+  def aside_content(node)
+    case node['_classname']
+    when 'Category'
+      "<h3>#{node['name']}</h3><p>#{node['description']}</p>"
+    when 'Issue'
+      "<h3>#{node['name']}</h3><p>#{node['description']}</p>"
+    when 'User'
+      "<img class='aside-user-avatar' src='#{node['avatar']}' /><a target='_blank' class='aside-text' href='#{node['twitter']}'><h3>#{node['name']}</h3></a><p><b>Description:</b> #{node['bio']}#{node['description']}</p>"
     end
-    properties + "</div>"
+  end
+
+  def get_properties(node)
+    # ["<div class='aside-box'>",
+    # "<img class='aside-user-avatar' src='#{node['avatar']}' />",
+    # "",
+    # "<p>#{node['bio']}</p>",
+    # "</div>"].join
+    # properties = "<div class='aside-box'>"
+    # node.each_pair do |key, value|
+    #   case key
+    #   # when 'title'
+    #   #   properties << "<h3><b>#{key}:</b> #{value}</h3>"
+    #   when 'avatar'
+    #     hash[:avatar] = value
+    #     properties << "<p><img class='current-user-avatar' src='#{value}'></p>"
+    #   when 'name'
+    #     properties << "<h3>#{value}</h3>"
+    #   when 'username'
+    #     properties << "<p><b>Twitter:</b> <a href='https://twitter.com/#{value}' target='_blank' class='aside-text'>#{value}</a></p>"
+    #   when 'description'
+    #     properties << "<p><b>Description:</b> #{value}"
+    #   else
+    #     properties << "<p><b>#{key}:</b> #{value}</p>"
+    #   end
+    # end
+    # properties + "</div>"
+    "<img class='aside-user-avatar' src='#{me['avatar']}' /><h3>#{me['name']}</h3><p>#{me['bio']}"
   end
 end
