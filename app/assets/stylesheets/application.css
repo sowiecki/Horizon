@@ -190,6 +190,12 @@ a.twitter-auth-button:hover {
   background-size: 22px 19px, auto auto;
 }
 
+.instruct {
+  padding: 0 0 0 220px;
+  font-size: 10px;
+  color: #7f7f7f;
+}
+
 footer {
   position: absolute;
   padding: 4px;

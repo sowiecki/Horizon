@@ -91,8 +91,8 @@ module ApplicationHelper
     elsif Issue.find_by(name: node['name'])
       string = "<h3>#{node['name']}</h3><p>#{node['description']}</p>"
     elsif User.find_by(name: node['name'])
-      string = "<a target='_blank' class='aside-text' href='#{node['twitter']}'><img class='aside-user-avatar' src='#{node['avatar']}' /><h3>#{node['name']}</h3></a><p><b>Description:</b> #{node['bio']}#{node['description']}</p>"
+      string = "<a target='_blank' class='aside-text' href='#{node['twitter']}'><img class='aside-user-avatar' src='#{node['avatar']}' /><h3><img src='http://platform.twitter.com/images/bird.png' /> #{node['name']}</h3></a><p><b>Description:</b> #{node['bio']}#{node['description']}</p>"
     end
-    "<div id='aside-filler'>#{string}</div>"
+    "<div id='aside-filler'>#{string}<span class='instruct'>(Drag me)</span></div>"
   end
 end

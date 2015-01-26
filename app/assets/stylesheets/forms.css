@@ -81,6 +81,7 @@ div#search {
 }
 .help-button {
   position: absolute;
+  margin: 1px 0 0 5px; /* Keeps help button inline */
   width: 60px;
   text-align: center;
   background: #FEC885;

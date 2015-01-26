@@ -1,4 +1,8 @@
 <div class='welcome-wrapper'>
   <h2>Welcome to Horizon</h2>
-  <p>Sign in to break past your filter bubble.</p>
+  <h4>Sign in to break past your filter bubble.</h4>
+  <div class='nav-button-twitter-login'>
+    <%= link_to "Sign in with Twitter", "/auth/twitter", class: 'twitter-auth-button' %>
+    <!-- Use /auth/twitter?force_login=true to force login upon redirect -->
+  </div>
 </div>
