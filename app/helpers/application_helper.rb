@@ -3,6 +3,10 @@ module ApplicationHelper
     @neo = Neography::Rest.new(ENV["GRAPHENEDB_URL"] || "http://localhost:7474")
   end
 
+  def neo_id_for(string)
+    Category.find_by(name: string).neo_id
+  end
+
   def neo_id_for(model, string)
     model.find_by(name: string).neo_id
   end
