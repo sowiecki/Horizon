@@ -22,7 +22,7 @@ section#search-buttons {
 }
 .category-button, .toggle-button {
   margin: 2px;
-  width: 180px;
+  width: 200px;
   text-align: left;
   text-transform: uppercase;
   outline: none;
@@ -43,7 +43,7 @@ section#search-buttons {
   box-shadow: 1px 1px 2px #bfbfbf;
 }
 .category-button:hover, .toggle-button:hover {
-  width: 190px;
+  width: 200px;
   background-color: #45484d;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#45484d), to(#000000));
   background-image: -webkit-linear-gradient(top, #45484d, #000000);
