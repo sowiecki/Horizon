@@ -55,14 +55,22 @@ module ApplicationHelper
   end
 
   def aside_content(node)
-    case node['_classname']
-    when 'Category'
-      "<h3>#{node['name']}</h3><p>#{node['description']}</p>"
-    when 'Issue'
-      "<h3>#{node['name']}</h3><p>#{node['description']}</p>"
-    when 'User'
-      "<img class='aside-user-avatar' src='#{node['avatar']}' /><a target='_blank' class='aside-text' href='#{node['twitter']}'><h3>#{node['name']}</h3></a><p><b>Description:</b> #{node['bio']}#{node['description']}</p>"
+    if Category.find_by(name: node['name'])
+      string = "<h3>#{node['name']}</h3><p>#{node['description']}</p>"
+    elsif Issue.find_by(name: node['name'])
+      string = "<h3>#{node['name']}</h3><p>#{node['description']}</p>"
+    elsif User.find_by(name: node['name'])
+      string = "<img class='aside-user-avatar' src='#{node['avatar']}' /><a target='_blank' class='aside-text' href='#{node['twitter']}'><h3>#{node['name']}</h3></a><p><b>Description:</b> #{node['bio']}#{node['description']}</p>"
     end
+    "<div id='aside-filler'>#{string}</div>"
+    # case node['_classname']
+    # when 'Category'
+    #   "<h3>#{node['name']}</h3><p>#{node['description']}</p>"
+    # when 'Issue'
+    #   "<h3>#{node['name']}</h3><p>#{node['description']}</p>"
+    # when 'User'
+    #   "<img class='aside-user-avatar' src='#{node['avatar']}' /><a target='_blank' class='aside-text' href='#{node['twitter']}'><h3>#{node['name']}</h3></a><p><b>Description:</b> #{node['bio']}#{node['description']}</p>"
+    # end
   end
 
   def get_properties(node)

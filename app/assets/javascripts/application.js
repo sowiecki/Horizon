@@ -13,11 +13,11 @@
 //= require jquery
 //= require jquery-ui
 //= require jquery_ujs
-//= processing.min
+//= require processing.min
 //= require_tree .
 
 $(function() {
-  // $('aside').draggable();
+  $('aside').draggable();
 
   $('#toggle-category-list').on('click', function (e) {
     e.preventDefault();

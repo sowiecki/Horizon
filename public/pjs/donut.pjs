@@ -186,7 +186,7 @@ public class DonutSegment {
        curContext.font = "20px GraublauWeb";
        curContext.fillText("Relationships", donut.x, donut.y+40);
 
-      curContext.font = "20px GraublauWeb"; // Control Donut font
+      curContext.font = "20px GraublauWeb";
       curContext.fillText(this.subject.getName(), donut.x, donut.y-25, 120);
 
       noStroke();
