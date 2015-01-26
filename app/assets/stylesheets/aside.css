@@ -19,7 +19,8 @@ aside {
   /*border-radius: 2px;*/
   box-shadow: 1px 1px 2px #bfbfbf;
 }
-#nav-info {
+#nav-info, #aside-info {
+  display: none;
   pointer-events: none;
   z-index: 100;
   position: absolute;
@@ -28,14 +29,11 @@ aside {
   font-size: 18px;
   font-weight: bolder;
 }
+#nav-info {
+  padding: 28px 0 0 40px;
+}
 #aside-info {
-  pointer-events: none;
-  z-index: 100;
-  position: absolute;
   padding: 88px 0 0 40px;
-  color: #333333;
-  font-size: 18px;
-  font-weight: bolder;
 }
 a.aside-text {
   color: #ff6238;

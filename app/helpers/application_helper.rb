@@ -1,4 +1,4 @@
-  module ApplicationHelper
+module ApplicationHelper
 
   def extract_relevant_tweets(uid, keywords=[])
       tweet_texts = get_text_from_tweets(uid)

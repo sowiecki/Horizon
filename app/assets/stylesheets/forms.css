@@ -22,8 +22,8 @@ div#search {
   height: 100px;
   width: 0;
 }
-.category-button, .toggle-button {
-  margin: 2px;
+.category-button, .toggle-button, .help-button {
+  margin: 1px;
   width: 160;
   text-align: left;
   text-transform: uppercase;
@@ -32,7 +32,7 @@ div#search {
   font-size: 12px;
   font-family: arial, helvetica, sans-serif;
   font-weight: bold;
-  padding: 4px 6px 4px 6px;
+  padding: 4px 8px 4px 8px;
   text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
   color: #FFFFFF;
   border: 1px solid white;
@@ -72,6 +72,25 @@ div#search {
   background-image: linear-gradient(to bottom, #FFA167, #FE5732);
 }
 .toggle-button:hover {
+  background: #FF7C4B;
+  background-image: -webkit-linear-gradient(top, #FF7C4B, #ff2a00);
+  background-image: -moz-linear-gradient(top, #FF7C4B, #ff2a00);
+  background-image: -ms-linear-gradient(top, #FF7C4B, #ff2a00);
+  background-image: -o-linear-gradient(top, #FF7C4B, #ff2a00);
+  background-image: linear-gradient(to bottom, #FF7C4B, #ff2a00);
+}
+.help-button {
+  position: absolute;
+  width: 60px;
+  text-align: center;
+  background: #FEC885;
+  background-image: -webkit-linear-gradient(top, #FFA167, #FE5732);
+  background-image: -moz-linear-gradient(top, #FFA167, #FE5732);
+  background-image: -ms-linear-gradient(top, #FFA167, #FE5732);
+  background-image: -o-linear-gradient(top, #FFA167, #FE5732);
+  background-image: linear-gradient(to bottom, #FFA167, #FE5732);
+}
+.help-button:hover {
   background: #FF7C4B;
   background-image: -webkit-linear-gradient(top, #FF7C4B, #ff2a00);
   background-image: -moz-linear-gradient(top, #FF7C4B, #ff2a00);

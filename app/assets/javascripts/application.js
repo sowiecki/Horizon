@@ -15,15 +15,16 @@
 //= require jquery_ujs
 //= require processing.min
 //= require_tree .
-function hideHelp() {
-  $('#nav-info').fadeOut(500)
-  $('#aside-info').fadeOut(500)
-}
 $(function() {
-  var keyword = window.location.hash.replace("#","")
-  if (keyword=='nohelp') { hideHelp() }
+  // var keyword = window.location.hash.replace("#","")
+  console.log($('#first-login').length)
+  if ($('#first-login').length) {
+    $('#nav-info').show()
+    $('#aside-info').show()
+  }
   $('html').on('click', function() {
-    hideHelp()
+    $('#nav-info').fadeOut(500)
+    $('#aside-info').fadeOut(500)
   })
   // $('#search-buttons').hide();
   $('aside').draggable();
@@ -35,6 +36,20 @@ $(function() {
       $('#search-buttons').toggle("fold", 25);
     } else {
       $('#search-buttons').toggle("fold", 25);
+    }
+    $(this).data('opened', !opened);
+  })
+
+  $('#help-toggle').on('click', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    var opened = $(this).data('opened');
+    if (opened) {
+      $('#nav-info').fadeOut();
+      $('#aside-info').fadeOut();
+    } else {
+      $('#nav-info').fadeIn();
+      $('#aside-info').fadeIn();
     }
     $(this).data('opened', !opened);
   })
