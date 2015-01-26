@@ -91,7 +91,7 @@
     elsif Issue.find_by(name: node['name'])
       string = "<h3>#{node['name']}</h3><p>#{node['description']}</p>"
     elsif User.find_by(name: node['name'])
-      string = "<img class='aside-user-avatar' src='#{node['avatar']}' /><a target='_blank' class='aside-text' href='#{node['twitter']}'><h3>#{node['name']}</h3></a><p><b>Description:</b> #{node['bio']}#{node['description']}</p>"
+      string = "<a target='_blank' class='aside-text' href='#{node['twitter']}'><img class='aside-user-avatar' src='#{node['avatar']}' /><h3>#{node['name']}</h3></a><p><b>Description:</b> #{node['bio']}#{node['description']}</p>"
     end
     "<div id='aside-filler'>#{string}</div>"
   end

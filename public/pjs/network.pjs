@@ -3,18 +3,18 @@ import( '/pjs/util.lib' );
 
 color[] colors = new color[12];
 
-colors[0] = #20CCD5;
+colors[0] = #24cfd5; // Category node color
 colors[1] = #FF784F;
-colors[2] = #ff9400;
-colors[3] = #e5b572;
-colors[4] = #9771e2;
-colors[5] = #f25b29;
-colors[6] = #ff4c4c;
-colors[7] = #23d399;
-colors[8] = #ff884c;
-colors[9] = #ff4cc3;
-colors[10] = #ed9e00;
-colors[11] = #24CFD5;
+colors[2] = #ffaa00; // Issue node color
+colors[3] = #FF6238; // User node color
+colors[4] = #24cfd5;
+colors[5] = #9eb72d;
+colors[6] = #1a33e0;
+colors[7] = #ff0000;
+colors[8] = #ff0000;
+colors[9] = #ff0000;
+colors[10] = #ff0000;
+colors[11] = #ff0000;
 
 color LABEL_COLOR = #4c9699;
 color HIGHLIGHTED_LABEL_COLOR = #5070a0;

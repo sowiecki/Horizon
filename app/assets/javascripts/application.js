@@ -15,17 +15,20 @@
 //= require jquery_ujs
 //= require processing.min
 //= require_tree .
-
 $(function() {
+  $('html').on('click', function() {
+    $('#info').fadeOut(500)
+  })
+  $('#search-buttons').hide();
   $('aside').draggable();
 
   $('#toggle-category-list').on('click', function (e) {
     e.preventDefault();
     var opened = $(this).data('opened');
     if (opened) {
-      $('#search-buttons').slideUp();
+      $('#search-buttons').toggle("fold", 25);
     } else {
-      $('#search-buttons').slideDown();
+      $('#search-buttons').toggle("fold", 25);
     }
     $(this).data('opened', !opened);
   })

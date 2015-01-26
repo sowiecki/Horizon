@@ -1,5 +1,5 @@
 float EPSILON = TWO_PI/100; // tolerance for applying angleAdjustment
-
+var counter = 0
 public class DonutSlice {
   Object subject;
 
@@ -337,7 +337,19 @@ public class Donut {
   }
 
   public void addSegment(DonutSegment s) {
-    s.col = colors[colorCount%11]; // assign a color
+    if (counter==0) {
+      s.col = colors[0];
+      counter += 1;
+    } else if (counter==1) {
+     s.col = colors[1];
+     counter += 1;
+    } else if (counter==2) {
+     s.col = colors[2];
+     counter += 1;
+    } else if (counter==3) {
+     s.col = colors[3];
+     counter += 1;
+    }
     if (colorCount==0)
       setSelectedSlice(s.slices[0]);
     segments.add(s);
