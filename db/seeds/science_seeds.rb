@@ -7,10 +7,10 @@
 # user.bio = auth["info"]["description"]
 
 # CREATE THIS CATEGORY ('Science')
-category = Category.create({title:"Science", description: "Major issues concerning science, the environment, and space."})
+category = Category.create({name:"Science", description: "Major issues concerning science, the environment, and space."})
 
 # CREATE THE ISSUE 'Global Warming' AND PUT IT UNDER THIS CATEGORY
-issue = Issue.create({title: "Global Warming", description: ""})
+issue = Issue.create({name: "Global Warming", description: ""})
 category.issues << issue
 
 # CREATE THE EXPERTS THAT BELONG UNDER THE 'Global Warming' ISSUE
@@ -29,9 +29,6 @@ issue.experts << expert
 expert = User.create({provider: 'twitter', uid: '14647570', username: 'sciam', twitter: 'https://twitter.com/sciam', avatar: 'http://pbs.twimg.com/profile_images/344513261578131564/b10c9510902473620c17c10b827f8a4f_normal.png', name: 'Scientific American', bio: 'Founded in 1845, Scientific American is the authoritative source for the science discoveries and technology innovations that matter.'})
 issue.experts << expert
 
-expert = User.create({provider: 'twitter', uid: '1117341', username: 'globalwarming', twitter: 'https://twitter.com/globalwarming', avatar: 'http://pbs.twimg.com/profile_images/1162061553/global_warming_100x100_normal.jpg', name: 'Global Warming', bio: 'Global warming, climate change and environment news from Outdoors Blog.'})
-issue.experts << expert
-
 expert = User.create({provider: 'twitter', uid: '20562703', username: 'greensheet', twitter: 'https://twitter.com/greensheet', avatar: 'http://pbs.twimg.com/profile_images/88874364/greensht_normal.jpg', name: 'Green Sheet', bio: 'The latest news and analysis of the business of the &quot;green&quot; industry: Wind, Solar, Oil, Nukes &amp; Garbage.'})
 issue.experts << expert
 
@@ -46,20 +43,20 @@ issue.experts << expert
 
 
 # CREATE THE ISSUE 'Global Warming' AND PUT IT UNDER THIS CATEGORY
-issue = Issue.create({title: "Fracking", description: ""})
+issue = Issue.create({name: "Fracking", description: ""})
 category.issues << issue
 
 # CREATE THE EXPERTS THAT BELONG UNDER THE 'Global Warming' ISSUE
-expert = User.create({provider: 'twitter', uid: '32372834', username: 'sciencemagazine', twitter: 'https://twitter.com/sciencemagazine', avatar: 'http://pbs.twimg.com/profile_images/530435882944167936/3NRTI9XS_normal.png', name: 'Science Magazine', bio: 'The world\'s leading outlet for scientific news, commentary, and cutting-edge research. Follow @NewsfromScience for our latest news.'})
+expert = User.find_or_create_by({provider: 'twitter', uid: '32372834', username: 'sciencemagazine', twitter: 'https://twitter.com/sciencemagazine', avatar: 'http://pbs.twimg.com/profile_images/530435882944167936/3NRTI9XS_normal.png', name: 'Science Magazine', bio: 'The world\'s leading outlet for scientific news, commentary, and cutting-edge research. Follow @NewsfromScience for our latest news.'})
 issue.experts << expert
 
-expert = User.create({provider: 'twitter', uid: '14647570', username: 'sciam', twitter: 'https://twitter.com/sciam', avatar: 'http://pbs.twimg.com/profile_images/344513261578131564/b10c9510902473620c17c10b827f8a4f_normal.png', name: 'Scientific American', bio: 'Founded in 1845, Scientific American is the authoritative source for the science discoveries and technology innovations that matter.'})
+expert = User.find_or_create_by({provider: 'twitter', uid: '14647570', username: 'sciam', twitter: 'https://twitter.com/sciam', avatar: 'http://pbs.twimg.com/profile_images/344513261578131564/b10c9510902473620c17c10b827f8a4f_normal.png', name: 'Scientific American', bio: 'Founded in 1845, Scientific American is the authoritative source for the science discoveries and technology innovations that matter.'})
 issue.experts << expert
 
 expert = User.create({provider: 'twitter', uid: '18089292', username: 'bmahersciwriter', twitter: 'https://twitter.com/bmahersciwriter', avatar: 'http://pbs.twimg.com/profile_images/67268364/brendan_hs_normal.jpg', name: 'Brendan Maher', bio: 'Writer and Editor working for Nature (although views expressed here are my own).'})
 issue.experts << expert
 
-expert = User.create({provider: 'twitter', uid: '24697991', username: 'environreport', twitter: 'https://twitter.com/environreport', avatar: 'http://pbs.twimg.com/profile_images/1123166513/green_logo200x200_bigger_normal.jpg', name: 'Environment Report', bio: 'The Environment Report reveals the relationship between the natural world and the everyday lives of people.'})
+expert = User.find_or_create_by({provider: 'twitter', uid: '24697991', username: 'environreport', twitter: 'https://twitter.com/environreport', avatar: 'http://pbs.twimg.com/profile_images/1123166513/green_logo200x200_bigger_normal.jpg', name: 'Environment Report', bio: 'The Environment Report reveals the relationship between the natural world and the everyday lives of people.'})
 issue.experts << expert
 
 expert = User.create({provider: 'twitter', uid: '29479859', username: 'ogjonline', twitter: 'https://twitter.com/ogjonline', avatar: 'http://pbs.twimg.com/profile_images/458998146886942720/CEA3b2G5_normal.jpeg', name: 'Oil & Gas Journal', bio: 'The premier source for international oil and gas news and technology      exploration | drilling | production | processing | transportation'})
@@ -83,7 +80,7 @@ issue.experts << expert
 
 
 # CREATE THE ISSUE 'Space Exploration' AND PUT IT UNDER THIS CATEGORY
-issue = Issue.create({title: "Space Exploration", description: ""})
+issue = Issue.create({name: "Space Exploration", description: ""})
 category.issues << issue
 
 # CREATE THE EXPERTS THAT BELONG UNDER THE 'Space Exploration' ISSUE
@@ -129,24 +126,4 @@ issue.experts << expert
 
 
 
-
-
-
-
-
-
-
-####### UNNECESSARY STUFF #######
-
-expert = User.create({provider: "twitter", uid: "16076032", username: "ggreenwald", twitter: "https://twitter.com/ggreenwald", avatar: "", name: "", bio: ""})
-issue.experts << expert
-
-
-expert = User.create({provider: 'twitter', uid: "16076032", username: "ggreenwald", twitter: "https://twitter.com/ggreenwald", avatar: 'http://pbs.twimg.com/profile_images/418715960158068736/Lv1oLH3A_normal.jpeg', name: "Glenn Greenwald", bio: "Journalist with @The_Intercept - author, No Place to Hide - dog/animal fanatic - email/PGP public key (https://t.co/uJnK90oulZ)"})
-
-User.create({provider: 'twitter', uid: '16076032', username: 'ggreenwald', twitter: 'https://twitter.com/ggreenwald', avatar: 'http://pbs.twimg.com/profile_images/418715960158068736/Lv1oLH3A_normal.jpeg', name: 'Glenn Greenwald', bio: 'Journalist with @The_Intercept - author, No Place to Hide - dog/animal fanatic - email/PGP public key (https://t.co/uJnK90oulZ)'})
-
-
-expert = User.create({uid: "19725644", username: "neiltyson", twitter: "neiltyson"})
-issue.experts << expert
 
