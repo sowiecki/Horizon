@@ -23,9 +23,9 @@ $(function() {
     e.preventDefault();
     var opened = $(this).data('opened');
     if (opened) {
-      $('#search-buttons').slideUp();
+      $('#search-buttons').toggle("fold", 25);
     } else {
-      $('#search-buttons').slideDown();
+      $('#search-buttons').toggle("fold", 25);
     }
     $(this).data('opened', !opened);
   })

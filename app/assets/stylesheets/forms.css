@@ -1,36 +1,39 @@
 form {
+  display: inline;
   max-width: 250px;
 }
 input {
+  display: inline;
   padding: 4px;
-  /*border-radius: 4px;*/
   border: none;
 }
 input.button {
+  display: inline;
   text-transform: uppercase;
   background-color: #FF784F
 }
 div#search {
   float: left;
   top: 80px;
-  max-width: 230px;
+  /*max-width: 230px;*/
 }
-section#search-buttons {
-  display: none;
-  margin: 0;
-  max-width: 230px;
+div#search-buttons {
+  display: inline;
+  padding: 0 0 0 50px;
+  height: 100px;
+  width: 0;
 }
 .category-button, .toggle-button {
   margin: 2px;
-  width: 200px;
+  width: 160;
   text-align: left;
   text-transform: uppercase;
   outline: none;
   /*border-radius: 3px;*/
-  font-size: 20px;
+  font-size: 12px;
   font-family: arial, helvetica, sans-serif;
   font-weight: bold;
-  padding: 4px 10px 4px 10px;
+  padding: 4px 6px 4px 6px;
   text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
   color: #FFFFFF;
   border: 1px solid white;
@@ -43,7 +46,6 @@ section#search-buttons {
   box-shadow: 1px 1px 2px #bfbfbf;
 }
 .category-button:hover, .toggle-button:hover {
-  width: 200px;
   background-color: #45484d;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#45484d), to(#000000));
   background-image: -webkit-linear-gradient(top, #45484d, #000000);
@@ -60,7 +62,8 @@ section#search-buttons {
   background-image: -o-linear-gradient(top, #26759e, #133d5b);
 }
 .toggle-button {
-  width: 220px;
+  position: absolute;
+  width: 40px;
   text-align: center;
   background: #FEC885;
   background-image: -webkit-linear-gradient(top, #FFA167, #FE5732);
@@ -70,7 +73,6 @@ section#search-buttons {
   background-image: linear-gradient(to bottom, #FFA167, #FE5732);
 }
 .toggle-button:hover {
-  width: 220px;
   background: #FF7C4B;
   background-image: -webkit-linear-gradient(top, #FF7C4B, #ff2a00);
   background-image: -moz-linear-gradient(top, #FF7C4B, #ff2a00);
