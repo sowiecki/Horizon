@@ -52,7 +52,7 @@ header {
 }
 .header-content-wrapper {
   margin: 0 auto auto;
-  max-width: 900px;
+  max-width: 1130px;
 }
 .logo {
   /*margin: 16px 0 16px 0;*/
@@ -95,7 +95,7 @@ a.nav-link:visited, a.nav-text-welcome:visited {
 .nav-text-alerts {
   display: inline-block;
   vertical-align: top;
-  margin: 16px 0 0 0;
+  /*margin: 16px 0 0 0;*/
 }
 .nav-text-welcome {
   font-size: 20px;
@@ -162,15 +162,10 @@ p {
   margin: 2px;
 }
 
-canvas {
-  clear: none;
-  /*height: 100%;*/
-  width: 100%;
-}
 #search-wrapper {
   position: relative;
   margin: 0 auto auto;
-  max-width: 900px;
+  max-width: 1130px;
 }
 #search {
   position: absolute;
