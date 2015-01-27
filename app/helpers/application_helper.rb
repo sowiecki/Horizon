@@ -14,7 +14,6 @@ module ApplicationHelper
     @unknown_friend_ids = perspective_ids - @user_friend_ids
 
     # people in our database you do currently follow
-
     @known_friend_ids = @user_friend_ids & perspective_ids
 
     sorted_perspectives = {unknown: @unknown_friend_ids, known: @known_friend_ids}
@@ -44,7 +43,7 @@ module ApplicationHelper
   def get_text_from_tweets(uid)
     tweet_timeline = extract_user_timeline(uid)
     tweet_timeline.map do |tweet_object|
-    #check the tweet object's text for any of our keywords
+      #check the tweet object's text for any of our keywords
       tweet_object.text
     end
   end
@@ -67,12 +66,16 @@ module ApplicationHelper
     @neo = Neography::Rest.new(ENV["GRAPHENEDB_URL"] || "http://localhost:7474")
   end
 
-  def neo_id_for(string)
-    Category.find_by(name: string).neo_id
+  def neo_id_for(model, string)
+    "#{model.find_by(name: string).neo_id}"
   end
 
-  def neo_id_for(model, string)
-    model.find_by(name: string).neo_id
+  def button_class(string)
+    if request.original_url == root_url(neoid: neo_id_for(Category, string))
+      'category-button-current'
+    else
+      'category-button'
+    end
   end
 
   def hashify(results)

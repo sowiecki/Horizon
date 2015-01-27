@@ -35,6 +35,7 @@ $(function() {
     $('#nav-info').fadeOut(500)
     $('#aside-info').fadeOut(500)
   })
+
   $('aside').draggable();
 
   $('#toggle-category-list').on('click', function (e) {
@@ -63,15 +64,10 @@ $(function() {
   })
 });
 
-
-
-
-
-
-Ajax.Base.prototype.initialize = Ajax.Base.prototype.initialize.wrap(
-   function(p, options){
-     p(options);
-     this.options.parameters = this.options.parameters || {};
-     this.options.parameters.authenticity_token = window._token || '';
-   }
-);
+// Ajax.Base.prototype.initialize = Ajax.Base.prototype.initialize.wrap(
+//    function(p, options){
+//      p(options);
+//      this.options.parameters = this.options.parameters || {};
+//      this.options.parameters.authenticity_token = window._token || '';
+//    }
+// );

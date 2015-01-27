@@ -6,52 +6,16 @@
     <p>Clicking on a bubble will display<br>information in a draggable box</p>
     <span class='instruct-text'>Click anywhere to close</span>
   </section>
-<!--   <form action="/" method="get">
-    <input id="neoid" name="neoid" type="hidden" value="<%= @neoid %>"></input>
-    <input class="toggle-button" id="toggle-category-list" type="submit" value=">>"></input>
-  </form> -->
-    <!--<form action="/" method="get">
-      <label>Search Node ID:</label>
-      <input id="neoid" name="neoid" type="text" value="<%= @neoid %>"></input>
-      <input class="button" id="loadnode" type="submit" value="Load"></input>
-    </form>-->
     <div id='search-buttons'>
-      <form action="/" method="get">
-        <input id="neoid" name="neoid" type="hidden" value="<%= neo_id_for(Category, 'Education') %>"></input>
-        <input class="category-button" id="loadnode" type="submit" value="Education"></input>
-      </form>
-      <form action="/" method="get">
-        <input id="neoid" name="neoid" type="hidden" value="<%= neo_id_for(Category, 'Science') %>"></input>
-        <input class="category-button" id="loadnode" type="submit" value="Science"></input>
-      </form>
-      <form action="/" method="get">
-        <input id="neoid" name="neoid" type="hidden" value="<%= neo_id_for(Category, 'Foreign Policy') %>"></input>
-        <input class="category-button" id="loadnode" type="submit" value="Foreign Policy"></input>
-      </form>
-      <form action="/" method="get">
-        <input id="neoid" name="neoid" type="hidden" value="<%= neo_id_for(Category, 'Health') %>"></input>
-        <input class="category-button" id="loadnode" type="submit" value="Health"></input>
-      </form>
-      <form action="/" method="get">
-        <input id="neoid" name="neoid" type="hidden" value="<%= neo_id_for(Category, 'Politics') %>"></input>
-        <input class="category-button" id="loadnode" type="submit" value="Politics"></input>
-      </form>
-      <form action="/" method="get">
-        <input id="neoid" name="neoid" type="hidden" value="<%= neo_id_for(Category, 'Social Justice') %>"></input>
-        <input class="category-button" id="loadnode" type="submit" value="Social Justice"></input>
-      </form>
-      <form action="/" method="get">
-        <input id="neoid" name="neoid" type="hidden" value="<%= neo_id_for(Category, 'Sports') %>"></input>
-        <input class="category-button" id="loadnode" type="submit" value="Sports"></input>
-      </form>
-      <form action="/" method="get">
-        <input id="neoid" name="neoid" type="hidden" value="<%= neo_id_for(Category, 'Technology') %>"></input>
-        <input class="category-button" id="loadnode" type="submit" value="Technology"></input>
-      </form>
-      <form action="/" method="get">
-        <input id="neoid" name="neoid" type="hidden" value="<%= neo_id_for(Category, 'Business') %>"></input>
-        <input class="category-button" id="loadnode" type="submit" value="Business"></input>
-      </form>
+      <%= link_to 'Education', root_path(neoid: neo_id_for(Category, 'Education')), :class => button_class('Education') %>
+      <%= link_to 'Science', root_path(neoid: neo_id_for(Category, 'Science')), :class => button_class('Science') %>
+      <%= link_to 'Foreign Policy', root_path(neoid: neo_id_for(Category, 'Foreign Policy')), :class => button_class('Foreign Policy') %>
+      <%= link_to 'Health', root_path(neoid: neo_id_for(Category, 'Health')), :class => button_class('Health') %>
+      <%= link_to 'Politics', root_path(neoid: neo_id_for(Category, 'Politics')), :class => button_class('Politics') %>
+      <%= link_to 'Social Justice', root_path(neoid: neo_id_for(Category, 'Social Justice')), :class => button_class('Social Justice') %>
+      <%= link_to 'Sports', root_path(neoid: neo_id_for(Category, 'Sports')), :class => button_class('Sports') %>
+      <%= link_to 'Technology', root_path(neoid: neo_id_for(Category, 'Technology')), :class => button_class('Technology') %>
+      <%= link_to 'Business', root_path(neoid: neo_id_for(Category, 'Business')), :class => button_class('Business') %>
       <form>
         <input id='help-toggle' class="help-button" type="submit" value="Help"></input>
       </form>
