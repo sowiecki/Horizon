@@ -36,7 +36,7 @@ $(function() {
     $('#aside-info').fadeOut(500)
   })
 
-  $('aside').draggable();
+  $('.aside-wrapper').draggable();
 
   $('#toggle-category-list').on('click', function (e) {
     e.preventDefault();

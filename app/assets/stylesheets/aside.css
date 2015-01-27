@@ -1,4 +1,5 @@
 .aside-wrapper {
+  margin: 0 0 0 500px;
   min-height: 80%;
 }
 aside {
@@ -13,7 +14,6 @@ aside {
   border: 1px solid black;
 }
 #aside-filler {
-  margin: 0 0 0 450px;
   padding: 8px;
   left: 200px;
   background-color: ghostwhite;
