@@ -1,23 +1,25 @@
 .aside-wrapper {
-  margin: 0 0 0 300px;
-/*  max-width: 100px;
-  min-height: 100px;*/
+  min-height: 80%;
 }
 aside {
-  position: absolute;
   top: 125px;
-  color: #20CCD5;
-  max-width: 350px;
-  max-height: 30px;
+  color: #191919;
+  max-width: 450px;
+}
+.intro-text {
+  padding: 10px;
+  font-size: 20px;
+  border: 1px solid black;
 }
 #aside-filler {
   margin: 10px;
-  padding: 6px;
-  max-width: 900px;
-  background-color:rgba(239, 233, 244, 0.75);
-  border: 4px solid rgba(255, 98, 56, 0.75);
+  padding: 8px;
+  background-color: ghostwhite;
   border-radius: 6px;
   box-shadow: 1px 1px 2px #bfbfbf;
+}
+.tweet-text {
+  font-size: 20px;
 }
 #nav-info, #aside-info {
   display: none;
@@ -37,7 +39,4 @@ aside {
 }
 a.aside-text {
   color: #ff6238;
-}
-a.aside-text:after {
-  /*content: ' (external link)';*/
 }
