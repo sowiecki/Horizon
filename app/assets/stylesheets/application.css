@@ -160,6 +160,16 @@ h4 {
 p {
   margin: 2px;
 }
+ul li:before {
+  content: "\00BB  ";
+}
+li {
+  padding: 20px 0 20px 0;
+  list-style: none;
+  color: #4c4c4c;
+  font-weight: bold;
+  font-size: 16px;
+}
 
 #search-wrapper {
   z-index: 100;
