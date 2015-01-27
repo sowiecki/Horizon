@@ -102,8 +102,8 @@ module ApplicationHelper
       string = [
                 "<a target='_blank' class='aside-text' href='#{node['twitter']}'>",
                 "<img class='aside-user-avatar' src='#{node['avatar']}' />",
-                "<h3 class='twitter-link'><img height='19.5px' width='24px' src='http://platform.twitter.com/images/bird.png' /> ",
-                "#{node['name']}</h3></a>",
+                "<h3 class='twitter-link'>",
+                "#{node['name']} <img height='19.5px' width='24px' src='http://platform.twitter.com/images/bird.png' /></h3></a>",
                 "<p>#{node['bio']}</p>",
                 "<h4>Recently tweeted:</h4>",
                 "<span class='tweet-text'>#{tweets.join}</span>"

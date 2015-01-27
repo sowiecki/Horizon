@@ -17,8 +17,7 @@
 //= require_tree .
 $(function() {
   // var keyword = window.location.hash.replace("#","")
-  console.log($('#first-login').length)
-  if ($('#first-login').length) {
+  if ($('.intro-text').length) {
     $('#nav-info').show()
     $('#aside-info').show()
   }

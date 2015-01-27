@@ -17,10 +17,7 @@
   font-family: Tahoma, Geneva, sans-serif;
 }
 html {
-  background: #EFE9F4;
-  background-image:
-     -webkit-radial-gradient(20% top, rgb(280, 280, 280) 0%, rgb(200,200,200) 75%),
-     -webkit-radial-gradient(right top, rgb(250, 250, 250) 100%, rgba(100, 100, 100,0) 57%);
+  background: #EFEFEF;
   background-repeat: no-repeat;
   background-size: 150%;
   overflow-y: scroll;
@@ -41,6 +38,7 @@ a:hover {
 
 /* Header elements */
 header {
+  z-index: 200;
   position: absolute;
   padding: 10px;
   top: 0;
@@ -52,7 +50,8 @@ header {
 }
 .header-content-wrapper {
   margin: 0 auto auto;
-  max-width: 1130px;
+  padding: 0 40px 0 0;
+  max-width: 960px;
 }
 .logo {
   /*margin: 16px 0 16px 0;*/
@@ -95,7 +94,7 @@ a.nav-link:visited, a.nav-text-welcome:visited {
 .nav-text-alerts {
   display: inline-block;
   vertical-align: top;
-  /*margin: 16px 0 0 0;*/
+  margin: 0 16px 0 0;
 }
 .nav-text-welcome {
   font-size: 20px;
@@ -146,8 +145,8 @@ h1.issue {
 }
 h2 {
   margin: 2px;
-  text-transform: uppercase;
-  color: #3A3042;
+  /*text-transform: uppercase;*/
+  color: #4c4c4c;
 }
 h3 {
   margin: 2px;
@@ -163,12 +162,14 @@ p {
 }
 
 #search-wrapper {
+  z-index: 100;
   position: relative;
-  margin: 0 auto auto;
-  max-width: 1130px;
+  /*margin: 0 auto auto;*/
+  max-width: 960px;
 }
 #search {
   position: absolute;
+  margin: 0 auto auto;
   left: 10px;
   right: 10px;
 }
@@ -204,7 +205,7 @@ a.twitter-auth-button:hover {
 }
 
 .instruct {
-  padding: 0 0 0 220px;
+  padding: 0 0 0 310px;
   font-size: 10px;
   color: #7f7f7f;
 }

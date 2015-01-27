@@ -14,8 +14,7 @@ input.button {
 }
 div#search {
   float: left;
-  top: 80px;
-  /*max-width: 230px;*/
+  top: 70px;
 }
 #search-buttons {
   display: inline;
