@@ -19,8 +19,13 @@ aside {
   border-radius: 6px;
   box-shadow: 1px 1px 2px #bfbfbf;
 }
+.twitter_icon {
+  margin: 0 6px 0 6px;
+  text-decoration: none;
+}
 .tweet-text {
-  font-size: 20px;
+  padding: 0 0 0 10px;
+  /*font-size: 20px;*/
 }
 #nav-info, #aside-info {
   display: none;

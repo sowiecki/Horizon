@@ -139,10 +139,10 @@ module ApplicationHelper
                 "<a target='_blank' class='aside-text' href='#{node['twitter']}'>",
                 "<img class='aside-user-avatar' src='#{node['avatar']}' />",
                 "<h3 class='twitter-link'>",
-                "#{node['name']} <img height='19.5px' width='24px' src='http://platform.twitter.com/images/bird.png' /></h3></a>",
+                "#{node['name']}<img class='twitter_icon' height='19.5px' width='24px' src='http://platform.twitter.com/images/bird.png' /></h3></a>",
                 "<p>#{node['bio']}</p>",
                 "<h4>Recently tweeted:</h4>",
-                "<span class='tweet-text'>#{tweets.join}</span>"
+                "<div class='tweet-text'>#{tweets.join}</div>"
                 # "#{twitter_script}<a href='https://twitter.com/#{user.username}' class='twitter-follow-button' data-show-count='false'></a>"
       ].join
     end
