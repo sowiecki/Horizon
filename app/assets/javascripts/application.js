@@ -15,9 +15,19 @@
 //= require jquery_ujs
 //= require processing.min
 //= require_tree .
+
+function queryString(variable) {
+  var query = window.location.search.substring(1);
+  var vars = query.split("&");
+  for (var i=0;i<vars.length;i++) {
+    var pair = vars[i].split("=");
+    if(pair[0] == variable){return pair[1];}
+  }
+  return pair;
+}
+
 $(function() {
-  // var keyword = window.location.hash.replace("#","")
-  if ($('.intro-text').length) {
+  if (!queryString()) {
     $('#nav-info').show()
     $('#aside-info').show()
   }
@@ -25,7 +35,6 @@ $(function() {
     $('#nav-info').fadeOut(500)
     $('#aside-info').fadeOut(500)
   })
-  // $('#search-buttons').hide();
   $('aside').draggable();
 
   $('#toggle-category-list').on('click', function (e) {
