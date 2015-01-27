@@ -61,6 +61,7 @@ module ApplicationHelper
   end
 
 
+
   def neo
     @neo = Neography::Rest.new(ENV["GRAPHENEDB_URL"] || "http://localhost:7474")
   end
@@ -123,6 +124,7 @@ module ApplicationHelper
     elsif user = User.find_by(name: node['name'])
       # user_tweets = extract_user_tweets(User.find_by(name: node['name'])).uid
       # p extract_relevant_tweets('nasezero', ['space', 'the', 'a'])
+
       tweets = get_text_from_tweets(user.username).take(3)
       tweets.map! { |tweet| tweet + "<br><br>" }
       string = [
@@ -132,7 +134,9 @@ module ApplicationHelper
                 "#{node['name']} <img height='19.5px' width='24px' src='http://platform.twitter.com/images/bird.png' /></h3></a>",
                 "<p>#{node['bio']}</p>",
                 "<h4>Recently tweeted:</h4>",
-                "<span class='tweet-text'>#{tweets.join}</span>"
+                "<span class='tweet-text'>#{tweets.join}</span>",
+              "<a href='https://twitter.com/#{user.username}' class='twitter-follow-button' data-show-count='false'></a>
+              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>"
       ].join
     end
     "<div id='aside-filler'>#{string}<span class='instruct'>(Draggable)</span></div>"
