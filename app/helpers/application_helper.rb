@@ -36,7 +36,7 @@ module ApplicationHelper
 
   # Get most recent 100 tweets of passed user
   def extract_user_timeline(uid)
-    client.user_timeline(uid).take(500)
+    client.user_timeline(uid).take(5)
   end
 
   # Scan through the array of tweet objects
@@ -133,7 +133,7 @@ module ApplicationHelper
       # user_tweets = extract_user_tweets(User.find_by(name: node['name'])).uid
       # p extract_relevant_tweets('nasezero', ['space', 'the', 'a'])
 
-      tweets = get_text_from_tweets(user.username).take(3)
+      tweets = get_text_from_tweets(user.username)
       tweets.map! { |tweet| tweet + "<br><br>" }
       string = [
                 "<a target='_blank' class='aside-text' href='#{node['twitter']}'>",

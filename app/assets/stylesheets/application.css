@@ -22,6 +22,8 @@ html {
   background-size: 150%;
   overflow-y: scroll;
   min-height: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
  }
 body {
   margin: 0;
@@ -53,15 +55,10 @@ header {
   padding: 0 40px 0 0;
   max-width: 960px;
 }
-.logo {
-  /*margin: 16px 0 16px 0;*/
-  /*text-shadow: 0 0 20px rgba(100,100,100,0.8), 0 0 0 black;*/
-}
 a.logo-text {
   color: #EFE9F4;
   font-weight: bold;
   font-family: 'Lato', serif;
-  /*color: #4312AE;*/
 }
 a.logo-text {
   text-decoration: none;
@@ -168,11 +165,11 @@ ul li:before {
   content: "\00BB  ";
 }
 li {
-  padding: 20px 0 20px 0;
+  padding: 20px 10px 20px 0;
   list-style: none;
   color: #4c4c4c;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 #search-wrapper {
