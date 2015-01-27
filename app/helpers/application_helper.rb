@@ -96,7 +96,7 @@ module ApplicationHelper
       end
     end
 
-    relationships = [{"name" => "No Relationships","values" => [{"id" => "#{params[:id]}","name" => "No Relationships "}]}] if relationships.empty?
+    relationships = [{"name" => "No Links","values" => [{"id" => "#{params[:id]}","name" => "No Links "}]}] if relationships.empty?
 
     {
       details_html: "#{aside_content(me)}",
