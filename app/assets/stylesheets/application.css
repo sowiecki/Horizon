@@ -73,6 +73,10 @@ nav {
   float: right;
   text-align: right;
 }
+.nav-wrapper {
+  margin: 0 auto auto;
+  width: 960px;
+}
 .nav-avatar {
   display: inline-block;
 }

@@ -2,6 +2,7 @@
   min-height: 80%;
 }
 aside {
+  position: absolute;
   top: 125px;
   color: #191919;
   max-width: 550px;

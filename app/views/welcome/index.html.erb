@@ -1,14 +1,16 @@
-<div class='canvas-wrapper'>
-  <div id='search-wrapper'>
-    <%= render 'layouts/search' %>
-  </div>
-  <canvas id="neoviz"></canvas>
-</div>
+<canvas id="neoviz"></canvas>
 <%= javascript_include_tag 'neovigator' %>
-<% if logged_in? %>
-  <%= render 'logged_in_index' %>
-  <!-- Renders a view for user that ARE logged in -->
-<% else %>
-  <%= render 'logged_out_index' %>
-  <!-- Renders a view for users that are NOT logged in -->
-<% end %>
+<div class="aside-wrapper">
+  <aside>
+    <div id="explanation">
+      <div id='aside-filler'>
+        <h2 id='first-view'>Expand your horizon.</h2>
+        <ul>
+          <li>Click on a category to get started.</li>
+          <li>Traverse issues and different perspectives.</li>
+          <li>Link your Twitter account to discover what's beyond your horizon.</li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+</div>
