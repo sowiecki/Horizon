@@ -29,14 +29,14 @@ $(document).ready(function(){
 
 
 	// Caching the neo-suggest textbox:
-	var neo_suggest = $('#neo-suggest');
+	// var neo_suggest = $('#neo-suggest');
 
 	// Defining a placeholder text:
-	neo_suggest.defaultText('Type a node id');
+	// neo_suggest.defaultText('Type a node id');
 
 
 	// Using jQuery UI's catcomplete widget:
-       $.widget( "custom.catcomplete", $.ui.autocomplete, {
+	$.widget( "custom.catcomplete", $.ui.autocomplete, {
 		_renderMenu: function( ul, items ) {
 			var self = this,
 				currentCategory = "";
@@ -52,10 +52,10 @@ $(document).ready(function(){
 	});
 
 
-	neo_suggest.catcomplete({
-		minLength	: 3,
-		source		: '/autocomplete.json'
-	});
+	// neo_suggest.catcomplete({
+	// 	minLength	: 3,
+	// 	source		: '/autocomplete.json'
+	// });
 
 });
 
