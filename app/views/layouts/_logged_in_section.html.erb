@@ -1,5 +1,5 @@
 <div class='nav-text'>
-  <span class='nav-text-welcome'>Welcome <%= link_to current_user.username, current_user, class: 'nav-text-welcome' %></span>
+  <span class='nav-text-welcome'>Welcome <%= link_to current_user.username, "/?neoid=#{current_user.neo_id}", class: 'nav-text-welcome', id: "loadnode" %></span>
   <span class="nav-link-logout"><%= notice.html_safe if notice %><%= alert %>
   <%= link_to "Sign Out", signout_path, class: "nav-link" %></span>
 </div>

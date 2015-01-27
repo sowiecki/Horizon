@@ -1,5 +1,35 @@
 module ApplicationHelper
 
+  def find_correct_users(user_friend_ids, issue_object)
+    #the current user's array of ids of people they follow
+    @user_friend_ids = user_friend_ids
+
+    # the current array of expert ids for this issue
+    perspective_ids = return_perspective_ids(issue_object)
+
+    @unknown_friend_ids = []
+    @known_friend_ids = []
+
+    # people in our database you don't currently follow
+    @unknown_friend_ids = perspective_ids - @user_friend_ids
+
+    # people in our database you do currently follow
+
+    @known_friend_ids = @user_friend_ids & perspective_ids
+
+    sorted_perspectives = {unknown: @unknown_friend_ids, known: @known_friend_ids}
+  end
+
+  def return_perspective_ids(issue_object)
+    perspective_ids = []
+    issue_object.perspectives.each do |perspective|
+      perspective_ids << perspective.uid.to_i
+    end
+    perspective_ids
+  end
+
+
+  # Extracting Most Recent Issue-Relevant Tweets from a provided user
   def extract_relevant_tweets(uid, keywords=[])
       tweet_texts = get_text_from_tweets(uid)
       needfilter_orig?(tweet_texts, keywords)
@@ -9,11 +39,6 @@ module ApplicationHelper
   def extract_user_timeline(uid)
       client.user_timeline(uid).take(500)
   end
-
-
-  # def extract_user_tweets(uid)
-  #     client.user_timeline(uid).take(5)
-  # end
 
   # Scan through the array of tweet objects
   def get_text_from_tweets(uid)
@@ -53,7 +78,7 @@ module ApplicationHelper
     results["data"].map {|row| Hash[*results["columns"].zip(row).flatten] }
   end
 
-  def node
+  def node # Neovigator
     id = params[:id] || current_user.neo_id
     cypher = "START me=node(#{id})
               OPTIONAL MATCH me -[r]- related
@@ -80,7 +105,7 @@ module ApplicationHelper
     }
   end
 
-  def node_id(node)
+  def node_id(node) # Neovigator
     case node
       when Hash
         node["self"].split('/').last
@@ -105,11 +130,11 @@ module ApplicationHelper
       string = [
                 "<a target='_blank' class='aside-text' href='#{node['twitter']}'>",
                 "<img class='aside-user-avatar' src='#{node['avatar']}' />",
-                "<h3><img src='http://platform.twitter.com/images/bird.png' /> ",
-                "#{node['name']}</h3></a>",
+                "<h3 class='twitter-link'>",
+                "#{node['name']} <img height='19.5px' width='24px' src='http://platform.twitter.com/images/bird.png' /></h3></a>",
                 "<p>#{node['bio']}</p>",
                 "<h4>Recently tweeted:</h4>",
-                "#{tweets.join}",
+                "<span class='tweet-text'>#{tweets.join}</span>",
               "<a href='https://twitter.com/#{user.username}' class='twitter-follow-button' data-show-count='false'></a>
               <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>"
       ].join

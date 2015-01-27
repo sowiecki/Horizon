@@ -1,0 +1,31 @@
+<div class='welcome-wrapper'>
+<h1>Profile</h1>
+
+<h2>All Hash</h2>
+
+<table>
+<% Issue.all.each do |issue_object| %>
+<tr>
+  <% @hash = find_correct_users(@user_friend_ids,issue_object) %>
+
+  <td>
+  <h4>Perspectives You Follow:</h4>
+  <ul>
+  <% @hash[:known].each do |perspective_id| %>
+    <li><%= User.find_by(uid: perspective_id.to_s).name %></li>
+  <% end %>
+  </ul>
+  </td>
+  <td>
+  <h4>Perspectives You Should Follow:</h4>
+  <ul>
+  <% @hash[:unknown].each do |perspective_id| %>
+    <li><%= User.find_by(uid: perspective_id.to_s).name %></li>
+  <% end %>
+  </ul>
+  </td>
+</tr>
+<% end %>
+</table>
+
+</div>

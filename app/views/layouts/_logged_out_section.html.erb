@@ -1,4 +1,12 @@
 <div class='nav-text-alerts'>
-  <span class="notice"><%= notice %></span>
-  <span class="alert"><%= alert %></span>
+  <% if notice %>
+    <span class="notice"><%= notice %></span>
+    <span class="alert"><%= alert %></span>
+  <% else %>
+    Link your twitter to see past your horizon.
+  <% end %>
+  <br>
+  <div class='nav-button-twitter-login'>
+  <%= link_to "Sign in with Twitter", "/auth/twitter", class: 'twitter-auth-button' %>
+  </div>
 </div>
