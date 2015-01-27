@@ -78,6 +78,10 @@ module ApplicationHelper
     end
   end
 
+  def neo_link_to(string)
+    link_to string, root_path(neoid: neo_id_for(Category, string)), :class => button_class(string)
+  end
+
   def hashify(results)
     results["data"].map {|row| Hash[*results["columns"].zip(row).flatten] }
   end

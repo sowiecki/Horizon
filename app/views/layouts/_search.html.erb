@@ -7,15 +7,15 @@
     <span class='instruct-text'>Click anywhere to close</span>
   </section>
     <div id='search-buttons'>
-      <%= link_to 'Education', root_path(neoid: neo_id_for(Category, 'Education')), :class => button_class('Education') %>
-      <%= link_to 'Science', root_path(neoid: neo_id_for(Category, 'Science')), :class => button_class('Science') %>
-      <%= link_to 'Foreign Policy', root_path(neoid: neo_id_for(Category, 'Foreign Policy')), :class => button_class('Foreign Policy') %>
-      <%= link_to 'Health', root_path(neoid: neo_id_for(Category, 'Health')), :class => button_class('Health') %>
-      <%= link_to 'Politics', root_path(neoid: neo_id_for(Category, 'Politics')), :class => button_class('Politics') %>
-      <%= link_to 'Social Justice', root_path(neoid: neo_id_for(Category, 'Social Justice')), :class => button_class('Social Justice') %>
-      <%= link_to 'Sports', root_path(neoid: neo_id_for(Category, 'Sports')), :class => button_class('Sports') %>
-      <%= link_to 'Technology', root_path(neoid: neo_id_for(Category, 'Technology')), :class => button_class('Technology') %>
-      <%= link_to 'Business', root_path(neoid: neo_id_for(Category, 'Business')), :class => button_class('Business') %>
+      <%= neo_link_to 'Education' %>
+      <%= neo_link_to 'Science' %>
+      <%= neo_link_to 'Foreign Policy' %>
+      <%= neo_link_to 'Health' %>
+      <%= neo_link_to 'Politics' %>
+      <%= neo_link_to 'Social Justice' %>
+      <%= neo_link_to 'Sports' %>
+      <%= neo_link_to 'Technology' %>
+      <%= neo_link_to 'Business' %>
       <form>
         <input id='help-toggle' class="help-button" type="submit" value="Help"></input>
       </form>
