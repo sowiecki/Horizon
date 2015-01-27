@@ -99,7 +99,7 @@ module ApplicationHelper
     elsif user = User.find_by(name: node['name'])
       # user_tweets = extract_user_tweets(User.find_by(name: node['name'])).uid
       # p extract_relevant_tweets('nasezero', ['space', 'the', 'a'])
-   
+
       tweets = get_text_from_tweets(user.username).take(3)
       tweets.map! { |tweet| tweet + "<br><br>" }
       string = [
@@ -110,10 +110,8 @@ module ApplicationHelper
                 "<p>#{node['bio']}</p>",
                 "<h4>Recently tweeted:</h4>",
                 "#{tweets.join}",
-                "<form method = 'post' action='/users/'#{node['name']}' class='button_to'>
-                  <input type = 'hidden' name = '_method' value = 'put'>
-                  <input value = 'Follow #{node['name']}' type = 'submit'/>
-                </form>"
+              "<a href='https://twitter.com/#{user.username}' class='twitter-follow-button' data-show-count='false'></a>
+              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>"
       ].join
     end
     "<div id='aside-filler'>#{string}<span class='instruct'>(Draggable)</span></div>"
