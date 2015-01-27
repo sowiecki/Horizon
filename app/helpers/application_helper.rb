@@ -51,7 +51,7 @@ module ApplicationHelper
     results["data"].map {|row| Hash[*results["columns"].zip(row).flatten] }
   end
 
-  def node
+  def node # Neovigator
     id = params[:id] || current_user.neo_id
     cypher = "START me=node(#{id})
               OPTIONAL MATCH me -[r]- related
@@ -78,7 +78,7 @@ module ApplicationHelper
     }
   end
 
-  def node_id(node)
+  def node_id(node) # Neovigator
     case node
       when Hash
         node["self"].split('/').last
