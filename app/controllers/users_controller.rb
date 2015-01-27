@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @user_friend_ids = client.friend_ids(current_user.username).to_a
   end
 
   # GET /users/new
