@@ -14,6 +14,8 @@ class ApplicationController < ActionController::Base
   end
 
 
+
+
   def client
     # request_token = session[:twitter_request_token]
 

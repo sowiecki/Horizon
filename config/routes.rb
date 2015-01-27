@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get "/resources/show" => "resources#show"
   get "/auth/:provider/callback" => "sessions#create"
   get "/signout" => "sessions#destroy", :as => :signout
-
+  put "/users" => "users#follow", :as => :follow
 
   # root :to => "profile#show"
 
@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :issues
-  post "/issues" => "issues#follow", :as => :follow
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

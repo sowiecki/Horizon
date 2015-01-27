@@ -10,6 +10,7 @@ module ApplicationHelper
       client.user_timeline(uid).take(500)
   end
 
+
   # def extract_user_tweets(uid)
   #     client.user_timeline(uid).take(5)
   # end
@@ -98,6 +99,7 @@ module ApplicationHelper
     elsif user = User.find_by(name: node['name'])
       # user_tweets = extract_user_tweets(User.find_by(name: node['name'])).uid
       # p extract_relevant_tweets('nasezero', ['space', 'the', 'a'])
+   
       tweets = get_text_from_tweets(user.username).take(3)
       tweets.map! { |tweet| tweet + "<br><br>" }
       string = [
@@ -108,10 +110,9 @@ module ApplicationHelper
                 "<p>#{node['bio']}</p>",
                 "<h4>Recently tweeted:</h4>",
                 "#{tweets.join}",
-                "<form method = 'post' action='/users/follow' class='button_to'>
+                "<form method = 'post' action='/users/'#{node['name']}' class='button_to'>
                   <input type = 'hidden' name = '_method' value = 'put'>
-                  <input type = 'hidden' name ='uid' value = #{node['name']}/>
-                  <input value = 'Follow' type = 'submit'/>
+                  <input value = 'Follow #{node['name']}' type = 'submit'/>
                 </form>"
       ].join
     end
