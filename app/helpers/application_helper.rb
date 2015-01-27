@@ -1,5 +1,35 @@
 module ApplicationHelper
 
+  def find_correct_users(user_friend_ids, issue_object)
+    #the current user's array of ids of people they follow
+    @user_friend_ids = user_friend_ids
+
+    # the current array of expert ids for this issue
+    perspective_ids = return_perspective_ids(issue_object)
+
+    @unknown_friend_ids = []
+    @known_friend_ids = []
+
+    # people in our database you don't currently follow
+    @unknown_friend_ids = perspective_ids - @user_friend_ids
+
+    # people in our database you do currently follow
+
+    @known_friend_ids = @user_friend_ids & perspective_ids
+
+    sorted_perspectives = {unknown: @unknown_friend_ids, known: @known_friend_ids}
+  end
+
+  def return_perspective_ids(issue_object)
+    perspective_ids = []
+    issue_object.perspectives.each do |perspective|
+      perspective_ids << perspective.uid.to_i
+    end
+    perspective_ids
+  end
+
+
+  # Extracting Most Recent Issue-Relevant Tweets from a provided user
   def extract_relevant_tweets(uid, keywords=[])
       tweet_texts = get_text_from_tweets(uid)
       needfilter_orig?(tweet_texts, keywords)
@@ -9,10 +39,6 @@ module ApplicationHelper
   def extract_user_timeline(uid)
       client.user_timeline(uid).take(500)
   end
-
-  # def extract_user_tweets(uid)
-  #     client.user_timeline(uid).take(5)
-  # end
 
   # Scan through the array of tweet objects
   def get_text_from_tweets(uid)
