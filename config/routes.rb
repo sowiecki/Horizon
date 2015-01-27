@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get "/auth/:provider/callback" => "sessions#create"
   get "/signout" => "sessions#destroy", :as => :signout
 
+
   # root :to => "profile#show"
 
   # The priority is based upon order of creation: first created -> highest priority.

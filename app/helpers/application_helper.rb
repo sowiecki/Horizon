@@ -35,6 +35,7 @@ module ApplicationHelper
   end
 
 
+
   def neo
     @neo = Neography::Rest.new(ENV["GRAPHENEDB_URL"] || "http://localhost:7474")
   end
@@ -106,7 +107,12 @@ module ApplicationHelper
                 "#{node['name']}</h3></a>",
                 "<p>#{node['bio']}</p>",
                 "<h4>Recently tweeted:</h4>",
-                "#{tweets.join}"
+                "#{tweets.join}",
+                "<form method = 'post' action='/users/follow' class='button_to'>
+                  <input type = 'hidden' name = '_method' value = 'put'>
+                  <input type = 'hidden' name ='uid' value = #{node['name']}/>
+                  <input value = 'Follow' type = 'submit'/>
+                </form>"
       ].join
     end
     "<div id='aside-filler'>#{string}<span class='instruct'>(Draggable)</span></div>"
