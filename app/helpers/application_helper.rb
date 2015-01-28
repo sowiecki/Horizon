@@ -152,6 +152,7 @@ module ApplicationHelper
                   <input name = 'screen_name' type='hidden' value=#{user.name}>
                   <input name='original_referer' type='hidden' value='http://platform.twitter.com/widgets/follow_button.df71e9fd75415d2cee8cfded99ebe79f.en.html'>
                   <input type='hidden' name='profile_id' value='user.neo_id'>
+                  <input name = 'screen_name' type='hidden' value=#{user.username}>
                   <input type='submit' value='follow'>
                 </form>"
       ].join
