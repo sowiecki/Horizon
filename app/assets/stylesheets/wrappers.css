@@ -32,12 +32,6 @@ header {
   max-width: 960px;
 }
 
-#user-wrapper {
-  margin: 0 auto auto;
-  padding: 120px 20px 80px 20px;
-  max-width: 960px;
-}
-
 div#categories {
   float: left;
   top: 80px;
@@ -82,13 +76,30 @@ footer > a {
   color: #ff784f;
 }
 
-.right {
-  float: right;
-  padding: 10px;
-  width: 30%;
+#user-wrapper {
+  margin: 0 auto auto;
+  padding: 120px 20px 80px 20px;
+  max-width: 960px;
 }
-.left {
-  display: inline-block;
+#piechart-wrapper {
+  clear: none;
+  float: left;
+  margin: 10px 10px 30px auto;
   padding: 10px;
-  width: 30%;
+  display: inline;
+}
+#user-show-right-wrapper {
+  z-index: 200;
+  margin: 10px;
+  display: inline-block;
+  /*padding: 100px;*/
+  max-width: 500px;
+}
+div.bio {
+  display: block;
+  margin: 0 0 0 20px;
+  font-size: 14px;
+}
+div.push {
+  min-height: 50px;
 }

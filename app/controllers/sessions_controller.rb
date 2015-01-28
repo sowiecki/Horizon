@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
     # Making sure the User object has a list of friend_ids
     # user.friend_ids = client.friend_ids(current_user.username).to_a
 
-    redirect_to root_url, :notice => "<span id='first-login'>You've been signed in.</span> | "
+    redirect_to "/users/#{current_user.neo_id}", :notice => "<span id='first-login'>You've been signed in.</span> | "
   end
 
   def destroy
