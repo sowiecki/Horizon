@@ -1,7 +1,4 @@
-
-
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-
 <script type="text/javascript">
   google.load("visualization", "1", {packages:["corechart"]});
   google.setOnLoadCallback(drawChart);
@@ -45,7 +42,7 @@
         ['Sports', <%= @known_experts_hash["Sports"].length %>, <%= @unknown_experts_hash["Sports"].length %>, ''],
         ['Technology', <%= @known_experts_hash["Technology"].length %>, <%= @unknown_experts_hash["Technology"].length %>, ''],
         ['Business', <%= @known_experts_hash["Business"].length %>, <%= @unknown_experts_hash["Business"].length %>, '']
-
+</script>
 <%= javascript_include_tag 'https://www.google.com/jsapi' %>
 
 <div id='user-wrapper'>
@@ -138,6 +135,13 @@
   </p>
 
   <%= user_display(0) %>
+  <!-- <form class= 'follow_button' action='users/follow/'' method= 'post'>
+    <input name = 'screen_name' type='hidden' value=' user.name ''>
+    <input name='original_referer' type='hidden' value='http://platform.twitter.com/widgets/follow_button.df71e9fd75415d2cee8cfded99ebe79f.en.html'>
+    <input type='hidden' name='profile_id' value='user.neo_id'>
+    <input name = 'screen_name' type='hidden' value=' user.username '>
+    <input class='twitter-follow-button' type='submit' value='Follow'>
+  </form> -->
 
   <%= user_display(1) %>
 
@@ -145,16 +149,6 @@
 
   <h2>The Sky Is The Limit</h2>
   <p>For more recommendations, please see our <a class="nav-link" href="/">interactive database</a>.</p>
-</div>
-
-
-<br>
-<br>
-<br>
-
-
-
-
 </div>
 
 
