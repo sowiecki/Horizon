@@ -176,6 +176,8 @@ class UsersController < ApplicationController
     end
     perspective_ids
   end
-
-
 end
+
+
+#
+
