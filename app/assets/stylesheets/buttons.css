@@ -93,7 +93,7 @@ input.button {
   background-image: -o-linear-gradient(top, #FF7C4B, #ff2a00);
   background-image: linear-gradient(to bottom, #FF7C4B, #ff2a00);
 }
-a.twitter-auth-button {
+a.twitter-auth-button, .twitter-follow-button {
   display: inline-block;
   padding: 1px 6px 0 28px;
   border: #ccc solid 1px;
@@ -110,7 +110,7 @@ a.twitter-auth-button {
   text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
   white-space: nowrap;
 }
-a.twitter-auth-button:hover {
+a.twitter-auth-button:hover, .twitter-follow-button:hover {
   color: #4c4c4c;
   background: #f8f8f8 url(//platform.twitter.com/images/bird.png) 2px 3px no-repeat;
   background: url(//platform.twitter.com/images/bird.png) 2px 3px no-repeat,
@@ -118,4 +118,10 @@ a.twitter-auth-button:hover {
   background: url(//platform.twitter.com/images/bird.png) 2px 3px no-repeat,
               linear-gradient(#fff, #f2f2f2);
   background-size: 22px 19px, auto auto;
+}
+.twitter-follow-button {
+  margin: 0 6px 0 10px;
+  text-decoration: none;
+  height: 26px;
+  font-size: 14px;
 }

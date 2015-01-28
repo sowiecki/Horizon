@@ -90,6 +90,7 @@ h3 {
   padding: 2px;
 }
 h3.twitter-link {
+  display: inline;
   text-decoration: underline;
 }
 h3.twitter-link:hover {
@@ -123,6 +124,9 @@ li {
 }
 
 /* Image and chart elements */
+.twitter_icon {
+  padding: 0 0 0 6px;
+}
 section.logo {
   display: inline-block;
 }
@@ -144,8 +148,4 @@ section.logo {
   display: block;
   border: 2px solid #4C4C4C;
   margin: 10px auto 30px auto;
-}
-
-.follow_button{
-
 }

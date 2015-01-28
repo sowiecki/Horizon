@@ -9,14 +9,16 @@ class UsersController < ApplicationController
   end
 
   def follow
-    p client
     client.follow(params["screen_name"])
-    redirect_to '/'
+  end
+
+  def twitter_redirect
+    redirect_to current_user_path
   end
 
   def show
     # Get the User's friend IDs
-    @user_friend_ids = [1] #client.friend_ids(current_user.username).to_a
+    @user_friend_ids = client.friend_ids(current_user.username).to_a
     @categories_hash = {}
     # Iterate through each category
     Category.all.each do |category|
