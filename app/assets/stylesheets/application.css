@@ -124,6 +124,9 @@ li {
 }
 
 /* Image and chart elements */
+.twitter_icon {
+  padding: 0 0 0 6px;
+}
 section.logo {
   display: inline-block;
 }

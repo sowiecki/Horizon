@@ -135,15 +135,14 @@ module ApplicationHelper
                 "<a target='_blank' class='aside-text' href='#{node['twitter']}'>",
                 "<img class='aside-user-avatar' src='#{node['avatar']}' /></a>",
                 "<h3 class='twitter-link'>",
-                "<a target='_blank' class='aside-text' href='#{node['twitter']}'>#{node['name']}</a>",
-                "</h3>",
-                "<form class='follow_button' data-remote='true' action='users/follow/' method= 'post'>
-                  <input name='screen_name' type='hidden' value=#{user.name}>
-                  <input name='original_referer' type='hidden' value='http://platform.twitter.com/widgets/follow_button.df71e9fd75415d2cee8cfded99ebe79f.en.html'>
-                  <input type='hidden' name='profile_id' value='user.neo_id'>
-                  <input name = 'screen_name' type='hidden' value=#{user.username}>
-                  <input class='twitter-follow-button' type='submit' value='Follow'>
-                </form>",
+                "<a target='_blank' class='aside-text' href='#{node['twitter']}'>#{node['name']}<img class='twitter_icon' height='19.5px' width='24px' src='http://platform.twitter.com/images/bird.png' /></a></h3>",
+                # "<form class='follow-button' data-remote='true' action='users/follow/' method= 'post'>
+                #   <input name='screen_name' type='hidden' value=#{user.name}>
+                #   <input name='original_referer' type='hidden' value='http://platform.twitter.com/widgets/follow_button.df71e9fd75415d2cee8cfded99ebe79f.en.html'>
+                #   <input type='hidden' name='profile_id' value='user.neo_id'>
+                #   <input name = 'screen_name' type='hidden' value=#{user.username}>
+                #   <input class='twitter-follow-button' type='submit' value='Follow'>
+                # </form>",
                 "<p>#{node['bio']}</p>",
                 "<h4>Recently tweeted:</h4>",
                 "<div class='tweet-text'>#{tweets.join}</div>"
