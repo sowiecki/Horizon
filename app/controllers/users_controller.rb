@@ -8,7 +8,10 @@ class UsersController < ApplicationController
   end
 
   def follow
-    client.follow('realhughjackman')
+    p client
+    p session[:token]
+    client.follow(params["screen_name"])
+    redirect_to '/'
   end
 
   # GET /users/1

@@ -149,7 +149,6 @@ module ApplicationHelper
                 # "#{twitter_script}<a href='https://twitter.com/#{user.username}' class='twitter-follow-button' data-show-count='false'></a>"
                 "#{tweets.join}",
                 "<form class= 'follow' action='users/follow/'' method= 'post'>
-                  <input type= 'hidden' name= 'authenticity_token' value= '2765930482-mwWhH2PnVBaAxA1knQ5njlsEjFgTxPde1P48PMV'>
                   <input name = 'screen_name' type='hidden' value=#{user.name}>
                   <input name='original_referer' type='hidden' value='http://platform.twitter.com/widgets/follow_button.df71e9fd75415d2cee8cfded99ebe79f.en.html'>
                   <input type='hidden' name='profile_id' value='user.neo_id'>
@@ -159,4 +158,6 @@ module ApplicationHelper
     end
     "<div id='aside-filler'>#{string}<span class='instruct'>(Draggable)</span></div>"
   end
+
+
 end
