@@ -1,16 +1,10 @@
 class IssuesController < ApplicationController
 
   def index
-
-
-
-
-
-    p extract_relevant_tweets('djdewitt',["tech","podcast","belieber", "salute"])
+    extract_relevant_tweets('djdewitt',["tech","podcast","belieber", "salute"])
   end
 
   def show
-    # Politics
     temp_usernames =
     %w(lessig
     markknoller
@@ -21,17 +15,10 @@ class IssuesController < ApplicationController
     KarlRove)
 
     temp_usernames.each do |temp_username|
-   twitter_object = client.user(temp_username)
+    twitter_object = client.user(temp_username)
     @user_create_string = "User.create({provider: 'twitter', uid: '" + twitter_object.id.to_s + "', username: '" + temp_username + "', twitter: 'https://twitter.com/" + temp_username + "', avatar: '" + twitter_object.profile_image_url + "', name: '" + twitter_object.name + "', bio: '" + twitter_object.description + "'})"
-    p @user_create_string
+    @user_create_string
   end
-
-    p ""
-    p ""
-    p ""
-
-
-
 
     # issue_id = params[:id]
     # @issue = Issue.find_by(uuid: issue_id)
@@ -54,9 +41,5 @@ class IssuesController < ApplicationController
     #  @rec_perspectives = @expert_ids - @my_friend_ids
     #  #@my_perspectives = []
     #  @my_perspectives = @my_friend_ids & @expert_ids
-
   end
-
-
-
 end

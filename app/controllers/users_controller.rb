@@ -9,9 +9,11 @@ class UsersController < ApplicationController
   end
 
   def follow
-    p client
     client.follow(params["screen_name"])
-    redirect_to '/'
+  end
+
+  def twitter_redirect
+    redirect_to current_user_path
   end
 
   def show
