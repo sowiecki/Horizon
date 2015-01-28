@@ -177,10 +177,4 @@ class UsersController < ApplicationController
     perspective_ids
   end
 end
-<<<<<<< HEAD
 
-
-#
-
-=======
->>>>>>> f994e7f3e6db357785251f9a62ec5d5add852e34
