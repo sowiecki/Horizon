@@ -1,4 +1,5 @@
 
+
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
 <script type="text/javascript">
@@ -44,78 +45,106 @@
         ['Sports', <%= @known_experts_hash["Sports"].length %>, <%= @unknown_experts_hash["Sports"].length %>, ''],
         ['Technology', <%= @known_experts_hash["Technology"].length %>, <%= @unknown_experts_hash["Technology"].length %>, ''],
         ['Business', <%= @known_experts_hash["Business"].length %>, <%= @unknown_experts_hash["Business"].length %>, '']
+
+<%= javascript_include_tag 'https://www.google.com/jsapi' %>
+
+<div id='user-wrapper'>
+  <script type="text/javascript">
+    google.load("visualization", "1", {packages:["corechart"]});
+    google.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['Task', 'Hours per Day'],
+        ['Education',     <%= @known_experts_hash["Education"].length %>],
+        ['Science',      <%= @known_experts_hash["Science"].length %>],
+        ['Foreign Policy',  <%= @known_experts_hash["Foreign Policy"].length %>],
+        ['Health', <%= @known_experts_hash["Health"].length %>],
+        ['Politics',    <%= @known_experts_hash["Politics"].length %>],
+        ['Social Justice',    <%= @known_experts_hash["Social Justice"].length %>],
+        ['Sports',    <%= @known_experts_hash["Sports"].length %>],
+        ['Technology',    <%= @known_experts_hash["Technology"].length %>],
+        ['Business',    <%= @known_experts_hash["Business"].length %>]
+
       ]);
 
       var options = {
-        title: 'Your Total Exposure (By Category)',
-        width: 600,
-        height: 400,
-        legend: { position: 'top', maxLines: 3 },
-        bar: { groupWidth: '75%' },
-        isStacked: true
+        title: 'Perspectives You Follow (By Category)',
+        pieHole: 0.4
       };
 
-        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+      var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
-        chart.draw(data, options);
-      }
-</script>
+      chart.draw(data, options);
+    }
+  </script>
+  <script type="text/javascript">
+    google.load("visualization", "1", {packages:["corechart"]});
+    google.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+      ['Genre', 'Currently Following', 'Not Yet Following', { role: 'annotation' } ],
+      ['Education', <%= @known_experts_hash["Education"].length %>, <%= @unknown_experts_hash["Education"].length %>, ''],
+      ['Science', <%= @known_experts_hash["Science"].length %>, <%= @unknown_experts_hash["Science"].length %>, ''],
+      ['Foreign Policy', <%= @known_experts_hash["Foreign Policy"].length %>, <%= @unknown_experts_hash["Foreign Policy"].length %>, ''],
+      ['Health', <%= @known_experts_hash["Health"].length %>, <%= @unknown_experts_hash["Health"].length %>, ''],
+      ['Politics', <%= @known_experts_hash["Politics"].length %>, <%= @unknown_experts_hash["Politics"].length %>, ''],
+      ['Social Justice', <%= @known_experts_hash["Social Justice"].length %>, <%= @unknown_experts_hash["Social Justice"].length %>, ''],
+      ['Sports', <%= @known_experts_hash["Sports"].length %>, <%= @unknown_experts_hash["Sports"].length %>, ''],
+      ['Technology', <%= @known_experts_hash["Technology"].length %>, <%= @unknown_experts_hash["Technology"].length %>, ''],
+      ['Business', <%= @known_experts_hash["Business"].length %>, <%= @unknown_experts_hash["Business"].length %>, '']
+    ]);
 
+    var options = {
+      title: 'Your Total Exposure (By Category)',
+      width: 600,
+      height: 400,
+      legend: { position: 'top', maxLines: 3 },
+      bar: { groupWidth: '75%' },
+      isStacked: true
+    };
 
-<div class='welcome-wrapper'>
-<div class='cloud'>
+      var chart = new google.visualization.BarChart(document.getElementById('barchart'));
+
+      chart.draw(data, options);
+    }
+  </script>
+
   <h1><%= current_user.name %>'s Horizon</h1>
-</div>
 
-<br>
-<div class='cloud'>
   <h2>Explore Your Horizon</h2>
   <p>Your <strong>Horizon</strong> represents a beautiful and informative take on the organizations, publications, and people you follow on Twitter.</p>
-  <br>
-  <p>The charts below give you a deeper understanding of the type of people you follow, and - more importantly - the compelling voices you aren't hearing.</p>
-</div>
-<br>
 
-<div id="piechart" style="width: 600px; height: 500px;"></div>
-<br>
-<div class='cloud'>
+  <p>The charts below give you a deeper understanding of the type of people you follow, and - more importantly - the compelling voices you aren't hearing.</p>
+
+  <div id="piechart" style="width: 600px; height: 500px;"></div>
+
   <h2>Find New Perspectives</h2>
   <p>Our database features hundreds of voices across a diverse range of issues and categories.</p>
-</div>
-<br>
-<div id="chart_div" style="width: 600px; height: 400px;"></div>
-<br>
-<div class='cloud'>
+
+  <div id="barchart" style="width: 600px; height: 400px;"></div>
+
   <h2>Hear New Voices</h2>
   <p>Our database features hundreds of voices across a diverse range of issues and categories.</p>
   <br>
   <p>You have an opportunity to follow a few more <strong><%= @longest_name %></strong> perspectives. Here are a few of our recommendations:</p>
-</div>
-<br>
-<div class='cloud'>
+
   <% user_object = User.find_by(uid: @longest_array[0].to_s) %>
   <h4><%= user_object.name %> @<%= user_object.username %></h4>
   <p><%= user_object.bio %></p>
-</div>
-<br>
-<div class='cloud'>
+
   <% user_object = User.find_by(uid: @longest_array[1].to_s) %>
   <h4><%= user_object.name %> @<%= user_object.username %></h4>
   <p><%= user_object.bio %></p>
-</div>
-<br>
-<div class='cloud'>
+
   <% user_object = User.find_by(uid: @longest_array[2].to_s) %>
   <h4><%= user_object.name %> @<%= user_object.username %></h4>
   <p><%= user_object.bio %></p>
-</div>
-<br>
-<br>
-<div class='cloud'>
+
   <h2>The Sky Is The Limit</h2>
   <p>For more recommendations, please see our <a class="nav-link" href="/">interactive database</a>.</p>
 </div>
 
+
 <br>
 <br>
 <br>
@@ -124,4 +153,5 @@
 
 
 </div>
+
 
