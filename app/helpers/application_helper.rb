@@ -145,9 +145,9 @@ module ApplicationHelper
                 "#{node['name']}<img class='twitter_icon' height='19.5px' width='24px' src='http://platform.twitter.com/images/bird.png' /></h3></a>",
                 "<p>#{node['bio']}</p>",
                 "<h4>Recently tweeted:</h4>",
-                "<div class='tweet-text'>#{tweets.join}</div>"
+                "<div class='tweet-text'>#{tweets.join}</div>",
                 # "#{twitter_script}<a href='https://twitter.com/#{user.username}' class='twitter-follow-button' data-show-count='false'></a>"
-                "#{tweets.join}",
+
                 "<form class= 'follow' action='users/follow/'' method= 'post'>
                   <input name = 'screen_name' type='hidden' value=#{user.name}>
                   <input name='original_referer' type='hidden' value='http://platform.twitter.com/widgets/follow_button.df71e9fd75415d2cee8cfded99ebe79f.en.html'>
