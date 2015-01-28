@@ -28,127 +28,77 @@
   }
 </script>
 <script type="text/javascript">
-      google.load("visualization", "1", {packages:["corechart"]});
-      google.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-        ['Genre', 'Currently Following', 'Not Yet Following', { role: 'annotation' } ],
-        ['Education', <%= @known_experts_hash["Education"].length %>, <%= @unknown_experts_hash["Education"].length %>, ''],
-        ['Science', <%= @known_experts_hash["Science"].length %>, <%= @unknown_experts_hash["Science"].length %>, ''],
-        ['Foreign Policy', <%= @known_experts_hash["Foreign Policy"].length %>, <%= @unknown_experts_hash["Foreign Policy"].length %>, ''],
-        ['Health', <%= @known_experts_hash["Health"].length %>, <%= @unknown_experts_hash["Health"].length %>, ''],
-        ['Politics', <%= @known_experts_hash["Politics"].length %>, <%= @unknown_experts_hash["Politics"].length %>, ''],
-        ['Social Justice', <%= @known_experts_hash["Social Justice"].length %>, <%= @unknown_experts_hash["Social Justice"].length %>, ''],
-        ['Sports', <%= @known_experts_hash["Sports"].length %>, <%= @unknown_experts_hash["Sports"].length %>, ''],
-        ['Technology', <%= @known_experts_hash["Technology"].length %>, <%= @unknown_experts_hash["Technology"].length %>, ''],
-        ['Business', <%= @known_experts_hash["Business"].length %>, <%= @unknown_experts_hash["Business"].length %>, '']
+  google.load("visualization", "1", {packages:["corechart"]});
+  google.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+    ['Genre', 'Currently Following', 'Not Yet Following', { role: 'annotation' } ],
+    ['Education', <%= @known_experts_hash["Education"].length %>, <%= @unknown_experts_hash["Education"].length %>, ''],
+    ['Science', <%= @known_experts_hash["Science"].length %>, <%= @unknown_experts_hash["Science"].length %>, ''],
+    ['Foreign Policy', <%= @known_experts_hash["Foreign Policy"].length %>, <%= @unknown_experts_hash["Foreign Policy"].length %>, ''],
+    ['Health', <%= @known_experts_hash["Health"].length %>, <%= @unknown_experts_hash["Health"].length %>, ''],
+    ['Politics', <%= @known_experts_hash["Politics"].length %>, <%= @unknown_experts_hash["Politics"].length %>, ''],
+    ['Social Justice', <%= @known_experts_hash["Social Justice"].length %>, <%= @unknown_experts_hash["Social Justice"].length %>, ''],
+    ['Sports', <%= @known_experts_hash["Sports"].length %>, <%= @unknown_experts_hash["Sports"].length %>, ''],
+    ['Technology', <%= @known_experts_hash["Technology"].length %>, <%= @unknown_experts_hash["Technology"].length %>, ''],
+    ['Business', <%= @known_experts_hash["Business"].length %>, <%= @unknown_experts_hash["Business"].length %>, '']
 </script>
 <%= javascript_include_tag 'https://www.google.com/jsapi' %>
-
-<div id='user-wrapper'>
-  <script type="text/javascript">
-    google.load("visualization", "1", {packages:["corechart"]});
-    google.setOnLoadCallback(drawChart);
-    function drawChart() {
-      var data = google.visualization.arrayToDataTable([
-        ['Task', 'Hours per Day'],
-        ['Education',     <%= @known_experts_hash["Education"].length %>],
-        ['Science',      <%= @known_experts_hash["Science"].length %>],
-        ['Foreign Policy',  <%= @known_experts_hash["Foreign Policy"].length %>],
-        ['Health', <%= @known_experts_hash["Health"].length %>],
-        ['Politics',    <%= @known_experts_hash["Politics"].length %>],
-        ['Social Justice',    <%= @known_experts_hash["Social Justice"].length %>],
-        ['Sports',    <%= @known_experts_hash["Sports"].length %>],
-        ['Technology',    <%= @known_experts_hash["Technology"].length %>],
-        ['Business',    <%= @known_experts_hash["Business"].length %>]
-
-      ]);
-
-      var options = {
-        'title': 'Perspectives You Follow (By Category)',
-        'pieHole': 0.4
-        };
-
-      var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-      chart.draw(data, options);
-    }
-  </script>
-  <script type="text/javascript">
-    google.load("visualization", "1", {packages:["corechart"]});
-    google.setOnLoadCallback(drawChart);
-    function drawChart() {
-      var data = google.visualization.arrayToDataTable([
-      ['Genre', 'Currently Following', 'Not Yet Following', { role: 'annotation' } ],
-      ['Education', <%= @known_experts_hash["Education"].length %>, <%= @unknown_experts_hash["Education"].length %>, ''],
-      ['Science', <%= @known_experts_hash["Science"].length %>, <%= @unknown_experts_hash["Science"].length %>, ''],
-      ['Foreign Policy', <%= @known_experts_hash["Foreign Policy"].length %>, <%= @unknown_experts_hash["Foreign Policy"].length %>, ''],
-      ['Health', <%= @known_experts_hash["Health"].length %>, <%= @unknown_experts_hash["Health"].length %>, ''],
-      ['Politics', <%= @known_experts_hash["Politics"].length %>, <%= @unknown_experts_hash["Politics"].length %>, ''],
-      ['Social Justice', <%= @known_experts_hash["Social Justice"].length %>, <%= @unknown_experts_hash["Social Justice"].length %>, ''],
-      ['Sports', <%= @known_experts_hash["Sports"].length %>, <%= @unknown_experts_hash["Sports"].length %>, ''],
-      ['Technology', <%= @known_experts_hash["Technology"].length %>, <%= @unknown_experts_hash["Technology"].length %>, ''],
-      ['Business', <%= @known_experts_hash["Business"].length %>, <%= @unknown_experts_hash["Business"].length %>, '']
+<script type="text/javascript">
+  google.load("visualization", "1", {packages:["corechart"]});
+  google.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['Task', 'Hours per Day'],
+      ['Education',     <%= @known_experts_hash["Education"].length %>],
+      ['Science',      <%= @known_experts_hash["Science"].length %>],
+      ['Foreign Policy',  <%= @known_experts_hash["Foreign Policy"].length %>],
+      ['Health', <%= @known_experts_hash["Health"].length %>],
+      ['Politics',    <%= @known_experts_hash["Politics"].length %>],
+      ['Social Justice',    <%= @known_experts_hash["Social Justice"].length %>],
+      ['Sports',    <%= @known_experts_hash["Sports"].length %>],
+      ['Technology',    <%= @known_experts_hash["Technology"].length %>],
+      ['Business',    <%= @known_experts_hash["Business"].length %>]
     ]);
 
     var options = {
-      title: 'Your Total Exposure (By Category)',
-      width: 600,
-      height: 400,
-      legend: { position: 'top', maxLines: 3 },
-      bar: { groupWidth: '75%' },
-      isStacked: true
-    };
+      'title': 'Perspectives You Follow (By Category)',
+      'pieHole': 0.4
+      };
 
-      var chart = new google.visualization.BarChart(document.getElementById('barchart'));
+    var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
-      chart.draw(data, options);
-    }
-  </script>
+    chart.draw(data, options);
+  }
+</script>
+<div id='user-wrapper'>
+  <div id='aside-filler'>
+    <h1><%= current_user.name %>'s Horizon</h1>
 
-  <h1><%= current_user.name %>'s Horizon</h1>
+    <p>
+      Your <strong>Horizon</strong> represents a beautiful and informative take on the organizations, publications, and people you follow on Twitter.
+    </p>
 
-  <p>
-    Your <strong>Horizon</strong> represents a beautiful and informative take on the organizations, publications, and people you follow on Twitter.
-  </p>
+    <p>
+      The charts below give you a deeper understanding of the type of people you follow, and - more importantly - the perspectives you aren't hearing.
+    </p>
 
-  <p>
-    The charts below give you a deeper understanding of the type of people you follow, and - more importantly - the perspectives you aren't hearing.
-  </p>
+    <div class='left'>
+    <div id="piechart" style="width: 600px; height: 500px;"></div>
+    </div>
+    <div class='right'>
+      <h2>Broaden your horizon</h2>
+      <p>
+         Consider following more perspectives in the <strong><%= @longest_name %></strong> category:
+      </p>
 
-  <div id="piechart" style="width: 600px; height: 500px;"></div>
+      <%= user_display(0) %>
 
-  <h2>Find New Perspectives</h2>
-  <p>
-    Our database features hundreds of voices across a diverse range of issues and categories.
-  </p>
+      <%= user_display(1) %>
 
-  <div id="barchart" style="width: 600px; height: 400px;"></div>
-
-  <h2>Hear New Voices</h2>
-  <p>
-    Our database features hundreds of voices across a diverse range of issues and categories.
-  </p>
-
-  <p>
-    You have an opportunity to follow a few more <strong><%= @longest_name %></strong> perspectives. Here are a few of our recommendations:
-  </p>
-
-  <%= user_display(0) %>
-  <!-- <form class= 'follow_button' action='users/follow/'' method= 'post'>
-    <input name = 'screen_name' type='hidden' value=' user.name ''>
-    <input name='original_referer' type='hidden' value='http://platform.twitter.com/widgets/follow_button.df71e9fd75415d2cee8cfded99ebe79f.en.html'>
-    <input type='hidden' name='profile_id' value='user.neo_id'>
-    <input name = 'screen_name' type='hidden' value=' user.username '>
-    <input class='twitter-follow-button' type='submit' value='Follow'>
-  </form> -->
-
-  <%= user_display(1) %>
-
-  <%= user_display(2) %>
-
-  <h2>The Sky Is The Limit</h2>
-  <p>For more recommendations, please see our <a class="nav-link" href="/">interactive database</a>.</p>
+      <%= user_display(2) %>
+    </div>
+  </div>
 </div>
 
 

@@ -40,6 +40,9 @@ a.logo-text {
   padding: 6px;
   vertical-align: top;
 }
+.nav-horizon {
+  /*font-size: 30px;*/
+}
 .nav-link, a.nav-link:hover, a.nav-text-welcome:hover {
   color: #ff784f;
 }
@@ -141,6 +144,12 @@ section.logo {
 .aside-user-avatar {
   float: right;
   display: block;
+  border: 3px solid #FF8351;
+  border-radius: 6px;
+}
+.twitter-avatar {
+  display: inline;
+  margin: 0 8px 0 2px;
   border: 3px solid #FF8351;
   border-radius: 6px;
 }

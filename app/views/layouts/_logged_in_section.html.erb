@@ -1,5 +1,5 @@
 <div class='nav-text'>
-  <span class='nav-text-welcome'><%= link_to "#{current_user.username}'s Horizon", "/users/#{current_user.neo_id}", class: 'nav-text-welcome' %></span>
+  <span class='nav-text-welcome'><%= link_to "#{current_user.username}'s Horizon", "/users/#{current_user.neo_id}", class: 'nav-horizon' %></span>
   <span class="nav-link-logout"><%= notice.html_safe if notice %><%= alert %>
   <%= link_to "Sign Out", signout_path, class: "nav-link" %></span>
 </div>
