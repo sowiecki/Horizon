@@ -70,7 +70,8 @@ a.nav-text-welcome:hover {
   display: inline;
 }
 #user-wrapper > p {
-  padding: 10px 0 10px 0;
+  padding: 5px 0 15px 20px;
+  font-size: 18px;
 }
 h1 {
   margin: 1px;
@@ -89,6 +90,7 @@ h3 {
   padding: 2px;
 }
 h3.twitter-link {
+  display: inline;
   text-decoration: underline;
 }
 h3.twitter-link:hover {
@@ -122,6 +124,9 @@ li {
 }
 
 /* Image and chart elements */
+.twitter_icon {
+  padding: 0 0 0 6px;
+}
 section.logo {
   display: inline-block;
 }
@@ -143,8 +148,4 @@ section.logo {
   display: block;
   border: 2px solid #4C4C4C;
   margin: 10px auto 30px auto;
-}
-
-.follow_button{
-
 }

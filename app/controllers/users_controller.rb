@@ -1,20 +1,21 @@
 class UsersController < ApplicationController
+  include UsersHelper
+
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   skip_before_filter :verify_authenticity_token
-  # GET /users
-  # GET /users.json
+
   def index
     @users = User.all
   end
 
   def follow
-    p client
     client.follow(params["screen_name"])
-    redirect_to '/'
   end
 
-  # GET /users/1
-  # GET /users/1.json
+  def twitter_redirect
+    redirect_to current_user_path
+  end
+
   def show
     # Get the User's friend IDs
     @user_friend_ids = client.friend_ids(current_user.username).to_a
@@ -37,10 +38,6 @@ class UsersController < ApplicationController
         @categories_hash[category.name][issue_object.name] = @issue_hash
       end
     end
-
-    ### If I want the amount of experts I follow in Science compared to my total friends
-    p "Categories Hash"
-    p @categories_hash
 
     # Your Known Experts By Category
     @known_experts_hash = {}
@@ -69,11 +66,6 @@ class UsersController < ApplicationController
       @unknown_experts_hash[category.name] = @unknown_experts_array
     end
 
-    p "Known Experts Hash"
-    p @known_experts_hash
-    p "Unknown Experts Hash"
-    p @unknown_experts_hash
-
     # Find Your Least-Followed Category
     @longest_name = ""
     @longest_array = []
@@ -84,57 +76,7 @@ class UsersController < ApplicationController
       end
     end
 
-    p @longest_name
-    p @longest_array
-
-
     @user_friend_ids = client.friend_ids(current_user.username).to_a
-
-
-  end
-
-  # GET /users/new
-  def new
-    @user = User.new
-  end
-
-  # GET /users/1/edit
-  def edit
-  end
-
-  # POST /users
-  # POST /users.json
-  def create
-    @user = User.new(user_params)
-
-    respond_to do |format|
-      if @user.save
-        redirect_to @user, notice: 'User was successfully created.'
-      else
-        render :new
-      end
-    end
-  end
-
-  # PATCH/PUT /users/1
-  # PATCH/PUT /users/1.json
-  def update
-    respond_to do |format|
-      if @user.update(user_params)
-        redirect_to @user, notice: 'User was successfully updated.'
-      else
-        render :edit
-      end
-    end
-  end
-
-  # DELETE /users/1
-  # DELETE /users/1.json
-  def destroy
-    @user.destroy
-    respond_to do |format|
-      redirect_to users_url, notice: 'User was successfully destroyed.'
-    end
   end
 
   private
@@ -155,7 +97,6 @@ class UsersController < ApplicationController
 
     # the current array of expert ids for this issue
     perspective_ids = return_perspective_ids(issue_object)
-
     @unknown_friend_ids = []
     @known_friend_ids = []
 
@@ -163,7 +104,6 @@ class UsersController < ApplicationController
     @unknown_friend_ids = perspective_ids - @user_friend_ids
 
     # people in our database you do currently follow
-
     @known_friend_ids = @user_friend_ids & perspective_ids
 
     sorted_perspectives = {unknown: @unknown_friend_ids, known: @known_friend_ids}

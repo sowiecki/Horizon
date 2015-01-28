@@ -36,6 +36,10 @@ $(function() {
     $('#aside-info').fadeOut(500)
   })
 
+  // $('.twitter-follow-button').on('click', function () {
+  //   $('.twitter-follow-button').val() = "Followed!";
+  // })
+
   $('.aside-wrapper').draggable();
 
   $('#help-toggle').on('click', function (e) {
