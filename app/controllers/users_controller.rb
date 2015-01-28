@@ -7,6 +7,11 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def follow
+    client.follow('redhourben')
+  end
+
+
   # GET /users/1
   # GET /users/1.json
   def show

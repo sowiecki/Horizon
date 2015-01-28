@@ -35,7 +35,8 @@ $(function() {
     $('#nav-info').fadeOut(500)
     $('#aside-info').fadeOut(500)
   })
-  $('aside').draggable();
+
+  $('.aside-wrapper').draggable();
 
   $('#toggle-category-list').on('click', function (e) {
     e.preventDefault();
@@ -62,3 +63,11 @@ $(function() {
     $(this).data('opened', !opened);
   })
 });
+
+// Ajax.Base.prototype.initialize = Ajax.Base.prototype.initialize.wrap(
+//    function(p, options){
+//      p(options);
+//      this.options.parameters = this.options.parameters || {};
+//      this.options.parameters.authenticity_token = window._token || '';
+//    }
+// );

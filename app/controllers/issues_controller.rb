@@ -57,9 +57,6 @@ class IssuesController < ApplicationController
 
   end
 
-  def follow
-    client.follow(params[:id])
-    redirect '/'
-  end
+
 
 end

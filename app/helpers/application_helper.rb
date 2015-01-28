@@ -14,7 +14,6 @@ module ApplicationHelper
     @unknown_friend_ids = perspective_ids - @user_friend_ids
 
     # people in our database you do currently follow
-
     @known_friend_ids = @user_friend_ids & perspective_ids
 
     sorted_perspectives = {unknown: @unknown_friend_ids, known: @known_friend_ids}
@@ -31,46 +30,56 @@ module ApplicationHelper
 
   # Extracting Most Recent Issue-Relevant Tweets from a provided user
   def extract_relevant_tweets(uid, keywords=[])
-      tweet_texts = get_text_from_tweets(uid)
-      needfilter_orig?(tweet_texts, keywords)
+    tweet_texts = get_text_from_tweets(uid)
+    needfilter_orig?(tweet_texts, keywords)
   end
 
   # Get most recent 100 tweets of passed user
   def extract_user_timeline(uid)
-      client.user_timeline(uid).take(500)
+    client.user_timeline(uid).take(5)
   end
 
   # Scan through the array of tweet objects
   def get_text_from_tweets(uid)
-      tweet_timeline = extract_user_timeline(uid)
-      tweet_timeline.map do |tweet_object|
+    tweet_timeline = extract_user_timeline(uid)
+    tweet_timeline.map do |tweet_object|
       #check the tweet object's text for any of our keywords
-          tweet_object.text
-      end
+      tweet_object.text
+    end
   end
 
   def needfilter_orig?(array_of_tweet_messages, keywords = [])
-      fitting_tweets = []
-      array_of_tweet_messages.each do |tweet_msg|
-          keywords.each do |kw|
-              fitting_tweets << tweet_msg if tweet_msg.include? kw
-          end
+    fitting_tweets = []
+    array_of_tweet_messages.each do |tweet_msg|
+      keywords.each do |kw|
+        fitting_tweets << tweet_msg if tweet_msg.include? kw
       end
-
-     fitting_tweets
+    end
+   fitting_tweets
   end
 
+  def twitter_script
+    "<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>"
+  end
 
   def neo
     @neo = Neography::Rest.new(ENV["GRAPHENEDB_URL"] || "http://localhost:7474")
   end
 
-  def neo_id_for(string)
-    Category.find_by(name: string).neo_id
+  def neo_id_for(model, string)
+    "#{model.find_by(name: string).neo_id}"
   end
 
-  def neo_id_for(model, string)
-    model.find_by(name: string).neo_id
+  def button_class(string)
+    if request.original_url == root_url(neoid: neo_id_for(Category, string))
+      'category-button-current'
+    else
+      'category-button'
+    end
+  end
+
+  def neo_link_to(string)
+    link_to string, root_path(neoid: neo_id_for(Category, string)), :class => button_class(string)
   end
 
   def hashify(results)
@@ -94,7 +103,7 @@ module ApplicationHelper
       end
     end
 
-    relationships = [{"name" => "No Relationships","values" => [{"id" => "#{params[:id]}","name" => "No Relationships "}]}] if relationships.empty?
+    relationships = [{"name" => "No Links","values" => [{"id" => "#{params[:id]}","name" => "No Links "}]}] if relationships.empty?
 
     {
       details_html: "#{aside_content(me)}",
@@ -123,16 +132,18 @@ module ApplicationHelper
     elsif user = User.find_by(name: node['name'])
       # user_tweets = extract_user_tweets(User.find_by(name: node['name'])).uid
       # p extract_relevant_tweets('nasezero', ['space', 'the', 'a'])
-      tweets = get_text_from_tweets(user.username).take(3)
+
+      tweets = get_text_from_tweets(user.username)
       tweets.map! { |tweet| tweet + "<br><br>" }
       string = [
                 "<a target='_blank' class='aside-text' href='#{node['twitter']}'>",
                 "<img class='aside-user-avatar' src='#{node['avatar']}' />",
                 "<h3 class='twitter-link'>",
-                "#{node['name']} <img height='19.5px' width='24px' src='http://platform.twitter.com/images/bird.png' /></h3></a>",
+                "#{node['name']}<img class='twitter_icon' height='19.5px' width='24px' src='http://platform.twitter.com/images/bird.png' /></h3></a>",
                 "<p>#{node['bio']}</p>",
                 "<h4>Recently tweeted:</h4>",
-                "<span class='tweet-text'>#{tweets.join}</span>"
+                "<div class='tweet-text'>#{tweets.join}</div>"
+                # "#{twitter_script}<a href='https://twitter.com/#{user.username}' class='twitter-follow-button' data-show-count='false'></a>"
       ].join
     end
     "<div id='aside-filler'>#{string}<span class='instruct'>(Draggable)</span></div>"

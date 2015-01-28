@@ -3,7 +3,3 @@ canvas {
   position: absolute;
   width: 100%;
 }
-.canvas-wrapper {
-  margin: 0 auto auto;
-  width: 960px;
-}

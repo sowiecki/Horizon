@@ -22,6 +22,8 @@ html {
   background-size: 150%;
   overflow-y: scroll;
   min-height: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
  }
 body {
   margin: 0;
@@ -53,15 +55,10 @@ header {
   padding: 0 40px 0 0;
   max-width: 960px;
 }
-.logo {
-  /*margin: 16px 0 16px 0;*/
-  /*text-shadow: 0 0 20px rgba(100,100,100,0.8), 0 0 0 black;*/
-}
 a.logo-text {
   color: #EFE9F4;
   font-weight: bold;
   font-family: 'Lato', serif;
-  /*color: #4312AE;*/
 }
 a.logo-text {
   text-decoration: none;
@@ -72,6 +69,10 @@ section.logo {
 nav {
   float: right;
   text-align: right;
+}
+.nav-wrapper {
+  margin: 0 auto auto;
+  width: 960px;
 }
 .nav-avatar {
   display: inline-block;
@@ -160,6 +161,16 @@ h4 {
 p {
   margin: 2px;
 }
+ul li:before {
+  content: "\00BB  ";
+}
+li {
+  padding: 20px 10px 20px 0;
+  list-style: none;
+  color: #4c4c4c;
+  font-weight: bold;
+  font-size: 14px;
+}
 
 #search-wrapper {
   z-index: 100;
@@ -210,7 +221,7 @@ a.twitter-auth-button:hover {
   color: #7f7f7f;
 }
 .instruct {
-  padding: 0 0 0 310px;
+  padding: 0 0 0 210px;
 }
 
 footer {

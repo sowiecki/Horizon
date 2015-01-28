@@ -1,7 +1,9 @@
 .aside-wrapper {
+  margin: 0 0 0 500px;
   min-height: 80%;
 }
 aside {
+  position: absolute;
   top: 125px;
   color: #191919;
   max-width: 450px;
@@ -12,13 +14,18 @@ aside {
   border: 1px solid black;
 }
 #aside-filler {
-  margin: 10px 0 0 40px;
   padding: 8px;
+  left: 200px;
   background-color: ghostwhite;
   border-radius: 6px;
   box-shadow: 1px 1px 2px #bfbfbf;
 }
+.twitter_icon {
+  margin: 0 6px 0 6px;
+  text-decoration: none;
+}
 .tweet-text {
+  padding: 0 0 0 10px;
   font-size: 20px;
 }
 #nav-info, #aside-info {
