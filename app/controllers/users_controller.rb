@@ -18,7 +18,8 @@ class UsersController < ApplicationController
 
   def show
     # Get the User's friend IDs
-    @user_friend_ids = client.friend_ids(current_user.username).to_a
+    @user_friend_ids = [17762060, 31583882] # Fucking rate limit
+    # @user_friend_ids = client.friend_ids(current_user.username).to_a
     @categories_hash = {}
     # Iterate through each category
     Category.all.each do |category|
@@ -76,7 +77,7 @@ class UsersController < ApplicationController
       end
     end
 
-    @user_friend_ids = client.friend_ids(current_user.username).to_a
+    # @user_friend_ids = client.friend_ids(current_user.username).to_a
   end
 
   private
