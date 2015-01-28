@@ -1,5 +1,4 @@
 module ApplicationHelper
-
   def find_correct_users(user_friend_ids, issue_object)
     #the current user's array of ids of people they follow
     @user_friend_ids = user_friend_ids

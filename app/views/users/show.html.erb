@@ -88,17 +88,11 @@
     You have an opportunity to follow a few more <strong><%= @longest_name %></strong> perspectives. Here are a few of our recommendations:
   </p>
 
-  <% user_object = User.find_by(uid: @longest_array[0].to_s) %>
-  <h4><%= user_object.name %> @<%= user_object.username %></h4>
-  <p><%= user_object.bio %></p>
+  <%= user_display(0) %>
 
-  <% user_object = User.find_by(uid: @longest_array[1].to_s) %>
-  <h4><%= user_object.name %> @<%= user_object.username %></h4>
-  <p><%= user_object.bio %></p>
+  <%= user_display(1) %>
 
-  <% user_object = User.find_by(uid: @longest_array[2].to_s) %>
-  <h4><%= user_object.name %> @<%= user_object.username %></h4>
-  <p><%= user_object.bio %></p>
+  <%= user_display(2) %>
 
   <h2>The Sky Is The Limit</h2>
   <p>For more recommendations, please see our <a class="nav-link" href="/">interactive database</a>.</p>
