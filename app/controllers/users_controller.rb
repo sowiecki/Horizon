@@ -2,13 +2,8 @@ class UsersController < ApplicationController
   include UsersHelper
 
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-<<<<<<< HEAD
-
-=======
   skip_before_filter :verify_authenticity_token
-  # GET /users
-  # GET /users.json
->>>>>>> cbac124ef8540f69aac68df033623d1dafcea6ed
+
   def index
     @users = User.all
   end
@@ -19,11 +14,6 @@ class UsersController < ApplicationController
     redirect_to '/'
   end
 
-<<<<<<< HEAD
-=======
-  # GET /users/1
-  # GET /users/1.json
->>>>>>> cbac124ef8540f69aac68df033623d1dafcea6ed
   def show
     # Get the User's friend IDs
     @user_friend_ids = [1] #client.friend_ids(current_user.username).to_a
@@ -46,10 +36,6 @@ class UsersController < ApplicationController
         @categories_hash[category.name][issue_object.name] = @issue_hash
       end
     end
-
-    # If I want the amount of experts I follow in Science compared to my total friends
-    p "Categories Hash"
-    p @categories_hash
 
     # Your Known Experts By Category
     @known_experts_hash = {}
@@ -78,11 +64,6 @@ class UsersController < ApplicationController
       @unknown_experts_hash[category.name] = @unknown_experts_array
     end
 
-    p "Known Experts Hash"
-    p @known_experts_hash
-    p "Unknown Experts Hash"
-    p @unknown_experts_hash
-
     # Find Your Least-Followed Category
     @longest_name = ""
     @longest_array = []
@@ -93,13 +74,7 @@ class UsersController < ApplicationController
       end
     end
 
-    p @longest_name
-    p @longest_array
-
-
     @user_friend_ids = client.friend_ids(current_user.username).to_a
-
-
   end
 
   private
@@ -120,7 +95,6 @@ class UsersController < ApplicationController
 
     # the current array of expert ids for this issue
     perspective_ids = return_perspective_ids(issue_object)
-
     @unknown_friend_ids = []
     @known_friend_ids = []
 
@@ -128,7 +102,6 @@ class UsersController < ApplicationController
     @unknown_friend_ids = perspective_ids - @user_friend_ids
 
     # people in our database you do currently follow
-
     @known_friend_ids = @user_friend_ids & perspective_ids
 
     sorted_perspectives = {unknown: @unknown_friend_ids, known: @known_friend_ids}

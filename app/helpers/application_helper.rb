@@ -1,9 +1,4 @@
 module ApplicationHelper
-<<<<<<< HEAD
-=======
-
-
->>>>>>> cbac124ef8540f69aac68df033623d1dafcea6ed
   def find_correct_users(user_friend_ids, issue_object)
     #the current user's array of ids of people they follow
     @user_friend_ids = user_friend_ids
@@ -33,8 +28,6 @@ module ApplicationHelper
 
 
   # Extracting Most Recent Issue-Relevant Tweets from a provided user
-
-
   def extract_relevant_tweets(uid, keywords=[])
     tweet_texts = get_text_from_tweets(uid)
     needfilter_orig?(tweet_texts, keywords)
