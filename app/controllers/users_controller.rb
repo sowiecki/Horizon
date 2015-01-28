@@ -51,8 +51,6 @@ class UsersController < ApplicationController
       @known_experts_hash[category.name] = @known_experts_array
     end
 
-    p "Known Experts Hash"
-    p @known_experts_hash
 
     # Your Unknown Experts By Category
     @unknown_experts_hash = {}
@@ -75,8 +73,6 @@ class UsersController < ApplicationController
         @longest_name = name
       end
     end
-
-    @user_friend_ids = client.friend_ids(current_user.username).to_a
   end
 
   private
