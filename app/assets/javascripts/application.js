@@ -38,17 +38,6 @@ $(function() {
 
   $('.aside-wrapper').draggable();
 
-  $('#toggle-category-list').on('click', function (e) {
-    e.preventDefault();
-    var opened = $(this).data('opened');
-    if (opened) {
-      $('#search-buttons').toggle("fold", 25);
-    } else {
-      $('#search-buttons').toggle("fold", 25);
-    }
-    $(this).data('opened', !opened);
-  })
-
   $('#help-toggle').on('click', function (e) {
     e.preventDefault();
     e.stopPropagation();

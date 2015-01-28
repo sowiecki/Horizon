@@ -13,23 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
 * {
   font-family: Tahoma, Geneva, sans-serif;
 }
-html {
-  background: #EFEFEF;
-  background-repeat: no-repeat;
-  background-size: 150%;
-  overflow-y: scroll;
-  min-height: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
- }
-body {
-  margin: 0;
-  min-height: 100%;
-  background-color: transparent;
-}
+
 a {
   text-decoration: none;
 }
@@ -38,23 +26,7 @@ a:hover {
   background-color: transparent;
 }
 
-/* Header elements */
-header {
-  z-index: 200;
-  position: absolute;
-  padding: 10px;
-  top: 0;
-  height: 56px;
-  width: 100%;
-  color: #35D7E0;
-  background-color: transparent;
-  background: #171D1C;
-}
-.header-content-wrapper {
-  margin: 0 auto auto;
-  padding: 0 40px 0 0;
-  max-width: 960px;
-}
+/* Text elements */
 a.logo-text {
   color: #EFE9F4;
   font-weight: bold;
@@ -62,20 +34,6 @@ a.logo-text {
 }
 a.logo-text {
   text-decoration: none;
-}
-section.logo {
-  display: inline-block;
-}
-nav {
-  float: right;
-  text-align: right;
-}
-.nav-wrapper {
-  margin: 0 auto auto;
-  width: 960px;
-}
-.nav-avatar {
-  display: inline-block;
 }
 .nav-text {
   display: inline-block;
@@ -111,30 +69,8 @@ a.nav-text-welcome:hover {
 .notice, .alert {
   display: inline;
 }
-h3.twitter-link {
-  text-decoration: underline;
-}
-h3.twitter-link:hover {
-  color: #ff9b7f;
-}
-
-.current-user-avatar {
-  display: inline-block;
-  border: 3px solid #35D7E0;
-  border-radius: 6px;
-}
-.aside-user-avatar {
-  float: right;
-  display: block;
-  border: 3px solid #FF8351;
-  border-radius: 6px;
-}
-
-.welcome-wrapper {
-  margin: 100px auto auto;
-  padding: 0 20px 0 20px;
-  max-width: 600px;
-  color: #7c7c7c;
+#user-wrapper > p {
+  padding: 10px 0 10px 0;
 }
 h1 {
   margin: 1px;
@@ -146,12 +82,17 @@ h1.issue {
 }
 h2 {
   margin: 2px;
-  /*text-transform: uppercase;*/
   color: #4c4c4c;
 }
 h3 {
   margin: 2px;
   padding: 2px;
+}
+h3.twitter-link {
+  text-decoration: underline;
+}
+h3.twitter-link:hover {
+  color: #ff9b7f;
 }
 h4 {
   margin: 6px 2px 2px 2px;
@@ -171,50 +112,6 @@ li {
   font-weight: bold;
   font-size: 14px;
 }
-
-#search-wrapper {
-  z-index: 100;
-  position: relative;
-  /*margin: 0 auto auto;*/
-  max-width: 960px;
-}
-#search {
-  position: absolute;
-  margin: 0 auto auto;
-  left: 10px;
-  right: 10px;
-}
-
-a.twitter-auth-button {
-  display: inline-block;
-  padding: 1px 6px 0 28px;
-  border: #ccc solid 1px;
-  border-radius: 3px;
-  background: #f8f8f8 url(//platform.twitter.com/images/bird.png) 2px 3px no-repeat;
-  background: url(//platform.twitter.com/images/bird.png) 2px 3px no-repeat,
-              -webkit-linear-gradient(#fff, #dedede);
-  background: url(//platform.twitter.com/images/bird.png) 2px 3px no-repeat,
-              linear-gradient(#fff, #dedede);
-  background-size: 22px 19px, auto auto;
-
-  /* Text */
-  font: bold 18px/24px Helvetica, Arial, sans-serif;
-  text-decoration: none;
-  color: #333;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
-  white-space: nowrap;
-}
-
-a.twitter-auth-button:hover {
-  color: #4c4c4c;
-  background: #f8f8f8 url(//platform.twitter.com/images/bird.png) 2px 3px no-repeat;
-  background: url(//platform.twitter.com/images/bird.png) 2px 3px no-repeat,
-              -webkit-linear-gradient(#fff, #f2f2f2);
-  background: url(//platform.twitter.com/images/bird.png) 2px 3px no-repeat,
-              linear-gradient(#fff, #f2f2f2);
-  background-size: 22px 19px, auto auto;
-}
-
 .instruct, .instruct-text {
   text-align: right;
   font-size: 10px;
@@ -224,17 +121,26 @@ a.twitter-auth-button:hover {
   padding: 0 0 0 210px;
 }
 
-footer {
-  position: absolute;
-  padding: 4px;
-  height: 20px;
-  width: 100%;
-  text-align: center;
-  color: #35D7E0;
-  background: #171D1C;
-  bottom: 0px;
+/* Image and chart elements */
+section.logo {
+  display: inline-block;
 }
-footer > a {
-  margin: 0 auto auto;
-  color: #35D7E0;
+.nav-avatar {
+  display: inline-block;
+}
+.current-user-avatar {
+  display: inline-block;
+  border: 3px solid #35D7E0;
+  border-radius: 6px;
+}
+.aside-user-avatar {
+  float: right;
+  display: block;
+  border: 3px solid #FF8351;
+  border-radius: 6px;
+}
+#piechart, #barchart {
+  display: block;
+  border: 2px solid #4C4C4C;
+  margin: 10px auto 30px auto;
 }

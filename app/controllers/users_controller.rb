@@ -35,7 +35,6 @@ class UsersController < ApplicationController
 
         @categories_hash[category.name][issue_object.name] = @issue_hash
       end
-
     end
 
     ### If I want the amount of experts I follow in Science compared to my total friends
@@ -86,8 +85,6 @@ class UsersController < ApplicationController
 
     p @longest_name
     p @longest_array
-
-
   end
 
   # GET /users/new
@@ -135,17 +132,16 @@ class UsersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = User.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def user_params
-      params[:user]
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_user
+    @user = User.find(params[:id])
+  end
 
-
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def user_params
+    params[:user]
+  end
 
   def find_correct_users(user_friend_ids, issue_object)
     #the current user's array of ids of people they follow
@@ -174,6 +170,4 @@ class UsersController < ApplicationController
     end
     perspective_ids
   end
-
-
 end
