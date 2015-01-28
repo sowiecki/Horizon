@@ -114,12 +114,12 @@ module ApplicationHelper
 
   def node_id(node) # Neovigator
     case node
-      when Hash
-        node["self"].split('/').last
-      when String
-        node.split('/').last
-      else
-        node
+    when Hash
+      node["self"].split('/').last
+    when String
+      node.split('/').last
+    else
+      node
     end
   end
 

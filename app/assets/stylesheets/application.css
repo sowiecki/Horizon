@@ -153,8 +153,3 @@ section.logo {
   border: 3px solid #FF8351;
   border-radius: 6px;
 }
-#piechart, #barchart {
-  display: block;
-  border: 2px solid #4C4C4C;
-  margin: 10px auto 30px auto;
-}
