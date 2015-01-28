@@ -43,7 +43,5 @@ class User
       user.name = auth["info"]["name"]
       user.bio = auth["info"]["description"]
     end
-
-
   end
 end

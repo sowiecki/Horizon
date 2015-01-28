@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get "/resources/show" => "resources#show"
   get "/auth/:provider/callback" => "sessions#create"
   get "/signout" => "sessions#destroy", :as => :signout
-  put "/users" => "users#follow", :as => :follow
+  post "/users/follow" => "users#follow", :as => :follow
 
   # root :to => "profile#show"
 

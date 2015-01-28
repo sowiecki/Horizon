@@ -2,15 +2,28 @@ class UsersController < ApplicationController
   include UsersHelper
 
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+<<<<<<< HEAD
 
+=======
+  skip_before_filter :verify_authenticity_token
+  # GET /users
+  # GET /users.json
+>>>>>>> cbac124ef8540f69aac68df033623d1dafcea6ed
   def index
     @users = User.all
   end
 
   def follow
-    client.follow('redhourben')
+    p client
+    client.follow(params["screen_name"])
+    redirect_to '/'
   end
 
+<<<<<<< HEAD
+=======
+  # GET /users/1
+  # GET /users/1.json
+>>>>>>> cbac124ef8540f69aac68df033623d1dafcea6ed
   def show
     # Get the User's friend IDs
     @user_friend_ids = [1] #client.friend_ids(current_user.username).to_a
@@ -82,6 +95,11 @@ class UsersController < ApplicationController
 
     p @longest_name
     p @longest_array
+
+
+    @user_friend_ids = client.friend_ids(current_user.username).to_a
+
+
   end
 
   private
@@ -124,3 +142,4 @@ class UsersController < ApplicationController
     perspective_ids
   end
 end
+
