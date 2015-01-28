@@ -3,21 +3,29 @@ class SessionsController < ApplicationController
   end
 
   def create
-    auth = request.env["omniauth.auth"]
+    require 'oauth'
 
+    consumer = get_consumer
+    
+    # Re-create the request token
+    @request_token = consumer.get_request_token
+    p params[:oauth_verifier]
+    # Convert the request token to an access token using the verifier Twitter gave us
+    @access_token = @request_token.get_access_token(:oauth_verifier =>
+        params[:oauth_verifier])
 
-    # Finding an existing or creating a new User object when logging in with Twitter
-    user = User.find_by(provider: auth["provider"], uid: auth["uid"]) || User.create_with_omniauth(auth)
+    # Store the token and secret that we need to make API calls
+    session[:oauth_token] = @access_token.token
+    session[:oauth_secret] = @access_token.secret
 
-    # Assigning Session
-    session[:user_id] = user.id
-
-
-    # Making sure the User object has a list of friend_ids
-    # user.friend_ids = client.friend_ids(current_user.username).to_a
-
-    redirect_to root_url, :notice => "<span id='first-login'>You've been signed in.</span> | "
+    # Hand off to our app, which actually uses the API with the above token and secret
+    redirect_to '/'
   end
+  
+  def oauth
+
+  end
+
 
   def destroy
     session.clear
@@ -25,15 +33,18 @@ class SessionsController < ApplicationController
   end
 
   private
-
-  def prepare_access_token(oauth_token, oauth_token_secret)
-    consumer = OAuth::Consumer.new(ENV['CONSUMER_KEY'], ENV['CONSUMER_SECRET'], { :site => "https://api.twitter.com", :scheme => :header })
-
-
-    # now create the access token object from passed values
-    token_hash = { :oauth_token => oauth_token, :oauth_token_secret => oauth_token_secret }
-    access_token = OAuth::AccessToken.from_hash(consumer, token_hash )
-
-    return access_token
+  
+  def get_consumer
+    OAuth::Consumer.new(ENV['CONSUMER_KEY'], ENV['CONSUMER_SECRET'], 
+      {
+        :oauth_signature_method => 'HMAC-SHA1',
+        :request_token_path => 'https://api.twitter.com/oauth/request_token',
+        :authorize_path =>  'https://api.twitter.com/oauth/authorize',
+        :access_token_path => 'https://api.twitter.com/oauth/access_token'
+      }
+    )
   end
+
+
 end
+

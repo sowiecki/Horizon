@@ -9,7 +9,6 @@ class UsersController < ApplicationController
 
   def follow
     p client
-    p session[:token]
     client.follow(params["screen_name"])
     redirect_to '/'
   end
