@@ -40,3 +40,13 @@ User.find_or_create_by({provider: 'twitter', uid: '14745264', username: 'malcolm
 china_perspectives.each do |expert|
   china_issue.perspectives << expert
 end
+
+eu_issue = Issue.find_or_create_by({name: "European Union", description: ""})
+fp_category.issues << eu_issue
+
+eu_perspectives = [
+]
+
+eu_perspectives.each do |perspective|
+	eu_issue.perspectives << perspective
+end
