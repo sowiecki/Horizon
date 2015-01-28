@@ -19,9 +19,9 @@
       ]);
 
       var options = {
-        title: 'Perspectives You Follow (By Category)',
-        pieHole: 0.4
-      };
+        'title': 'Perspectives You Follow (By Category)',
+        'pieHole': 0.4
+        };
 
       var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
@@ -62,22 +62,31 @@
 
   <h1><%= current_user.name %>'s Horizon</h1>
 
-  <h2>Explore Your Horizon</h2>
-  <p>Your <strong>Horizon</strong> represents a beautiful and informative take on the organizations, publications, and people you follow on Twitter.</p>
+  <p>
+    Your <strong>Horizon</strong> represents a beautiful and informative take on the organizations, publications, and people you follow on Twitter.
+  </p>
 
-  <p>The charts below give you a deeper understanding of the type of people you follow, and - more importantly - the compelling voices you aren't hearing.</p>
+  <p>
+    The charts below give you a deeper understanding of the type of people you follow, and - more importantly - the perspectives you aren't hearing.
+  </p>
 
   <div id="piechart" style="width: 600px; height: 500px;"></div>
 
   <h2>Find New Perspectives</h2>
-  <p>Our database features hundreds of voices across a diverse range of issues and categories.</p>
+  <p>
+    Our database features hundreds of voices across a diverse range of issues and categories.
+  </p>
 
   <div id="barchart" style="width: 600px; height: 400px;"></div>
 
   <h2>Hear New Voices</h2>
-  <p>Our database features hundreds of voices across a diverse range of issues and categories.</p>
-  <br>
-  <p>You have an opportunity to follow a few more <strong><%= @longest_name %></strong> perspectives. Here are a few of our recommendations:</p>
+  <p>
+    Our database features hundreds of voices across a diverse range of issues and categories.
+  </p>
+
+  <p>
+    You have an opportunity to follow a few more <strong><%= @longest_name %></strong> perspectives. Here are a few of our recommendations:
+  </p>
 
   <% user_object = User.find_by(uid: @longest_array[0].to_s) %>
   <h4><%= user_object.name %> @<%= user_object.username %></h4>
