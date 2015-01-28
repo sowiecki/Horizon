@@ -13,14 +13,7 @@ class ApplicationController < ActionController::Base
     current_user != nil
   end
 
-
-
-
   def client
-    # request_token = session[:twitter_request_token]
-
-    # access_token = request_token.get_access_token(:oauth_verifier => params[:oauth_verifier])
-
     client = Twitter::REST::Client.new do |config|
       config.consumer_key        = ENV["CONSUMER_KEY"]
       config.consumer_secret     = ENV["CONSUMER_SECRET"]

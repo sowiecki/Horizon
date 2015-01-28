@@ -13,9 +13,6 @@ class SessionsController < ApplicationController
     session[:consumer_token] = auth.credentials.token
     session[:consumer_secret] = auth.credentials.secret
 
-    # Making sure the User object has a list of friend_ids
-    # user.friend_ids = client.friend_ids(current_user.username).to_a
-
     redirect_to "/users/#{current_user.neo_id}", :notice => "<span id='first-login'>You've been signed in.</span> | "
   end
 

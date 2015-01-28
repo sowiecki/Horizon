@@ -6,19 +6,11 @@
 
     var data = google.visualization.arrayToDataTable([
       ['Task', 'Hours per Day'],
-      ['Education',     <%= @known_experts_hash["Education"].length %>],
-      ['Science',      <%= @known_experts_hash["Science"].length %>],
-      ['Foreign Policy',  <%= @known_experts_hash["Foreign Policy"].length %>],
-      ['Health', <%= @known_experts_hash["Health"].length %>],
-      ['Politics',    <%= @known_experts_hash["Politics"].length %>],
-      ['Social Justice',    <%= @known_experts_hash["Social Justice"].length %>],
-      ['Sports',    <%= @known_experts_hash["Sports"].length %>],
-      ['Technology',    <%= @known_experts_hash["Technology"].length %>],
-      ['Business',    <%= @known_experts_hash["Business"].length %>]
+      <%= @known_experts_hash.map { |k,v| [k, v.length].to_s }.join(',').html_safe %>
     ]);
 
     var options = {
-      'width': 315,
+      'width': 350,
       'height': 400,
       'backgroundColor': { fill:'transparent' },
       'legend': {position: 'bottom'},

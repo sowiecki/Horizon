@@ -127,8 +127,8 @@ li {
 }
 
 /* Image and chart elements */
-.twitter_icon {
-  padding: 0 0 0 6px;
+.twitter-icon {
+  padding: 0 0 0 3px;
 }
 section.logo {
   display: inline-block;
@@ -136,20 +136,18 @@ section.logo {
 .nav-avatar {
   display: inline-block;
 }
-.current-user-avatar {
-  display: inline-block;
+.current-user-avatar, .aside-user-avatar, .twitter-avatar {
   border: 3px solid #35D7E0;
   border-radius: 6px;
+}
+.current-user-avatar {
+  display: inline-block;
 }
 .aside-user-avatar {
   float: right;
   display: block;
-  border: 3px solid #FF8351;
-  border-radius: 6px;
 }
 .twitter-avatar {
   display: inline;
   margin: 0 8px 0 2px;
-  border: 3px solid #FF8351;
-  border-radius: 6px;
 }
