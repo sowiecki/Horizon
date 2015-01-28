@@ -73,7 +73,6 @@ class UsersController < ApplicationController
         @longest_name = name
       end
     end
-    # @user_friend_ids = client.friend_ids(current_user.username).to_a
   end
 
   private

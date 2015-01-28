@@ -40,14 +40,11 @@ a.logo-text {
   padding: 6px;
   vertical-align: top;
 }
-.nav-horizon {
-  /*font-size: 30px;*/
-}
 .nav-link, a.nav-link:hover, a.nav-text-welcome:hover {
-  color: #ff784f;
+  color: #35D7E0;
 }
 a.nav-link:visited, a.nav-text-welcome:visited {
-  color: #ff784f;
+  color: #35D7E0;
 }
 .nav-button-twitter-login {
   display: inline-block;
@@ -60,10 +57,13 @@ a.nav-link:visited, a.nav-text-welcome:visited {
 }
 .nav-text-welcome {
   font-size: 20px;
-  color: #35D7E0;
+  color: #ff784f;
+}
+.nav-horizon {
+  color: #ff784f;
 }
 a.nav-text-welcome:hover {
-  color: #ff784f;
+  color: #35D7E0;
 }
 .nav-link-logout {
   display: block;
