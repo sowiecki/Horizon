@@ -41,10 +41,10 @@ a.logo-text {
   vertical-align: top;
 }
 .nav-link, a.nav-link:hover, a.nav-text-welcome:hover {
-  color: #ff784f;
+  color: #35D7E0;
 }
 a.nav-link:visited, a.nav-text-welcome:visited {
-  color: #ff784f;
+  color: #35D7E0;
 }
 .nav-button-twitter-login {
   display: inline-block;
@@ -57,10 +57,13 @@ a.nav-link:visited, a.nav-text-welcome:visited {
 }
 .nav-text-welcome {
   font-size: 20px;
-  color: #35D7E0;
+  color: #ff784f;
+}
+.nav-horizon {
+  color: #ff784f;
 }
 a.nav-text-welcome:hover {
-  color: #ff784f;
+  color: #35D7E0;
 }
 .nav-link-logout {
   display: block;
@@ -141,6 +144,12 @@ section.logo {
 .aside-user-avatar {
   float: right;
   display: block;
+  border: 3px solid #FF8351;
+  border-radius: 6px;
+}
+.twitter-avatar {
+  display: inline;
+  margin: 0 8px 0 2px;
   border: 3px solid #FF8351;
   border-radius: 6px;
 }

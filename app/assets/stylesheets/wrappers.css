@@ -22,7 +22,7 @@ header {
   top: 0;
   height: 56px;
   width: 100%;
-  color: #35D7E0;
+  color: #ff784f;
   background-color: transparent;
   background: #171D1C;
 }
@@ -73,11 +73,22 @@ footer {
   height: 20px;
   width: 100%;
   text-align: center;
-  color: #35D7E0;
+  color: #ff784f;
   background: #171D1C;
   bottom: 0px;
 }
 footer > a {
   margin: 0 auto auto;
-  color: #35D7E0;
+  color: #ff784f;
+}
+
+.right {
+  float: right;
+  padding: 10px;
+  width: 30%;
+}
+.left {
+  display: inline-block;
+  padding: 10px;
+  width: 30%;
 }

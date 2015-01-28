@@ -36,6 +36,10 @@ $(function() {
     $('#aside-info').fadeOut(500)
   })
 
+  $('body').on('click', '.twitter-follow-button', function (e) {
+    $('.twitter-follow-button').val('Followed!')
+  })
+
   // $('.twitter-follow-button').on('click', function () {
   //   $('.twitter-follow-button').val() = "Followed!";
   // })
