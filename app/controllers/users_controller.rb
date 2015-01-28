@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-
+  skip_before_filter :verify_authenticity_token
   # GET /users
   # GET /users.json
   def index
@@ -8,9 +8,10 @@ class UsersController < ApplicationController
   end
 
   def follow
-    client.follow('redhourben')
+    p client
+    client.follow(params["screen_name"])
+    redirect_to '/'
   end
-
 
   # GET /users/1
   # GET /users/1.json
@@ -87,6 +88,7 @@ class UsersController < ApplicationController
     p @longest_name
     p @longest_array
 
+    @user_friend_ids = client.friend_ids(current_user.username).to_a
 
   end
 
@@ -174,6 +176,8 @@ class UsersController < ApplicationController
     end
     perspective_ids
   end
-
-
 end
+
+
+#
+

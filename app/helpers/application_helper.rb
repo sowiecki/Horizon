@@ -1,5 +1,6 @@
 module ApplicationHelper
 
+
   def find_correct_users(user_friend_ids, issue_object)
     #the current user's array of ids of people they follow
     @user_friend_ids = user_friend_ids
@@ -29,6 +30,8 @@ module ApplicationHelper
 
 
   # Extracting Most Recent Issue-Relevant Tweets from a provided user
+
+
   def extract_relevant_tweets(uid, keywords=[])
     tweet_texts = get_text_from_tweets(uid)
     needfilter_orig?(tweet_texts, keywords)
@@ -142,10 +145,20 @@ module ApplicationHelper
                 "#{node['name']}<img class='twitter_icon' height='19.5px' width='24px' src='http://platform.twitter.com/images/bird.png' /></h3></a>",
                 "<p>#{node['bio']}</p>",
                 "<h4>Recently tweeted:</h4>",
-                "<div class='tweet-text'>#{tweets.join}</div>"
+                "<div class='tweet-text'>#{tweets.join}</div>",
                 # "#{twitter_script}<a href='https://twitter.com/#{user.username}' class='twitter-follow-button' data-show-count='false'></a>"
+
+                "<form class= 'follow' action='users/follow/'' method= 'post'>
+                  <input name = 'screen_name' type='hidden' value=#{user.name}>
+                  <input name='original_referer' type='hidden' value='http://platform.twitter.com/widgets/follow_button.df71e9fd75415d2cee8cfded99ebe79f.en.html'>
+                  <input type='hidden' name='profile_id' value='user.neo_id'>
+                  <input name = 'screen_name' type='hidden' value=#{user.username}>
+                  <input type='submit' value='follow'>
+                </form>"
       ].join
     end
     "<div id='aside-filler'>#{string}<span class='instruct'>(Draggable)</span></div>"
   end
+
+
 end
