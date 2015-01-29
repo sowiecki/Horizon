@@ -2,7 +2,7 @@
 tech_category = Category.find_or_create_by({name:"Technology", description: "Major issues concerning technology and the internet."})
 
 # find_or_CREATE_by THE ISSUE AND PUT IT UNDER THIS CATEGORY
-cyber_issue = Issue.find_or_create_by({name: "Cyber Crime", description: ""})
+cyber_issue = Issue.find_or_create_by({name: "Cyber Crime", description: "Criminal exploitation of the Internet."})
 tech_category.issues << cyber_issue
 
 # find_or_CREATE_by THE perspectives THAT BELONG UNDER THIS ISSUE
@@ -21,7 +21,7 @@ end
 
 
 # find_or_CREATE_by THE ISSUE AND PUT IT UNDER THIS CATEGORY
-net_issue = Issue.find_or_create_by({name: "Net Neutrality", description: ""})
+net_issue = Issue.find_or_create_by({name: "Net Neutrality", description: "The principle that Internet service providers and governments should treat all data on the Internet equally."})
 tech_category.issues << net_issue
 
 # find_or_CREATE_by THE perspectives THAT BELONG UNDER THIS ISSUE
@@ -41,12 +41,13 @@ end
 
 
 # find_or_CREATE_by THE ISSUE AND PUT IT UNDER THIS CATEGORY
-privacy_issue = Issue.find_or_create_by({name: "Internet Privacy", description: ""})
+privacy_issue = Issue.find_or_create_by({name: "Internet Privacy", description: "The right or mandate of personal privacy concerning the storing, repurposing, provision to third parties, and displaying of information pertaining to oneself via the Internet."})
 tech_category.issues << privacy_issue
 
 # find_or_CREATE_by THE perspectives THAT BELONG UNDER THIS ISSUE
 
-privacy_perspectives = [User.find_or_create_by({provider: 'twitter', uid: '16076032', username: 'ggreenwald', twitter: 'https://twitter.com/ggreenwald', avatar: 'http://pbs.twimg.com/profile_images/418715960158068736/Lv1oLH3A_normal.jpeg', name: 'Glenn Greenwald', bio: 'Journalist with @The_Intercept - author, No Place to Hide - dog/animal fanatic - email/PGP public key (https://t.co/uJnK90oulZ)'}),
+privacy_perspectives = [User.find_by(username: 'EFF'),
+User.find_or_create_by({provider: 'twitter', uid: '16076032', username: 'ggreenwald', twitter: 'https://twitter.com/ggreenwald', avatar: 'http://pbs.twimg.com/profile_images/418715960158068736/Lv1oLH3A_normal.jpeg', name: 'Glenn Greenwald', bio: 'Journalist with @The_Intercept - author, No Place to Hide - dog/animal fanatic - email/PGP public key (https://t.co/uJnK90oulZ)'}),
 # User.find_or_create_by({provider: 'twitter', uid: '4816', username: 'EFF', twitter: 'https://twitter.com/EFF', avatar: 'http://pbs.twimg.com/profile_images/529206082699137024/nPcjL5ym_normal.png', name: 'EFF', bio: 'We\'re the Electronic Frontier Foundation. We defend your civil liberties in a digital world.'}),
 User.find_or_create_by({provider: 'twitter', uid: '139409902', username: 'PrivacyMemes', twitter: 'https://twitter.com/PrivacyMemes', avatar: 'http://pbs.twimg.com/profile_images/895156502/PMprofile_normal.jpg', name: 'PrivacyMemes', bio: 'The pulse of online privacy.'}),
 User.find_or_create_by({provider: 'twitter', uid: '12206102', username: 'PrivacyDigest', twitter: 'https://twitter.com/PrivacyDigest', avatar: 'http://pbs.twimg.com/profile_images/208206323/GreenLibertyHead_normal.jpg', name: 'PrivacyDigest', bio: 'Long time techie with an interest in the law and Basic Human & Civil Rights. A RT is NOT an endorsement. Visit FB page http://t.co/BT0gik9uXM so I can track you'}),

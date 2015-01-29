@@ -63,9 +63,6 @@ vax_issue.perspectives << expert
 expert = User.find_or_create_by({provider: 'twitter', uid: '18170896', username: 'drsanjaygupta', twitter: 'https://twitter.com/drsanjaygupta', avatar: 'http://pbs.twimg.com/profile_images/512747456442818560/nQc8NBRD_normal.jpeg', name: 'Dr. Sanjay Gupta', bio: 'Staff Neurosurgeon, Emory Clinic; CNN Chief Medical Correspondent'})
 vax_issue.perspectives << expert
 
-expert = User.find_or_create_by({provider: 'twitter', uid: '1180070852', username: 'hc_thejournal', twitter: 'https://twitter.com/hc_thejournal', avatar: 'http://pbs.twimg.com/profile_images/3346598018/dd2212dae71b4c6f3fae3e8f443ac155_normal.jpeg', name: 'Healthcare', bio: 'Healthcare: The Journal of Delivery Science and Innovation\r\nRT≠endorsement'})
-vax_issue.perspectives << expert
-
 expert = User.find_or_create_by({provider: 'twitter', uid: '16348549', username: 'onecampaign', twitter: 'https://twitter.com/onecampaign', avatar: 'http://pbs.twimg.com/profile_images/553288704454701057/WPpw-ZK1_normal.jpeg', name: 'ONE', bio: 'ONE is a campaigning and advocacy organization of more than 6 million people taking action to end extreme poverty & preventable disease, particularly in Africa.'})
 vax_issue.perspectives << expert
 

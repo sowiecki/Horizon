@@ -14,6 +14,13 @@ namespace :db do
       load(seed_file) if File.exist?(seed_file)
     end
   end
+  # task :followees => :environment do
+  #   seed_files = ['followers.rb']
+  #   seed_files.each do |file|
+  #     seed_file = File.join(Rails.root,'db/seeds', file)
+  #     load(seed_file) if File.exist?(seed_file)
+  #   end
+  # end
 end
 
 
