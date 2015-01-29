@@ -21,7 +21,7 @@ me_perspectives.each do |expert|
 end
 
 # find_or_CREATE_by THE ISSUE AND PUT IT UNDER THIS CATEGORY
-china_issue = Issue.find_or_create_by({name: "China", description: ""})
+china_issue = Issue.find_or_create_by({name: "China", description: "Foreign policy relating to China."})
 fp_category.issues << china_issue
 
 # find_or_CREATE_by THE perspectives THAT BELONG UNDER THIS ISSUE
@@ -41,7 +41,7 @@ china_perspectives.each do |expert|
   china_issue.perspectives << expert
 end
 
-eu_issue = Issue.find_or_create_by({name: "European Union", description: ""})
+eu_issue = Issue.find_or_create_by({name: "European Union", description: "Foreign policy relating to the European Union"})
 fp_category.issues << eu_issue
 
 eu_perspectives = [
