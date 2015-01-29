@@ -10,7 +10,7 @@
 category = Category.find_or_create_by({name:"Science", description: "Major issues concerning science, the environment, and space."})
 
 # find_or_CREATE_by THE ISSUE 'Global Warming' AND PUT IT UNDER THIS CATEGORY
-issue = Issue.find_or_create_by({name: "Global Warming", description: ""})
+issue = Issue.find_or_create_by({name: "Global Warming", description: "Perspectives concerning the human impact on climate change"})
 category.issues << issue
 
 # find_or_CREATE_by THE perspectives THAT BELONG UNDER THE 'Global Warming' ISSUE
@@ -43,7 +43,7 @@ issue.perspectives << expert
 
 
 # find_or_CREATE_by THE ISSUE 'Global Warming' AND PUT IT UNDER THIS CATEGORY
-issue = Issue.find_or_create_by({name: "Fracking", description: ""})
+issue = Issue.find_or_create_by({name: "Fracking", description: "Perspectives on the technique of accessing oil and gas through the pressurized fracturing of rock formations."})
 category.issues << issue
 
 # find_or_CREATE_by THE perspectives THAT BELONG UNDER THE 'Global Warming' ISSUE
@@ -80,7 +80,7 @@ issue.perspectives << expert
 
 
 # find_or_CREATE_by THE ISSUE 'Space Exploration' AND PUT IT UNDER THIS CATEGORY
-issue = Issue.find_or_create_by({name: "Space Exploration", description: ""})
+issue = Issue.find_or_create_by({name: "Space Exploration", description: "Perspectives on current efforts to explore and understand outer space."})
 category.issues << issue
 
 # find_or_CREATE_by THE perspectives THAT BELONG UNDER THE 'Space Exploration' ISSUE
