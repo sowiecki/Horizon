@@ -9,7 +9,15 @@ class UsersController < ApplicationController
   end
 
   def follow
+    client = Twitter::REST::Client.new do |config|
+      config.consumer_key        = ENV["CONSUMER_KEY"]
+      config.consumer_secret     = ENV["CONSUMER_SECRET"]
+      config.access_token        = current_user.access_token
+      config.access_token_secret = current_user.access_token_secret
+    end
+
     client.follow(params["screen_name"])
+    current_user.followees << User.find_by(username: params["screen_name"]) unless current_user.followees.include?(User.find_by(username: params["screen_name"]))
     render json: 'Successfully followed.'
   end
 
@@ -19,7 +27,9 @@ class UsersController < ApplicationController
 
   def show
     # @user_friend_ids = [17762060, 31583882] # Mock to use in case we hit rate limit
-    @user_friend_ids = client.friend_ids(current_user.username).to_a
+
+    @user_friend_ids = []
+    current_user.followees.to_a.each { |followee| @user_friend_ids << followee.uid.to_i }
     @categories_hash = {}
     @known_experts_hash = {}
     @unknown_experts_hash = {}

@@ -125,7 +125,9 @@ module ApplicationHelper
 
   def follow_button(user)
     if logged_in?
-      if client.friend_ids(current_user.username).to_a.include?(user.uid.to_i)
+      array = []
+      current_user.followees.to_a.each { |followee| array << followee.uid }
+      if array.include?(user.uid)
         " <img src='/favicon.ico' /> <span class='instruct-text'>Within your Horizon</span>"
       else
         "<form class='follow-button' data-remote='true' action='users/follow/' method= 'post'>
