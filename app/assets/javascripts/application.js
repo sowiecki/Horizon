@@ -40,6 +40,11 @@ $(function() {
     $('.twitter-follow-button').val('Followed!')
   })
 
+  $('body').on('click', '.closeme', function(e) {
+    e.preventDefault();
+    $('#aside-filler').fadeOut()
+  })
+
   $('.aside-wrapper').draggable();
 
   $('#help-toggle').on('click', function (e) {

@@ -162,6 +162,6 @@ module ApplicationHelper
                 "<div class='tweet-text'>#{tweets.join}</div>"
       ].join
     end
-    "<div id='aside-filler'>#{string}<span class='instruct'>(Draggable)</span></div>"
+    "<div id='aside-filler'>#{string}<span class='instruct'>Draggable</span><div class='closeme'><a href='#' class='closeme'>Click here to close</a></div></div>"
   end
 end

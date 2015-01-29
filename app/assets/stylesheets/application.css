@@ -123,13 +123,16 @@ li {
   font-weight: bold;
   font-size: 14px;
 }
-.instruct, .instruct-text {
-  text-align: right;
+a.closeme, .instruct, .instruct-text {
+  display: inline;
   font-size: 10px;
   color: #7f7f7f;
 }
-.instruct {
-  padding: 0 0 0 210px;
+div.closeme {
+  margin: -18px 0 0 0;
+  clear: none;
+  text-align: right;
+  width: 100%;
 }
 
 /* Image and chart elements */
