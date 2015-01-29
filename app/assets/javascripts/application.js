@@ -37,7 +37,7 @@ $(function() {
   })
 
   $('body').on('click', '.twitter-follow-button', function (e) {
-    $('.twitter-follow-button').val('Followed!')
+    $('.twitter-follow-button').replaceWith(" <img src='/favicon.ico' /> <span class='instruct-text'>Within your Horizon</span>")
   })
 
   $('.aside-wrapper').draggable();

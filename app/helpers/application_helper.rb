@@ -125,13 +125,17 @@ module ApplicationHelper
 
   def follow_button(user)
     if logged_in?
-      "<form class='follow-button' data-remote='true' action='users/follow/' method= 'post'>
-        <input name='screen_name' type='hidden' value=#{user.name}>
-        <input name='original_referer' type='hidden' value='http://platform.twitter.com/widgets/follow_button.df71e9fd75415d2cee8cfded99ebe79f.en.html'>
-        <input type='hidden' name='profile_id' value='user.neo_id'>
-        <input name = 'screen_name' type='hidden' value=#{user.username}>
-        <input class='twitter-follow-button' type='submit' value='Follow'>
-      </form>"
+      if client.friend_ids(current_user.username).to_a.include?(user.uid.to_i)
+        " <img src='/favicon.ico' /> <span class='instruct-text'>Within your Horizon</span>"
+      else
+        "<form class='follow-button' data-remote='true' action='users/follow/' method= 'post'>
+          <input name='screen_name' type='hidden' value=#{user.name}>
+          <input name='original_referer' type='hidden' value='http://platform.twitter.com/widgets/follow_button.df71e9fd75415d2cee8cfded99ebe79f.en.html'>
+          <input type='hidden' name='profile_id' value='user.neo_id'>
+          <input name = 'screen_name' type='hidden' value=#{user.username}>
+          <input class='twitter-follow-button' type='submit' value='Follow'>
+        </form>"
+      end
     else
       ""
     end

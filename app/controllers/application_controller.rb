@@ -20,6 +20,6 @@ class ApplicationController < ActionController::Base
       config.access_token        = session[:consumer_token]
       config.access_token_secret = session[:consumer_secret]
     end
-    return client
+    client
   end
 end

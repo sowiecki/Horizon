@@ -10,10 +10,4 @@ module UsersHelper
       "</h4><div class='bio'>#{user.bio}</div>"
     ].join.html_safe
   end
-
-  def find_correct_users(user_friend_ids, issue_object)
-    # the current array of expert ids for this issue
-    perspective_ids = issue_object.perspectives.map {|x| x.uid.to_i }
-    {unknown: perspective_ids - user_friend_ids, known: user_friend_ids & perspective_ids}
-  end
 end
