@@ -2,7 +2,7 @@
 tech_category = Category.find_or_create_by({name:"Technology", description: "Major issues concerning technology and the internet."})
 
 # find_or_CREATE_by THE ISSUE AND PUT IT UNDER THIS CATEGORY
-cyber_issue = Issue.find_or_create_by({name: "Cyber Crime", description: "Criminal exploitation of the Internet."})
+cyber_issue = Issue.find_or_create_by({name: "Cyber Crime", description: "Perspectives on criminal exploitation of the Internet."})
 tech_category.issues << cyber_issue
 
 # find_or_CREATE_by THE perspectives THAT BELONG UNDER THIS ISSUE
@@ -21,7 +21,7 @@ end
 
 
 # find_or_CREATE_by THE ISSUE AND PUT IT UNDER THIS CATEGORY
-net_issue = Issue.find_or_create_by({name: "Net Neutrality", description: "The principle that Internet service providers and governments should treat all data on the Internet equally."})
+net_issue = Issue.find_or_create_by({name: "Net Neutrality", description: "Perspectives on the principle that Internet service providers and governments should treat all data on the Internet equally."})
 tech_category.issues << net_issue
 
 # find_or_CREATE_by THE perspectives THAT BELONG UNDER THIS ISSUE
@@ -41,7 +41,7 @@ end
 
 
 # find_or_CREATE_by THE ISSUE AND PUT IT UNDER THIS CATEGORY
-privacy_issue = Issue.find_or_create_by({name: "Internet Privacy", description: "The right or mandate of personal privacy concerning the storing, repurposing, provision to third parties, and displaying of information pertaining to oneself via the Internet."})
+privacy_issue = Issue.find_or_create_by({name: "Internet Privacy", description: "Perspectives on the right or mandate of personal privacy concerning the Internet."})
 tech_category.issues << privacy_issue
 
 # find_or_CREATE_by THE perspectives THAT BELONG UNDER THIS ISSUE

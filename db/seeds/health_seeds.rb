@@ -2,7 +2,7 @@
 health_category = Category.find_or_create_by({name:"Health", description: "Major issues concerning public health and wellness."})
 
 # find_or_CREATE_by THE ISSUE 'Healthcare' AND PUT IT UNDER THIS health_category
-care_issue = Issue.find_or_create_by({name: "Healthcare", description: "The diagnosis, treatment, and prevention of disease, illness, injury, and other physical and mental impairments."})
+care_issue = Issue.find_or_create_by({name: "Healthcare", description: "Perspectives on general healthcare issues."})
 health_category.issues << care_issue
 
 # find_or_CREATE_by THE perspectives THAT BELONG UNDER THIS ISSUE
@@ -36,9 +36,8 @@ care_issue.perspectives << expert
 expert = User.find_or_create_by({provider: 'twitter', uid: '11274452', username: 'kevinmd', twitter: 'https://twitter.com/kevinmd', avatar: 'http://pbs.twimg.com/profile_images/1182717255/Kevin2_WEB_normal.jpg', name: 'Kevin Pho, M.D.', bio: 'Physician, author, keynote speaker, USA TODAY\'s Board of Contributors. Social media\'s leading physician voice. http://t.co/MlC37Wze and http://t.co/hThNxwTt'})
 
 # find_or_CREATE_by THIS ISSUE AND PUT IT UNDER THIS CATEGORY
-vax_issue = Issue.find_or_create_by({name: "Vaccinations", description: "The administration of antigenic material to stimulate an individual's immune system to develop adaptive immunity to a pathogen."})
+vax_issue = Issue.find_or_create_by({name: "Vaccinations", description: "Perspectives relating to the effects of vaccinations on global health."})
 health_category.issues << vax_issue
-
 
 # find_or_CREATE_by THE perspectives THAT BELONG UNDER THIS ISSUE
 
@@ -68,7 +67,7 @@ vax_issue.perspectives << expert
 
 
 # find_or_CREATE_by THIS ISSUE AND PUT IT UNDER THIS health_category
-obesity_issue = Issue.find_or_create_by({name: "Obesity", description: "A medical condition in which excess body fat has accumulated to the extent that it may have a negative effect on health, leading to reduced life expectancy and/or increased health problems."})
+obesity_issue = Issue.find_or_create_by({name: "Obesity", description: "Perspectives relating to the effects of obesity on global health."})
 health_category.issues << obesity_issue
 
 # find_or_CREATE_by THE perspectives THAT BELONG UNDER THIS ISSUE
