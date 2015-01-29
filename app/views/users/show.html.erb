@@ -35,14 +35,14 @@
       <div id="piechart"></div>
     </div>
     <div id='user-show-right-wrapper'>
-      <h2>Broaden your Horizon</h2>
+      <h2>Want to broaden your Horizon?</h2>
       <p>
          Consider following these perspectives in the <strong><%= link_to @longest_name, "/?neo_id=#{Category.find_by(name: @longest_name).neo_id}", class: 'nav-horizon' %></strong> category:
       </p>
       <%= user_display(0) %>
       <%= user_display(1) %>
       <%= user_display(2) %>
-      <div class='push'></div>
+      <div class='push'><h4><%= link_to "Jump to your bubble", "/?neoid=#{current_user.neo_id}", class: 'nav-horizon' %></h4></div>
     </div>
   </div>
 </div>
