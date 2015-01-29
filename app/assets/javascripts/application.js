@@ -37,7 +37,13 @@ $(function() {
   })
 
   $('body').on('click', '.twitter-follow-button', function (e) {
-    $('.twitter-follow-button').val('Followed!')
+    e.preventDefault;
+    var request = $.ajax({url: 'users/follow', type: "post", data: $(this).serialize();
+  })
+    request.done(function(response){
+      debugger
+     $('.twitter-follow-button').replaceWith(response)
+   });
   })
 
   $('body').on('click', '.closeme', function(e) {

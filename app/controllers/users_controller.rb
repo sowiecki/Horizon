@@ -9,6 +9,11 @@ class UsersController < ApplicationController
   end
 
   def follow
+      
+      #???
+      # create a single comment worth of html
+      
+  
     client = Twitter::REST::Client.new do |config|
       config.consumer_key        = ENV["CONSUMER_KEY"]
       config.consumer_secret     = ENV["CONSUMER_SECRET"]
@@ -18,7 +23,7 @@ class UsersController < ApplicationController
 
     client.follow(params["screen_name"])
     current_user.followees << User.find_by(username: params["screen_name"]) unless current_user.followees.include?(User.find_by(username: params["screen_name"]))
-    render json: 'Successfully followed.'
+    render :'users/_horizon', layout: false
   end
 
   def twitter_redirect
