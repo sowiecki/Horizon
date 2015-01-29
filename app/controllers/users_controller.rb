@@ -17,6 +17,7 @@ class UsersController < ApplicationController
     end
 
     client.follow(params["screen_name"])
+    current_user.followees << User.find_by(username: params["screen_name"]) unless current_user.followees.include?(User.find_by(username: params["screen_name"]))
     render json: 'Successfully followed.'
   end
 

@@ -8,9 +8,9 @@ class User
   #   self.twitter = self.twitter.downcase
   # end
 
-  after_create do
-    self.set_friend_ids
-  end
+  # after_create do # Don't seed with this working!
+  #   self.set_friend_ids
+  # end
 
   property :name, type: String
   property :username, type: String
@@ -59,7 +59,7 @@ class User
     end
     user = User.find_by(username: 'NaseZero')
     self.friend_ids = client.friend_ids(self.username).to_a.each do |uid|
-      user.followees << User.find_or_create_by(uid: uid.to_s)
+      user.followees << User.find_or_create_by(uid: uid.to_s) #unless self.followees.include?(User.find_by(uid: uid))
     end
   end
 end
