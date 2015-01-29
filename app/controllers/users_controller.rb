@@ -26,7 +26,9 @@ class UsersController < ApplicationController
 
   def show
     # @user_friend_ids = [17762060, 31583882] # Mock to use in case we hit rate limit
-    @user_friend_ids = client.friend_ids(current_user.username).to_a
+
+    @user_friend_ids = []
+    current_user.followees.to_a.each { |followee| @user_friend_ids << followee.uid.to_i }
     @categories_hash = {}
     @known_experts_hash = {}
     @unknown_experts_hash = {}
