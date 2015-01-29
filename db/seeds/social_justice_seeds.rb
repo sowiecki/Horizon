@@ -2,7 +2,7 @@
 social_justice_category = Category.find_or_create_by({name:"Social Justice", description: "Major issues concerning social issues and civil liberties."})
 
 # find_or_CREATE_by THE ISSUE 'Healthcare' AND PUT IT UNDER THIS health_category
-lgbt_issue = Issue.find_or_create_by({name: "LGBT", description: ""})
+lgbt_issue = Issue.find_or_create_by({name: "LGBT", description: "Perspectives on LGBT representation and rights in American society."})
 social_justice_category.issues << lgbt_issue
 # LGBT Rights
 
@@ -21,7 +21,7 @@ lgbt_perspectives.each do |expert|
   lgbt_issue.perspectives << expert
 end
 
-police_militarization_issue = Issue.find_or_create_by({name: "Police Militarization", description: ''})
+police_militarization_issue = Issue.find_or_create_by({name: "Police Militarization", description: "Perspectives on the American public's growing concern with police militarization."})
 social_justice_category.issues << police_militarization_issue
 
 police_militarization_perspectives = [User.find_or_create_by({provider: 'twitter', uid: '116625196', username: 'CopWatch', twitter: 'https://twitter.com/CopWatch', avatar: 'http://pbs.twimg.com/profile_images/378800000863401905/SnwA6aaJ_normal.jpeg', name: 'Copwatch', bio: 'The cops watch us. We get cameras to watch the cops. You can too. Ask us or groups like @Peoples_Justice for trainings.'}),
@@ -38,7 +38,7 @@ end
 
 
 # Civil Rights
-civil_rights_issue = Issue.find_or_create_by({name: "Civil Rights", description: ''})
+civil_rights_issue = Issue.find_or_create_by({name: "Civil Rights", description: "Perspectives on contemporary civil rights issues."})
 social_justice_category.issues << civil_rights_issue
 
 civil_rights_perspectives = [User.find_or_create_by({provider: 'twitter', uid: '29417304', username: 'deray', twitter: 'https://twitter.com/deray', avatar: 'http://pbs.twimg.com/profile_images/555381462107570176/TBtL-FxK_normal.jpeg', name: 'deray mckesson', bio: 'I will never betray my heart. Curator, connector, commited to ed equity. TFA alum. Bowdoin loyalist. Protestor. deray@thisisthemovement.org.'}),

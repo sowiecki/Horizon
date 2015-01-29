@@ -1,7 +1,7 @@
 
 # minimum wage
-politics_category = Category.find_or_create_by({name: "Politics", description: ""})
-minimum_wage_issue = Issue.find_or_create_by({name: "Minimum Wage", description: ""})
+politics_category = Category.find_or_create_by({name: "Politics", description: "Major issues concerning U.S. national and state politics."})
+minimum_wage_issue = Issue.find_or_create_by({name: "Minimum Wage", description: "Economic, political, and social perspectives on minimum wage in the United States."})
 politics_category.issues << minimum_wage_issue
 
 minimum_wage_perspectives = [User.find_or_create_by({provider: 'twitter', uid: '14512287', username: 'thinkprogress_i', twitter: 'https://twitter.com/thinkprogress_i', avatar: 'http://abs.twimg.com/sticky/default_profile_images/default_profile_6_normal.png', name: 'Think Progress', bio: 'Think Progress'}),
@@ -24,10 +24,11 @@ end
 paul = User.find_by({provider: 'twitter', uid: '17006157', username: 'NYTimeskrugman', twitter: 'https://twitter.com/NYTimeskrugman', avatar: 'http://pbs.twimg.com/profile_images/2044852218/NYT_Twitter_Krugman_normal.png', name: 'Paul Krugman', bio: 'Nobel laureate. Op-Ed columnist, @nytopinion. Author, “The Return of Depression Economics,” “The Great Unraveling,” “The Age of Diminished Expectations” + more.'}),
 minimum_wage_issue.perspectives << paul
 
-super_pac_issue = Issue.find_or_create_by({name: "Super PAC", description: ""})
+ # ISSUE - Super PACs
+super_pac_issue = Issue.find_or_create_by({name: "Super PACs", description: "Perspectives concerning controversial political financing techniques."})
 politics_category.issues << super_pac_issue
 
-#super PACS
+# PERSPECTIVES - Super PACS
 super_pac_perspectives = [User.find_or_create_by({provider: 'twitter', uid: '11388132', username: 'lessig', twitter: 'https://twitter.com/lessig', avatar: 'http://pbs.twimg.com/profile_images/2822485013/e54012b6296106112b44465776d13d3c_normal.jpeg', name: 'Lessig', bio: 'law professor, reformer.'}),
 User.find_or_create_by({provider: 'twitter', uid: '31127446', username: 'markknoller', twitter: 'https://twitter.com/markknoller', avatar: 'http://pbs.twimg.com/profile_images/137394623/knoller_normal.jpg', name: 'Mark Knoller', bio: 'CBS News White House Correspondent'}),
 User.find_or_create_by({provider: 'twitter', uid: '1846196022', username: 'nhrebellion', twitter: 'https://twitter.com/nhrebellion', avatar: 'http://pbs.twimg.com/profile_images/378800000780082498/5600907c28efb2b8fd8825ef1c96efc4_normal.jpeg', name: 'nhrebellion', bio: 'Nonpartisan movement founded by @lessig to end the root problem of money in politics during the 2016 #FITN NH primary.'}),
@@ -38,4 +39,24 @@ User.find_or_create_by({provider: 'twitter', uid: '18791763', username: 'KarlRov
 
 super_pac_perspectives.each do |expert|
   super_pac_issue.perspectives << expert
+end
+
+# ISSUE - Immigration
+immigration_issue = Issue.find_or_create_by({name: "Immigration", description: "Perspectives reflecting America's diverse attitudes towards immigration reform."})
+politics_category.issues << immigration_issue
+
+# PERSPECTIVES - Immigration
+
+immigration_perspectives = [User.find_or_create_by({provider: 'twitter', uid: '38599332', username: 'ProLinkGLOBAL', twitter: 'https://twitter.com/ProLinkGLOBAL', avatar: 'http://pbs.twimg.com/profile_images/479405456398381056/VcFH3c2G_normal.jpeg', name: 'Pro-Link GLOBAL', bio: 'Immigration. Everywhere you are.                                \r\n1600+ immigration professionals 140+ countries 1 common goal, YOU.'}),
+User.find_or_create_by({provider: 'twitter', uid: '15778911', username: 'NIJC', twitter: 'https://twitter.com/NIJC', avatar: 'http://pbs.twimg.com/profile_images/540510438195077120/PM6nTLFD_normal.jpeg', name: 'Immigrant Justice', bio: 'The National Immigrant Justice Center is a legal aid organization that advocates for human rights and immigration reform with offices in Chicago, Indiana, D.C.'}),
+User.find_or_create_by({provider: 'twitter', uid: '122455671', username: 'TeaPartyOrg', twitter: 'https://twitter.com/TeaPartyOrg', avatar: 'http://pbs.twimg.com/profile_images/510217570360651777/du-qsneC_normal.png', name: 'Tea Party', bio: 'Tea Party calls national awareness to issues which challenges the security, sovereignty or domestic tranquility of our Beloved Nation. http://t.co/FTBdUKMuvi'}),
+User.find_or_create_by({provider: 'twitter', uid: '156290470', username: 'MigrantVoiceUK', twitter: 'https://twitter.com/MigrantVoiceUK', avatar: 'http://pbs.twimg.com/profile_images/995921791/migrant_normal.jpg', name: 'Migrant Voice', bio: 'Migrant Voice will transform how migrants are portrayed in the media by empowering ourselves to positively influence public attitudes. RT not endorsements'}),
+User.find_or_create_by({provider: 'twitter', uid: '9300262', username: 'politico', twitter: 'https://twitter.com/politico', avatar: 'http://pbs.twimg.com/profile_images/378800000671090749/bd9d151b66dddabbb58ddc92b81cecb1_normal.jpeg', name: 'POLITICO', bio: 'Nobody knows politics like POLITICO.'}),
+User.find_or_create_by({provider: 'twitter', uid: '1877831', username: 'nytimesworld', twitter: 'https://twitter.com/nytimesworld', avatar: 'http://pbs.twimg.com/profile_images/2045337639/NYT_Twitter_world_normal.png', name: 'New York Times World', bio: 'World news from The New York Times. Follow our editors and correspondents here: http://t.co/dZjTQkxoyM'}),
+User.find_or_create_by({provider: 'twitter', uid: '32359921', username: 'EconBizFin', twitter: 'https://twitter.com/EconBizFin', avatar: 'http://pbs.twimg.com/profile_images/3240055746/a85b7cb8c2b6434ebd84ac2de52af014_normal.png', name: 'The Economist', bio: 'Official posts from The Economist on Business, Finance and Economics'}),
+User.find_or_create_by({provider: 'twitter', uid: '21346365', username: 'ImmPolicyCenter', twitter: 'https://twitter.com/ImmPolicyCenter', avatar: 'http://pbs.twimg.com/profile_images/1539872192/youtube_image_smaller_copy_normal.jpg', name: 'Immigration Policy', bio: 'IPC is an immigration research and advocacy org that seeks to shape a rational conversation on immigration through research and analysis.'}),
+User.find_or_create_by({provider: 'twitter', uid: '18956212', username: 'FAIRImmigration', twitter: 'https://twitter.com/FAIRImmigration', avatar: 'http://pbs.twimg.com/profile_images/555382946534682624/0mr4xevm_normal.png', name: 'FAIR', bio: 'FAIR is a membership nonprofit made up of citizens concerned about #border security, enforcing U.S. #immigration laws & stopping illegal immigration. #NoAmnesty'})]
+
+immigration_perspectives.each do |expert|
+  immigration_issue.perspectives << expert
 end

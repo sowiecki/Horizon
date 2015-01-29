@@ -1,8 +1,8 @@
 # find_or_CREATE_by THIS CATEGORY
-sports_category = Category.find_or_create_by({name:"Sports", description: "Major issues concerning technology and the internet."})
+sports_category = Category.find_or_create_by({name:"Sports", description: "Major issues concerning organized sports."})
 
 # find_or_CREATE_by THE ISSUE AND PUT IT UNDER THIS CATEGORY
-amat_issue = Issue.find_or_create_by({name: "Amateurism", description: ""})
+amat_issue = Issue.find_or_create_by({name: "Amateurism", description: "Perspectives on the institutions and laws defining college athletic life."})
 sports_category.issues << amat_issue
 
 # find_or_CREATE_by THE perspectives THAT BELONG UNDER THIS ISSUE
@@ -21,7 +21,7 @@ amat_perspectives.each do |expert|
 end
 
 # find_or_CREATE_by THE ISSUE AND PUT IT UNDER THIS CATEGORY
-ped_issue = Issue.find_or_create_by({name: "Performance-Enhancing Drugs", description: ""})
+ped_issue = Issue.find_or_create_by({name: "Performance-Enhancing Drugs", description: "Perspectives on the effect of PEDs on organized sports."})
 sports_category.issues << ped_issue
 
 # find_or_CREATE_by THE perspectives THAT BELONG UNDER THIS ISSUE
@@ -41,7 +41,7 @@ end
 
 
 # find_or_CREATE_by THE ISSUE AND PUT IT UNDER THIS CATEGORY
-injury_issue = Issue.find_or_create_by({name: "Concussions and Injuries", description: ""})
+injury_issue = Issue.find_or_create_by({name: "Concussions and Injuries", description: "Perspectives on the growing awareness of the risk of injury in organized sports."})
 sports_category.issues << injury_issue
 
 # find_or_CREATE_by THE perspectives THAT BELONG UNDER THIS ISSUE
