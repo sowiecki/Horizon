@@ -57,9 +57,22 @@ class User
       config.access_token        = self.access_token
       config.access_token_secret = self.access_token_secret
     end
-    user = User.find_by(username: 'NaseZero')
+    user = self
+    # self.friend_ids = client.friend_ids(self.username).to_a.each do |uid|
+    #   user.followees << User.find_or_create_by(uid: uid.to_s)
+    # end
     self.friend_ids = client.friend_ids(self.username).to_a.each do |uid|
-      user.followees << User.find_or_create_by(uid: uid.to_s)
+      user.followees <<  User.find_by(uid: uid.to_s)
     end
+    # self.friend_ids = client.friend_ids(self.username).to_a.each do |uid|
+    #   if followee = User.find_by(uid: uid.to_s)
+    #     user.followees << followee
+    #   else
+    #     build_followee = client.user(uid)
+    #     debuggers
+    #     followee = User.create(uid: uid.to_s, username: build_followee.username, name: build_followee.name, bio: build_followee.bio, twitter: build_followee.twitter)
+    #     user.followees << followee
+    #   end
+    # end
   end
 end
