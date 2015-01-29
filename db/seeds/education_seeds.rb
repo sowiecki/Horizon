@@ -2,7 +2,7 @@
 education_category = Category.find_or_create_by({name:"Education", description: "Major issues concerning public and private education."})
 
 # find_or_CREATE_by THE ISSUE AND PUT IT UNDER THIS CATEGORY
-testing_issue = Issue.find_or_create_by({name: "Standardized Testing", description: "The latest news and analysis on standardized testing and the Common Core."})
+testing_issue = Issue.find_or_create_by({name: "Standardized Testing", description: "Perspectives on standardized testing and the Common Core."})
 education_category.issues << testing_issue
 
 # find_or_CREATE_by THE perspectives THAT BELONG UNDER THIS ISSUE
@@ -22,7 +22,7 @@ testing_perspectives.each do |expert|
 end
 
 # find_or_CREATE_by THE ISSUE AND PUT IT UNDER THIS CATEGORY
-loans_issue = Issue.find_or_create_by({name: "Student Loans", description: "Major developments on the growing concern of student loans."})
+loans_issue = Issue.find_or_create_by({name: "Student Loans", description: "Perspectives on the growing concern of student loans."})
 education_category.issues << loans_issue
 
 # find_or_CREATE_by THE perspectives THAT BELONG UNDER THIS ISSUE
@@ -43,7 +43,7 @@ loans_perspectives.each do |expert|
 end
 
 # find_or_CREATE_by THE ISSUE AND PUT IT UNDER THIS CATEGORY
-privatization_issue = Issue.find_or_create_by({name: "Privatization", description: "The current state and impact of privatized education."})
+privatization_issue = Issue.find_or_create_by({name: "Privatization", description: "Perspectives on the current state and impact of privatized education."})
 education_category.issues << privatization_issue
 
 # find_or_CREATE_by THE perspectives THAT BELONG UNDER THIS ISSUE

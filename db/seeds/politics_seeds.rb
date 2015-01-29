@@ -1,7 +1,7 @@
 
 # minimum wage
 politics_category = Category.find_or_create_by({name: "Politics", description: "Major issues concerning U.S. national and state politics."})
-minimum_wage_issue = Issue.find_or_create_by({name: "Minimum Wage", description: "Economic, political, and social perspectives on minimum wage in the United States."})
+minimum_wage_issue = Issue.find_or_create_by({name: "Minimum Wage", description: "Perspectives on the economic, political, and social impact of minimum wage in the United States."})
 politics_category.issues << minimum_wage_issue
 
 minimum_wage_perspectives = [User.find_or_create_by({provider: 'twitter', uid: '14512287', username: 'thinkprogress_i', twitter: 'https://twitter.com/thinkprogress_i', avatar: 'http://abs.twimg.com/sticky/default_profile_images/default_profile_6_normal.png', name: 'Think Progress', bio: 'Think Progress'}),

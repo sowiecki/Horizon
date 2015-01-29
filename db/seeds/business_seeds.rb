@@ -2,7 +2,7 @@
 business_category = Category.find_or_create_by({name:"Business", description: "Major issues concerning business and finance."})
 
 # find_or_CREATE_by THE ISSUE AND PUT IT UNDER THIS CATEGORY
-regulation_issue = Issue.find_or_create_by({name: "Regulation", description: "The politics and consequences of economic regulation."})
+regulation_issue = Issue.find_or_create_by({name: "Regulation", description: "Perspectives on the politics and consequences of economic regulation."})
 business_category.issues << regulation_issue
 
 # find_or_CREATE_by THE perspectives THAT BELONG UNDER THIS ISSUE
@@ -26,7 +26,7 @@ regulation_perspectives.each do |expert|
 end
 
 # find_or_CREATE_by THE ISSUE AND PUT IT UNDER THIS CATEGORY
-globalization_issue = Issue.create({name: "Globalization", description: "Insight and analysis concerning our increasingly globalized economy."})
+globalization_issue = Issue.create({name: "Globalization", description: "Perspectives concerning our increasingly globalized economy."})
 business_category.issues << globalization_issue
 
 # find_or_CREATE_by THE perspectives THAT BELONG UNDER THIS ISSUE
@@ -61,7 +61,7 @@ maria = User.find_or_create_by({provider: 'twitter', uid: '208155240', username:
 globalization_issue.perspectives << maria
 
 # find_or_CREATE_by THE ISSUE AND PUT IT UNDER THIS CATEGORY
-trading_issue = Issue.find_or_create_by({name: "High-Frequency Trading", description: "The latest on high-speed, high-frequency trading."})
+trading_issue = Issue.find_or_create_by({name: "High-Frequency Trading", description: "Perspectives on high-speed, high-frequency trading."})
 
 business_category.issues << trading_issue
 
