@@ -18,9 +18,6 @@ care_issue.perspectives << expert
 expert = User.find_or_create_by({provider: 'twitter', uid: '233364902', username: 'atul_gawande', twitter: 'https://twitter.com/atul_gawande', avatar: 'http://pbs.twimg.com/profile_images/526917220241137664/8KF6mJxn_normal.jpeg', name: 'Atul Gawande', bio: 'Surgeon, Writer, Researcher, Dilettante.'})
 care_issue.perspectives << expert
 
-expert = User.find_or_create_by({provider: 'twitter', uid: '1180070852', username: 'hc_thejournal', twitter: 'https://twitter.com/hc_thejournal', avatar: 'http://pbs.twimg.com/profile_images/3346598018/dd2212dae71b4c6f3fae3e8f443ac155_normal.jpeg', name: 'Healthcare', bio: 'Healthcare: The Journal of Delivery Science and Innovation\r\nRT≠endorsement'})
-care_issue.perspectives << expert
-
 expert = User.find_or_create_by({provider: 'twitter', uid: '1360077600', username: 'sacjai', twitter: 'https://twitter.com/sacjai', avatar: 'http://pbs.twimg.com/profile_images/474914253951225857/UHW1lpGz_normal.jpeg', name: 'Sachin H. Jain', bio: 'CMO @CareMoreHealth; @Harvard faculty; Co-Editor-in-Chief, @hc_thejournal; ex-Obama Senior Advisor, @CMSgov & @ONC_healthIT. @Yankees fan. Opinions my own.'})
 care_issue.perspectives << expert
 
