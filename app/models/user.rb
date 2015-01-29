@@ -8,9 +8,9 @@ class User
     self.twitter = self.twitter.downcase
   end
 
-  after_create do
-    self.set_friend_ids
-  end
+  # after_create do
+  #   self.set_friend_ids
+  # end
 
   property :name, type: String
   property :username, type: String
@@ -18,6 +18,8 @@ class User
   property :bio, type: String
   property :avatar, type: String
   property :friend_ids, type: String
+  property :access_token, type: String
+  property :access_token_secret, type: String
   index :twitter
 
   # property :friend_ids, type: Array
@@ -50,13 +52,15 @@ class User
     end
   end
 
-  def set_friend_ids
-    client = Twitter::REST::Client.new do |config|
-      config.consumer_key        = ENV["CONSUMER_KEY"]
-      config.consumer_secret     = ENV["CONSUMER_SECRET"]
-      config.access_token        = session[:consumer_token]
-      config.access_token_secret = session[:consumer_secret]
-    end
-    self.friend_ids = client.friend_ids(current_user.username).to_a
-  end
+
+
+  # def set_friend_ids
+  #   client = Twitter::REST::Client.new do |config|
+  #     config.consumer_key        = ENV["CONSUMER_KEY"]
+  #     config.consumer_secret     = ENV["CONSUMER_SECRET"]
+  #     config.access_token        = session[:consumer_token]
+  #     config.access_token_secret = session[:consumer_secret]
+  #   end
+  #   self.friend_ids = client.friend_ids(current_user.username).to_a
+  # end
 end

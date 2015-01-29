@@ -9,6 +9,13 @@ class UsersController < ApplicationController
   end
 
   def follow
+    client = Twitter::REST::Client.new do |config|
+      config.consumer_key        = ENV["CONSUMER_KEY"]
+      config.consumer_secret     = ENV["CONSUMER_SECRET"]
+      config.access_token        = current_user.access_token
+      config.access_token_secret = current_user.access_token_secret
+    end
+
     client.follow(params["screen_name"])
     render json: 'Successfully followed.'
   end

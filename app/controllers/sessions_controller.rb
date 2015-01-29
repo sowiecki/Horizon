@@ -10,8 +10,9 @@ class SessionsController < ApplicationController
 
     # Assigning Session
     session[:user_id] = user.id
-    session[:consumer_token] = auth.credentials.token
-    session[:consumer_secret] = auth.credentials.secret
+    current_user.access_token = auth.credentials.token
+    current_user.access_token_secret = auth.credentials.secret
+    current_user.save
 
     redirect_to "/users/#{current_user.neo_id}", :notice => "<span id='first-login'>You've been signed in.</span> | "
   end
