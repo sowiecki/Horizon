@@ -6,8 +6,12 @@ class SessionsController < ApplicationController
     auth = request.env["omniauth.auth"]
 
     # Finding an existing or creating a new User object when logging in with Twitter
-    user = User.find_by(provider: auth["provider"], uid: auth["uid"]) || User.create_with_omniauth(auth)
+    if user = User.find_by(provider: auth["provider"], uid: auth["uid"])
 
+    else
+      user = User.create_with_omniauth(auth)
+      user.set_friends
+    end
     # Assigning Session
     session[:user_id] = user.id
     current_user.access_token = auth.credentials.token

@@ -124,9 +124,9 @@ module ApplicationHelper
   end
 
   def follow_button(user)
-    array = []
-    current_user.followees.to_a.each { |followee| array << followee.uid }
     if logged_in?
+      array = []
+      current_user.followees.to_a.each { |followee| array << followee.uid }
       if array.include?(user.uid)
         " <img src='/favicon.ico' /> <span class='instruct-text'>Within your Horizon</span>"
       else

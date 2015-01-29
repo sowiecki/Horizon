@@ -39,7 +39,7 @@ class User
 
 
   def self.create_with_omniauth(auth)
-    create! do |user| # OMFG remove this bang before production
+    create do |user|
       user.provider = auth["provider"]
       user.uid = auth["uid"]
       user.username = auth["info"]["nickname"]
@@ -59,7 +59,7 @@ class User
     end
     user = User.find_by(username: 'NaseZero')
     self.friend_ids = client.friend_ids(self.username).to_a.each do |uid|
-      user.followees << User.find_or_create_by(uid: uid.to_s) #unless self.followees.include?(User.find_by(uid: uid))
+      user.followees << User.find_or_create_by(uid: uid.to_s)
     end
   end
 end
